@@ -1,0 +1,14 @@
+package sec01_ex01;
+
+import javax.servlet.http.HttpServlet;
+
+//http를 상속받은 자바 -> 서블릿
+
+public class FirstServlet extends HttpServlet {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

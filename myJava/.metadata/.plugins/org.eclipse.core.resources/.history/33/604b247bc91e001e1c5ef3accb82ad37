@@ -1,0 +1,34 @@
+package sec01.ex01;
+
+import java.io.IOException;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/login")
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("init 메소드 호출");
+	}
+
+	
+	public void destroy() {
+		System.out.println("destory 메소드 호출");
+	}
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		//창에 아이디 비밀번호 치고 로그인을 누르면 서버에 request요청이 온다. 
+		//입력된 내용을 request에 저장한다.
+		//저장할때 인코딩타입을 utf-8로 지정하여 글자가 안깨지게한다.
+	}
+
+}

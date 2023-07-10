@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 창</title>
+</head>
+<body>
+	<form name="fromlogin" method = "get" action="login" encType = "UTF-8">
+	<!-- get방식으로 하면 주소창에 아이디 비밀번호가 노출됨->post방식을 많이 사용 -->
+	 아이디: <input type="text" name="user_id"><br>	<!-- 아이디입력하면 user_id로 넘어옴 -->
+	 비밀번호: <input type="password" name="user_pw"><br> <!--비밀번호입력하면 user_pw로 넘어옴 -->
+	 나이:<input type="text" name= user_age"><br>
+	 <input type="submit" value="로그인"><input type="reset" value="다시입력"> 	
+	</form>
+</body>
+</html>

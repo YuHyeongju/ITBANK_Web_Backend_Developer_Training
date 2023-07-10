@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인 창</title>
+</head>
+<body>
+	<form name="fromlogin" method = "get" action="loginServlet">
+		
+	</form>
+</body>
+</html>
