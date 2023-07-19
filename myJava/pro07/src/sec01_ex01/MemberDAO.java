@@ -58,7 +58,7 @@ public class MemberDAO {
 			System.out.println("Oricle 드라이버 로딩 성공");
 			con = DriverManager.getConnection(url, user , pwd);
 			System.out.println("Connection 생성 성공");
-			stmt = con.createStatement();
+			stmt = con.createStatement(); //sql문을 작성할수 있는 객체생성
 			System.out.println("Statement 생성 성공");
 		}catch(Exception e) {
 			e.printStackTrace();
