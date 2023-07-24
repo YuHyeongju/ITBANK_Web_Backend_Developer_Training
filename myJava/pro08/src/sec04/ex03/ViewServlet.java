@@ -1,6 +1,7 @@
 package sec04.ex03;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 import java.sql.Date;
 import java.util.List;
@@ -43,7 +44,7 @@ public class ViewServlet extends HttpServlet {
 								name + "</td><td>"+
 								email + "</td><td>"+
 								joinDate + "</td><td>"
-								+"<a href='/pro07/member3?command=delMember&id=" + id + "'>삭제</a></td></tr>");
+								+"<a href='/pro08/member3?command=delMember&id=" + id + "'>삭제</a></td></tr>");
 		}
 		out.print("</table></body></html>");
 		out.print("<a href= '/pro08/memberForm.html'>새회원등록하기</a>");

@@ -33,6 +33,7 @@ public class MemberServlet extends HttpServlet {
 
 		MemberDAO dao = new MemberDAO();
 		List membersList = dao.listMembers();
+		request.setAttribute("membersList", membersList);
 		RequestDispatcher dispatch = request.getRequestDispatcher("viewMembers");
 		dispatch.forward(request, response);
 
