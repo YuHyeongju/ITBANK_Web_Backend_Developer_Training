@@ -12,12 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class SetServlet
- */
+
 @WebServlet("/cset")
 public class SetServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,13 +24,13 @@ public class SetServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		ServletContext context = getServletContext();
-		// 주소가 저장되어있음
+		// servletContext객체를 가져옴
 		
 		List member = new ArrayList();		
 		member.add("이순신");
 		member.add(30);
 		context.setAttribute("member",member);
-		
+		//servletContext객체에 데이터를 바인딩
 		out.print("<html><body>");
 		out.print("이순신과 30 설정");
 		out.print("</body></html>");

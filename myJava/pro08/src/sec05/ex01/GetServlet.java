@@ -1,6 +1,7 @@
 package sec05.ex01;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +22,9 @@ public class GetServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		
-		ServletContext context = getServletContext();
+		ServletContext context = getServletContext(); //ServletContext 객체 가져옴
 		List member = (ArrayList)context.getAttribute("member");
+		//member로 이전에 바인딩된 회원정보를 가져옴
 		String name = (String)member.get(0);
 		int age = (Integer)member.get(1);
 		
