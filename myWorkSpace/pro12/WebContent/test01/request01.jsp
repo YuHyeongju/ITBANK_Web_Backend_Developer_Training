@@ -17,7 +17,7 @@ request.setAttribute("address", "서울시 강남구");
 </head>
 <body>
 	<% 
-	RequestDispatcher dispatch = request.getRequestDispatcher("request2.jsp");
+	RequestDispatcher dispatch = request.getRequestDispatcher("request02.jsp");
 	dispatch.forward(request,response);
 	//다른페이지로 정보를 넘길때는 dispatch를 사용해야한다.
 	%>

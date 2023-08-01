@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
     
 <%
-String name=(String)request.getAttribute("name");
-String address=(String)request.getAttribute("address");
+String name = (String)request.getAttribute("name");
+String address = (String)request.getAttribute("address");
 
 %>    
     
