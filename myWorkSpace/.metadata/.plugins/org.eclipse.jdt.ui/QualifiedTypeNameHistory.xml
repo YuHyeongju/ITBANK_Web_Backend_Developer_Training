@@ -7,7 +7,6 @@
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
     <fullyQualifiedTypeName name="com.sun.tools.javac.util.Context"/>
     <fullyQualifiedTypeName name="com.sun.java.util.jar.pack.Package.Class.Member"/>
-    <fullyQualifiedTypeName name="javax.naming.Context"/>
     <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
     <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="java.util.List"/>
@@ -17,4 +16,5 @@
     <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="javax.naming.Context"/>
 </qualifiedTypeNameHistroy>
