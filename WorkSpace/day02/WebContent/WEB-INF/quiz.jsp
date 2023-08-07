@@ -5,6 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>quiz.jsp</title>
+<style>
+	input: {width:60px;}
+
+</style>
 </head>
 <body>
 	<%--
@@ -26,9 +30,11 @@
 	
 	 --%>
 	 <form  method = "post">
-	 	<p><input name = "number1" type = "number" ></p>
-	 	<p><input name = "number2" type = "number" ></p>
-	 
+	 	<input name = "num1" type = "number" required>
+	 	+
+	 	<input name = "num2" type = "number" required>
+	 	
+	 	<button>=</button>
 	 </form>
 </body>
 </html>

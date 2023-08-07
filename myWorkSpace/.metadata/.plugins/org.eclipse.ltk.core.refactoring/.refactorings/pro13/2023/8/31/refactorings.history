@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;pro13/WebContent/NewFile.jsp&apos; to &apos;incude1.jsp&apos;" description="Rename resource &apos;NewFile.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/NewFile.jsp" name="incude1.jsp" stamp="1690848736219" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;pro13/WebContent/incude1.jsp&apos; to &apos;include1.jsp&apos;" description="Rename resource &apos;incude1.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/incude1.jsp" name="include1.jsp" stamp="1690849680504" updateReferences="true"/>
-</session>

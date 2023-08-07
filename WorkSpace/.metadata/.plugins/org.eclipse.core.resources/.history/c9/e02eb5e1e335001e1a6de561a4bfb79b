@@ -1,0 +1,33 @@
+package com.itbank.day03;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+
+@Controller
+public class HomeController {// 상속 불필요
+
+	// @RequestMapping(value = "/" ,method = RequestMethod.GET)
+	// -위의 구분은 spring 3버전에서 사용하는 구문
+
+	@GetMapping("/") // 4버전부터 사용 가능 위의 @RequestMApping과 동일한 효과
+	public String home() {
+		return "home"; // WEB-INF/views/home.jsp로 간다.
+	}
+	
+	@GetMapping("/ex01")
+	public String test() {
+		//String 반환형: return 하는 문자열이 viewName이된다.
+		return "ex01";
+	}
+	@PostMapping("/ex01")
+	public String test(HttpServletRequest request) {
+		
+		
+		return null;
+	}
+
+}

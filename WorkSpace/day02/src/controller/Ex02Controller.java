@@ -40,7 +40,7 @@ public class Ex02Controller extends HttpServlet {
 		String msg = (age >= 20) ? "성인" : "미성년자" ;
 		msg +=" 입니다~";
 		
-		request.setAttribute(msg, msg);
+		request.setAttribute("msg", msg);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/ex02_result.jsp");
 		rd.forward(request, response);

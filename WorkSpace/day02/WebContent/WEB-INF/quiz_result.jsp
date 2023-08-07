@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>결과페이지</title>
+<title>quiz_result.jsp</title>
 </head>
 <body>
-	<h1>결과페이지</h1>
+	<h1>덧셈 결과</h1>
 	<hr>
 	
 	
-	<h4>${param.num1 }과 ${param.num2 }의 합계 : ${num_sum }</h4>
+	<h4>${param.num1 } + ${param.num2 } = ${sum }</h4>
 </html>

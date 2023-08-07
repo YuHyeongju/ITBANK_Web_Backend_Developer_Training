@@ -20,10 +20,10 @@
 		<li>WEB-INF 위치를 접근하려면 웹 서버에서 포워드로 전송해야만 접근 가능</li>
 	</ul>
 	
-	<form method="POST"> <!-- dopost가 없어서 오류발생ㅂ -->
+	<form method="POST"> <!-- dopost가 없어서 오류발생,  action이없으면 자기자신 페이지를 호출-->
 	
-		<p><input name = "name" type = "text" palceholder = "이름" required></p>
-		<p><input name = "age" type = "number" palceholder = "나이" required></p>
+		<p>이름:<input name = "name" type = "text" palceholder = "이름" required></p>
+		<p>나이:<input name = "age" type = "number" palceholder = "나이" required></p>
 		<button>전송</button>
  	</form>
 </body>
