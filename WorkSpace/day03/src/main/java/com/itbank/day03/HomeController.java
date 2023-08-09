@@ -47,7 +47,7 @@ public class HomeController {// 상속 불필요
 	//void 반환형 : 요청하는 url 자체가 viewName이 된다.
 	
 	@PostMapping("/ex02")
-	public String ex02(String name, int age,Model model) {
+	public String ex02(String name, int age, Model model) {
 		//1.매개변수의 파라미터의 이름과 동일하게 작성해두면 저장된다.
 		//2.medel은 request를 대체하기 위한 객체
 		

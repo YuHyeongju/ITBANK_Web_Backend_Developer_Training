@@ -30,6 +30,13 @@ public class QuizController extends HttpServlet {
 		int num2 = Integer.parseInt(request.getParameter("num2"));
 		
 		request.setAttribute("sum",num1 + num2);
+		/* 내가 짠 코드
+		 int sum = num1 + num2 
+		 
+		 request.setAttribute("sum",sum);
+		  
+		 이걸 한 줄로 통합
+		 */
 		
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/quiz_result.jsp");
 		rd.forward(request, response);

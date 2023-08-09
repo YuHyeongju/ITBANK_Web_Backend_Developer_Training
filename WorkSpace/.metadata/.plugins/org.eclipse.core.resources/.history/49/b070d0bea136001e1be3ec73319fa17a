@@ -1,0 +1,12 @@
+package com.itbank.day04;
+
+
+
+
+@Controller
+public class HomeController {
+	
+	
+	}
+	
+}
