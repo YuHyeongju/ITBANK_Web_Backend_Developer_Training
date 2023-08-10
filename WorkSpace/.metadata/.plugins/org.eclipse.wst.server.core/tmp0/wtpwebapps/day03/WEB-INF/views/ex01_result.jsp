@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>request 갹체 사용 - 결과</title>
+<title>request 객체 사용 - 결과</title>
 </head>
 <body>
  	<h4> request 객체 사용 - 결과</h4>

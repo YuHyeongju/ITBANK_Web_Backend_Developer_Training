@@ -33,7 +33,6 @@ ul>li {
 			<a href="${cpath }">home</a>
 			<a href="${cpath }/ex01">ex01</a>
 			<a href="${cpath }/ex02">ex02</a>
-			
 		</li>
 	</ul>
 	

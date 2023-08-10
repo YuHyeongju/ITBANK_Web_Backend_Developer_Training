@@ -1,0 +1,15 @@
+package com.itbank.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/ex03") //     /ex03의 URL아래만 매핑해서 처리
+public class Ex03Controller {
+
+	@GetMapping("/test")
+	public void ex03() {
+		
+	}
+}

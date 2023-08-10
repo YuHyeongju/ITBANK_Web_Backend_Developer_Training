@@ -1,0 +1,27 @@
+package com.itbank.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.itbank.dto.PersonDTO;
+import com.itbank.service.Ex04Service;
+
+@Controller("/ex04")
+public class Ex04Controller {
+	@Autowired //스프링 컨테이너 에서 아래 클래스와 동일한 객체를 주입
+	private Ex04Service es;
+	
+	@GetMapping("/text")
+	public void ex04() {}
+	
+	@PostMapping("/test")
+	public String ex04(Model model, PersonDTO per) {
+		
+		
+		System.out.println(es);
+		return "ex04/text";
+	}
+}

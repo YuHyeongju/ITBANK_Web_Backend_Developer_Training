@@ -1,0 +1,27 @@
+package com.itbank.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.itbank.dto.PersonDTO;
+
+@Controller
+@RequestMapping("/ex03") //     /ex03의 URL아래만 매핑해서 처리
+public class Ex03Controller {
+
+	@GetMapping("/test") //즉 여기는 /ex03/test으로의 요청만 처리
+	public void ex03() {  //따라서 viewName은 /WEB-INF/views/ex03/test.jsp이다
+		
+	}
+	@PostMapping
+	public String ex03(Model medel, PersonDTO per) {
+		//디버깅
+		System.out.println("name = " + per.getName());
+		
+		return "test_result";
+		
+	}
+}
