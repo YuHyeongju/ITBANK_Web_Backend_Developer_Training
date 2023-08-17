@@ -1,0 +1,5 @@
+package com.itbank.dto;
+
+public class AccountDTO {
+
+}

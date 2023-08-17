@@ -1,0 +1,20 @@
+package com.itbank.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+public class QuizController {
+
+	@Autowired
+	private QuizService qz;
+	
+	
+	@PostMapping("/ex01")
+	public ModelAndView ex01(AccountDTO user) {
+		
+		
+		return null;
+	}
+	
+}

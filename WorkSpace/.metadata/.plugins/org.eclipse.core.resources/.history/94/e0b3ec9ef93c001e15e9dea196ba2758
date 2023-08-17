@@ -1,0 +1,19 @@
+package com.itbank.service;
+
+import com.itbank.dto.AccountDTO;
+
+public class QuizService {
+	private AccountDTO[] db = new AccountDTO[]{
+		new AccountDTO("itbank", "it", "여행"),
+		new AccountDTO("user", "1234", "테스트"),
+		new AccountDTO("root", "qwe", "관리자")
+	};
+	
+	public AccountDTO login(AccountDTO user) {
+		
+		 {
+		
+		
+		
+	}
+}

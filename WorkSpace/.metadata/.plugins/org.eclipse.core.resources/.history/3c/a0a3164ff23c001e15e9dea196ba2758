@@ -1,0 +1,7 @@
+package com.itbank.service;
+
+public class QuizService {
+	private AccountDTO[] db = new AccountDTO[]{
+		new AccountDTO("itbank", it , "여행");
+	}
+}

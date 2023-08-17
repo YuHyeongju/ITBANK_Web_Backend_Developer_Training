@@ -1,0 +1,6 @@
+package com.itbank.dto;
+
+public class AccountDTO {
+	private String id;
+	private String pw;
+}
