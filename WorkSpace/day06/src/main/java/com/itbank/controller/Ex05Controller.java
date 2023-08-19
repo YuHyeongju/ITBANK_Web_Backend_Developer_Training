@@ -2,6 +2,7 @@ package com.itbank.controller;
 
 import java.util.Map;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +33,7 @@ public class Ex05Controller {
 		ModelAndView mav = new ModelAndView();
 		
 		mav.addObject("per" , per);
-		mav.addObject("adult" , es.isAdult(per));
+		mav.addObject("adult" , es.isAdult(per)); //addObject:  key와 value를 담아서 보낼수 있는 메서
 		//Attribute 추가
 		
 		mav.setViewName("ex05/test_result");
