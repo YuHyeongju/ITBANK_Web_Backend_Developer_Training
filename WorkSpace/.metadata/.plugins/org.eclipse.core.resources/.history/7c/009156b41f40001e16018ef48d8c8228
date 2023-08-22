@@ -1,0 +1,13 @@
+package com.itbank.model;
+
+
+/* 
+ 		Name   VARCHAER2(20)
+ 		HEIGHT NUMBER
+ 		BRITH  DATE
+ */
+
+
+public class PersonVo {
+
+}

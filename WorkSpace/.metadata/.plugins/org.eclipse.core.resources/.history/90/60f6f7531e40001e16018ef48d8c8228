@@ -1,0 +1,8 @@
+package com.itbank.model;
+
+import org.springframework.stereotype.Repository;
+
+@Repository   //DB 접근과 관련된 Spring Bean 등록
+public class PersonDAO {
+
+}

@@ -1,0 +1,13 @@
+package com.itbank.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class PersonService {
+
+	public String getList() {
+		// TODO Auto-generated method stub
+		return "Person 목록 입니다.";
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.itbank.controller;
+
+
+
+@Controller
+public class HomeController {
+	
+	
+	
+	
+	
+}

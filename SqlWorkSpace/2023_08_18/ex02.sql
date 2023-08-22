@@ -2,7 +2,7 @@
 --구문:select 열1, 열2...from 테이블명;
 select * from person;
 select name from person;
-select name, birth from person;  --*는 모든 열을 조회
+select name, birth from person;  -- *는 모든 열을 조회
 select birth, name from person;  -- 여러 열은 콤마로 구분 
                                  -- 열 순서는 원하는 순서대로 작성 가능 
 
