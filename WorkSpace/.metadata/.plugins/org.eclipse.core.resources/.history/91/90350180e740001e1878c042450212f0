@@ -1,0 +1,21 @@
+package main;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+import obj.Toy;
+
+public class Ex02 {
+
+	public static void main(String[] args) {
+		GenericXmlApplicationContext gxac =
+				new GenericXmlApplicationContext("classpath:appCtx.xml");
+		
+		Toy t1 = gxac.getBean(Toy.class);
+		Toy t2 = gxac.getBean("toy",Toy.class);
+		
+		
+		System.out.println("t1 = " + t1);
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package main;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+import obj.Toy;
+
+public class Ex02 {
+
+	public static void main(String[] args) {
+		GenericXmlApplicationContext gxac =
+				new GenericXmlApplicationContext("classpath:appCtx.xml");
+		
+		Toy t1 = gxac.getBean(Toy.class);
+		//클래스에 겹치는 bean이없으면 클래스명만 명시하면되고
+		
+		Toy t2 = gxac.getBean("toy",Toy.class);
+		//클래스가 겹치면 id까지 명시해서 정확하게 가져올 수 있다.
+		
+		System.out.println("t1 = " + t1);
+		System.out.println("t2 = " +t2);
+	}
+
+}
