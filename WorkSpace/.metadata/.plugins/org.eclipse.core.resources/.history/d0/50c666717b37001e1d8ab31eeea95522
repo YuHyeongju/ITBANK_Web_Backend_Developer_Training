@@ -1,8 +1,0 @@
-package com.itbank.service;
-
-import org.springframework.stereotype.Service;
-
-@Service  //비지니스 로직을 처리할 스프링 빈
-public class Ex04Service {
-
-}

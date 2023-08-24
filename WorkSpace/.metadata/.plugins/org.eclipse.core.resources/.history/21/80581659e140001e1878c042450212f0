@@ -1,7 +1,0 @@
-package obj;
-
-public class Bettery {
-	public static void main(String[] args) {
-		
-	}
-}
