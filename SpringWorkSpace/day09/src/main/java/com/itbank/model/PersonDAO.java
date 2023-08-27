@@ -40,4 +40,4 @@ public class PersonDAO {
 		return  jt.query(sql, rm); //여러 행을 받아서 리스트타입으로 반환 (PersonVO타입으로 반환)
 	}//selectAll -> dao.selectAll()로가서 getList()로 리턴
 }
-//mapping 데이터 베이스와 자바사이에 데이터를 주고받는 과정
+//mapping 데이터 베이스와 자바 사이에 데이터를 주고받는 과정
