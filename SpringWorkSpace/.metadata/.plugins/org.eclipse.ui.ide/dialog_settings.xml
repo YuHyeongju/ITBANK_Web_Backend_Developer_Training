@@ -5,6 +5,7 @@
 		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\mySpring\SpringWorkSpace\day10"/>
 			<item value="C:\mySpring\SpringWorkSpace\DI"/>
 			<item value="C:\mySpring\SpringWorkSpace\day09"/>
 			<item value="C:\mySpring\SpringWorkSpace\day08"/>

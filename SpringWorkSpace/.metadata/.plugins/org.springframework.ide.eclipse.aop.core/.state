@@ -4,8 +4,9 @@
 <aop-project name="day05"/>
 <aop-project name="day04"/>
 <aop-project name="day03"/>
-<aop-project name="day09"/>
 <aop-project name="day01"/>
+<aop-project name="day09"/>
 <aop-project name="day08"/>
 <aop-project name="day07"/>
+<aop-project name="day10"/>
 </aop-reference-model>
