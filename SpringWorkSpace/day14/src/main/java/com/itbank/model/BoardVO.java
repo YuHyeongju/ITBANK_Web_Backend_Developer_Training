@@ -1,0 +1,58 @@
+package com.itbank.model;
+
+import java.sql.Date;
+
+/*
+ 	IDX      NOT NULL NUMBER       
+	TITLE    NOT NULL VARCHAR2(20) 
+	CONTENTS          CLOB         
+	WRITER   NOT NULL VARCHAR2(20) 
+	VCOUNT            NUMBER       
+	WDATE             DATE  
+
+*/
+
+
+public class BoardVO {
+	private int idx,vcount;
+	private String title,writer,contents;
+	private Date wdate;
+	
+	public int getIdx() {
+		return idx;
+	}
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
+	public int getVcount() {
+		return vcount;
+	}
+	public void setVcount(int vcount) {
+		this.vcount = vcount;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	public String getContents() {
+		return contents;
+	}
+	public void setContents(String contents) {
+		this.contents = contents;
+	}
+	public Date getWdate() {
+		return wdate;
+	}
+	public void setWdate(Date wdate) {
+		this.wdate = wdate;
+	}
+	
+}
