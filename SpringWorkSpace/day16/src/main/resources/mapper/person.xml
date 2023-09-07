@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itbank.model.PersonDAO">
+
+	<!-- 
+		1. namespace 		: mapper를 사용할 DAO를 지정. 패키지명까지 작성
+		2. id				: DAO에서 연결할 메서드명
+		3. parameterType 	: id의 메서드에서 받을 매개변수 타입
+		4. resultType		: id의 메서드가 반환할 타입 (int인 경우는 생략)
+	
+	 -->
+
+	<select id="selectOne"
+			parameterType="String"
+			resultType="com.itbank.model.PersonVO">
+			
+		select * from person 
+			where name = #{name}
+	</select>
+
+	<update id="update"
+			parameterType="com.itbank.model.PersonVO">
+		
+		update person
+		    set 
+		        height = #{height},
+		        birth = #{birth}
+		    
+		    where name = #{name}
+	</update>
+</mapper>
