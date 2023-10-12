@@ -15,7 +15,7 @@ public class Quiz01 {
 		System.out.println("몸무게: " + height1);
 		System.out.println("키: " + weight1);
 
-		//실수는 소수점까지 표현되지만, 정수는 소수점을 표현하지않음.
+		//실수는 소수점까지 표현되지만, 정수는 소수점을 표현하지않음
 		//실수 값을 정수형 변수에 옮겨 담으면 소수점은 잘린다.
 		
 		
