@@ -1,0 +1,19 @@
+INDEX VERSION 1.131+C:\IT_Bank_Backend_Java\.metadata\.plugins\org.eclipse.jdt.core
+2598152.index
+3624875219.index
+1401107734.index
+1325091951.index
+4028517842.index
+1002677649.index
+859397209.index
+2381076460.index
+1599200894.index
+1069719889.index
+2922093605.index
+1352520941.index
+476755445.index
+1726068343.index
+3184491376.index
+3962426996.index
+158551806.index
+1464182320.index

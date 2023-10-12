@@ -1,9 +1,0 @@
-package com.itbank.model;
-
-import org.apache.ibatis.annotations.Select;
-
-public interface BoardDAO {
-	
-	@Select("select * from board");
-	
-}

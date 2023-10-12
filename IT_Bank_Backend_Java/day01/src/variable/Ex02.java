@@ -1,0 +1,44 @@
+package variable;
+
+public class Ex02 {
+
+	public static void main(String[] args) {
+		
+		String name1 = "짱구";
+		String name2 = "유리";
+		String name3 = "훈이";
+		
+		int age1 = 5;
+		int age2 = 4;
+		int age3 = 6;
+		
+		System.out.println(name1+"의 나이는 " + age1 +"세 입니다.");
+		System.out.println(name2+"의 나이는 " + age2 +"세 입니다.");
+		System.out.println(name3+"의 나이는 " + age3 +"세 입니다.");
+		//한 줄 복사: ctrl + alt + ↓
+		//한 줄 삭제: ctrl + d
+		
+		int num = 128;
+		byte by =(byte)num;
+		
+		System.out.println("by : " + by); //128은 범위를 벗어나기때문에 -127로 돌아간다. 범위:-128~ 127
+		
+		/*
+		자바의 자료형
+		1)primitive type, 기본자료형 원시 자료형
+		
+		- byte 		-128 ~ 127  		1바이트
+	      boolean 	true/false			1바이트
+	      short 	-32768 ~ 32767		2바이트
+	      char		0 ~ 65535			2바이트(글자를 표현하기 위한 정수)
+	      int 		-21억 ~ 21억			4바이트(정수 대표 자료형)
+	      long 		-922경 ~ 922경		8바이트
+	      float 	실수					4바이트
+	      double	실수					8바이트(실수 대표 자료형)
+			
+		2)Reference type, 참조 자료형
+		
+		*/
+	}
+
+}
