@@ -1,0 +1,71 @@
+package output;
+
+import java.util.Date;
+
+
+public class Ex01 {
+	public static void main(String[] args) {
+		//자바의 기본 출력함수 3가지
+		
+		//System.out.println() : 괄호 안에 하나의 값을  받아서 출력(,를 넣을 수 없음). 출력후 한 줄을 내린다.
+		//System.out.print() : 	  괄호 안에 하나의 값을 받아서 출력한다. 줄을 바꾸지 않음.
+		//System.out.printf() :  괄호 안에 서식과 값을 차례대로 전달바아서 출력한다.
+		System.out.println("a"); // 연산자는 값을 만들어내는 기호이기 때문에
+		System.out.println("b"); //괄호 안에 계산이 먼저 실행되고
+		System.out.println("c"); //계산의 결과값 하나가 출력되는 순서이다.
+		
+		System.out.printf("d");	//둘다 출력할 값의 자료형이 무엇이라도 출력할 수 있음.
+		System.out.printf("e");
+		System.out.printf("f");
+		
+		Date today = new Date(); // 실행하는 시점의 현재 날짜 및 시간이 저장된 객체
+		System.out.println(today);
+		System.out.println(today.toString());
+		
+		System.out.println(1);
+		System.out.println(2.3);
+		System.out.println(4.5f);
+		System.out.println(Integer.class); //클래스 정보 자체 출력
+		
+		System.out.println("A");	//print()는 출력 후 줄을 바꾸지 않음.
+		System.out.println("\n");	//\n은 줄바꿈 문자(개행문자, NewLine, lineFeed)이다./
+		System.out.println("B");	//따라서 print("\n)과 println()은 같은 역할이다.
+		System.out.println("\r");	//\r은 커서를 줄 왼쪽 끝으로 이동시킴(carrigeReturn)
+		System.out.println("C"); 	//\r도 엔터의 값이므로 줄을 바꾼다.
+		
+		String lyrics ="동해물과 백두산이 마르고 닳도록 \r\n"; //\r\n합쳐서 하나의 엔터키이다.
+		lyrics +="하느님이 보우하사 우리나라만세\r\n";
+		
+		//+ 연산자는 숫자간의 연산에서 숫자를 계산하고 문자열의 양쪽중 한 곳에 포함되면, 문자열을 베이스로 하여  글자를 이어
+		//붙이기 함. 산술연산자는 복합대입연산자 형식으로 사용할 수 있기 때문에 lyrics 에 처음 값을 지정한 후 기존값을
+		//유지하면서 새로운 내용을 덧붙이기 할 때 사용할 수 있다.
+
+		System.out.println(lyrics);
+		System.out.println();
+		
+		System.out.println(1 + 2 ); 	//3 	양쪽 모두 숫자 -> 계산
+		System.out.println("1" + 2); 	//12	왼쪽이 문자열
+		System.out.println(1 + "2");	//12	오른쪽이 문자열
+		System.out.println("1" + "2");	//12	양쪽이 문자열, 글자모양을 이어 붙임.
+		
+		//print와 println의 차이는 주로 반복문 내부에서 값을 연속으로 출력할 때 활용함.
+		
+		for(int i = 0; i < 5; i++) {
+			System.out.println("i" + " "); //i를 출력하고 한 칸 띄어쓰기하고 줄은 바꾸지 않기 
+		}
+		
+		System.out.println(); 			   //출력이 다 끝나면 줄 바꾸기;
+		
+		for(int i = 0; i < 5; i++) {	   //값을 출력할 때 마다 계속 줄 바꾸기
+			System.out.println(i);
+		}
+		
+		int num = 1234;
+		String num2 = 1234 + ""; 
+		//String이 아닌 값을 가장 쉽게 문자열로 바꾸는 방법은 
+		//기존값에 빈 문자열을 더하는 방법이다. 
+		
+		System.out.println(num);
+		System.out.println(num2);
+	}
+}

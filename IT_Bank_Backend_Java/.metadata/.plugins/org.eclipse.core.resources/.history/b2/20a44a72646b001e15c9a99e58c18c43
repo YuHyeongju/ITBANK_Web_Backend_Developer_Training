@@ -1,0 +1,12 @@
+package backjoon;
+
+import java.util.scanner;
+
+public class Question_2588 {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

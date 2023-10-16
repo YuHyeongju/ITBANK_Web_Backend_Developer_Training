@@ -11,7 +11,7 @@ public class Ex07 {
 		// Wrapper Class는 객체에 대한 자료형이므로, 데이터 저장 및 기능이 포함되어있다.
 
 //
-//		  primitive type 	Wrapper Class 
+//		  primitive type  	Wrapper Class
 //		  boolean 			Boolean
 //		  byte 				Byte
 //		  short				Short
@@ -36,7 +36,7 @@ public class Ex07 {
 		n4 =(int)(byte)by2;
 		//Byte -> byte -> int ->Integer
 		
-		n4 = by2.intValue();
+		n4 = by2.intValue(); //언박싱
 		//by2에 담긴 값을 int 형태로 바꿔서 대입할 수 있도록 해주는 기능(함수)
 		System.out.println("n4: " + n4);
 		

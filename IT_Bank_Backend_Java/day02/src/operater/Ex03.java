@@ -2,13 +2,13 @@ package operater;
 
 public class Ex03 {
 	public static void main(String[] args) {
-		//비교 연산
+		// 비교 연산
 		// >, <, >=, <=, == , !=
 		// 초과, 미만, 이상, 이하, 일치, 불일치
 		
-		//정수 혹은 실수값의 크기를 비교하여 그 결과를 boolean타입의 값으로 나타낸다.
-		//(파이썬과 달리, 문자열의 크기 비교 지원안함.)
-		//"Robert" > "Chris" (x)
+		// 정수 혹은 실수값의 크기를 비교하여 그 결과를 boolean타입의 값으로 나타낸다.
+		// (파이썬과 달리, 문자열의 크기 비교 지원안함.)
+		// "Robert" > "Chris" (x)
 		
 		int n1 = 10;
 		int n2 = 3;
