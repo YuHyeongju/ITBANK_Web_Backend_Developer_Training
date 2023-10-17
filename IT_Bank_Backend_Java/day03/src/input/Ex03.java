@@ -22,22 +22,22 @@ public class Ex03 {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		String s1;
-		System.out.println("주소를 동까지 입력:  ");		//부산광역시 수영구 광안동
-		s1 = sc.next(); 							//부산광역시
+//		String s1;
+//		System.out.println("주소를 동까지 입력:  ");		//부산광역시 수영구 광안동
+//		s1 = sc.next(); 							//부산광역시
+//		
+//		String s2;
+//		s2 = sc.nextLine(); 						//수영구 광안동
+//		
+//		System.out.println("s1 : " + s1);
+//		System.out.println("s2 : " + s2);
+//		
 		
-		String s2;
-		s2 = sc.nextLine(); 						//수영구 광안동
-		
-		System.out.println("s1 : " + s1);
-		System.out.println("s2 : " + s2);
-		
-		sc.close();
 		
 		//2) nextInt() vs Integer.parseInt(sc.nextLine())
 		
-		int n1, n2;
-		char operator;
+        int n1, n2;
+        char operator;
 		
 		System.out.println("n1 입력: ");
 		n1 = sc.nextInt(); //숫자만 빼가고 엔터키 처리도 하지 않음. 
@@ -46,7 +46,7 @@ public class Ex03 {
 		operator = sc.nextLine().charAt(0); //엔터앞에 글자가 없어 추출할 수 없는 예외발생 
 		
 		System.out.println("n2 입력: ");
-		n2 =sc.nextInt();
+		n2 = sc.nextInt();
 		
 		System.out.printf("%d %c %d = ?\n", n1, operator, n2);
 		
@@ -55,10 +55,10 @@ public class Ex03 {
 		System.out.println("n1 입력: ");
 		n1 = Integer.parseInt(sc.nextLine()); 
 		//문자열 형으로 입력받고(엔터키는 정리되고) 문자열 내용을 숫자 형식으로 변경하여 저장. 
-		//모양만 바뀌는 것이 아니라 안에 내용도 변경됨
+		//모양만 바뀌는 것이 아니라 안에 내용도 변경됨.
 		
 		System.out.println("연산자 입력(+,-,*/): ");
-		operator = sc.nextLine().charAt(0); 		//엔터앞에 글자가 없어 추출할 수 없는 예외 발생 
+		operator = sc.nextLine().charAt(0); 		
 		
 		System.out.println("n2 입력: ");		
 		n2 = Integer.parseInt(sc.nextLine());
