@@ -5,6 +5,8 @@
 		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\IT_Bank_Backend_Java\day05"/>
+			<item value="C:\IT_Bank_Backend_Java\day04"/>
 			<item value="C:\IT_Bank_Backend_Java\day03"/>
 			<item value="C:\IT_Bank_Backend_Java\day02"/>
 			<item value="C:\IT_Bank_Backend_Java\day01"/>
