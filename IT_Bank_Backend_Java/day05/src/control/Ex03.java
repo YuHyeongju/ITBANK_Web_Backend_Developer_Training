@@ -11,12 +11,11 @@ public class Ex03 {
 
 		/*
 		 * Cannot switch on a value of type double. Only convertible int values, strings
-		 * or enum variables are permitted  
-		 * double 유형 값은 변환 할 수 없다. 변환 가능한 int 값, 문자열, 열거형 변수만 변환가능합니다.
+		 * or enum variables are permitted  문자열 비교는 가능
 		 */
 
 		switch (str) {
-		case "A": 	// if(str == "A") x
+		case "A": // if(str == "A") x
 					// if(str.equals("A")) o
 
 			System.out.println("one");

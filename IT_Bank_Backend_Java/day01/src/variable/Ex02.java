@@ -12,9 +12,9 @@ public class Ex02 {
 		int age2 = 4;
 		int age3 = 6;
 		
-		System.out.println(name1 + "의 나이는 " + age1 + "세 입니다.");
-		System.out.println(name2 + "의 나이는 " + age2 + "세 입니다.");
-		System.out.println(name3 + "의 나이는 " + age3 + "세 입니다.");
+		System.out.println(name1+"의 나이는 " + age1 +"세 입니다.");
+		System.out.println(name2+"의 나이는 " + age2 +"세 입니다.");
+		System.out.println(name3+"의 나이는 " + age3 +"세 입니다.");
 		//한 줄 복사: ctrl + alt + ↓
 		//한 줄 삭제: ctrl + d
 		

@@ -6,7 +6,7 @@ public class Ex04 {
 	public static void main(String[] args) {
 		//입력과 연산자를 사용한 예시
 		
-		int num;										//정수를 입력 받을 변수
+		int num;										//정수를 입력받을 변수
 		boolean isEven;									//입력받은 정수가 짝수인지 판별할 변수
 		Scanner sc = new Scanner(System.in);			//입력을 처리할 변수
 		

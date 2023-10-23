@@ -16,7 +16,7 @@ public class Quiz03 {
 		System.out.printf("입력: ");
 		input = sc.next();
 
-		num1 = Integer.parseInt(input.split("-")[0]); 
+		num1 = Integer.parseInt(input.split("-")[0]);
 		num2 = Integer.parseInt(input.split("-")[1]);
 
 		System.out.println("주민등록번호 앞자리 : " + num1);
@@ -27,10 +27,10 @@ public class Quiz03 {
 		// 그리고 성별은 문자열로 준비하여 모두 출력하세요.
 		// 980319-1124610
 
-		year = num1 / 10000; 		// 앞에 두자리만 남음
-		month = num1 / 100 % 100; 	// 가운데 월을  추출하기위해 /100 하면 앞에 4자리가 남는데 그 상태에서
+		year = num1 / 10000; // 앞에 두자리만 남음
+		month = num1 / 100 % 100; // 가운데를 추출하기위해 /100 하면 앞에 네자리가 남는데 그상태에서
 									// %100 연산을 해주면 출생월이 나머지로 남음
-		day = num1 % 100; 			// 6자리에서 나머지 연산 해서 출생일을 남김
+		day = num1 % 100; // 6자리에서 나머지 연산 해서 출생일을 남김
 
 //		day = num1 % 100;				num1	year	month	day
 //										930516	?		?		16
@@ -40,7 +40,7 @@ public class Quiz03 {
 //		
 //		year = num1 / 100;
 
-		switch (num2 / 1000000) { // 뒷자리 케이스 9, 0, 1 ,2 ,3 ,4로 시작
+		switch (num2 / 1000000) { // 뒷자리 케이스 9, 0, 1,2,3,4로 시작
 		case 9:
 			year += 1800;
 			gender = "남성";

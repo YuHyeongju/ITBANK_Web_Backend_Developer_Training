@@ -6,10 +6,9 @@ public class Ex03 {
 		// 이스케이프 시퀀스: 글자로 표현되지는 않으나, 특정 기능을 포함하는 특수 글자
 
 		/*
-		 * \r carrige return 커서를 줄 가장 왼쪽으로 이동 
-		 * \n line feed 	  커서를 한 줄 아래로 내린다. 
-		 * \b backspace 	  커서를 왼쪽으로 한 칸 이동시킨다.( 글자를 지우지 않는다) 
-		 * \t tab            탭 크기 (4, 8)만큼 오른쪽으로 커서를 이동시킨다.
+		 * \r carrige return 커서를 줄 가장 왼쪽으로 이동 \n line feed 커서를 한 줄 아래로 내린다. \b backspace
+		 * 커서를 왼쪽으로 한 칸 이동시킨다.( 글자를 지우지 않는다) \t tab 탭 크기 (4, 8)만큼 오른쪽으로 커서를 이동시킨다.
+		 * 
 		 */
 
 		System.out.println("A\rB");

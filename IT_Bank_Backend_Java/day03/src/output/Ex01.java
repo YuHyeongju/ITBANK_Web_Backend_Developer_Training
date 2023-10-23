@@ -7,14 +7,14 @@ public class Ex01 {
 	public static void main(String[] args) {
 		//자바의 기본 출력함수 3가지
 		
-		//System.out.println() : 괄호 안에 하나의 값을  받아서 출력(,를 넣을 수 없음). 출력후 한 줄을 내린다.
-		//System.out.print() : 	  괄호 안에 하나의 값을 받아서 출력한다. 줄을 바꾸지 않음.
-		//System.out.printf() :  괄호 안에 서식과 값을 차례대로 전달받아서 출력한다.
+		//System.out.println() : 괄호안에 하나의 값을  받아서 출력(,를 넣을 수 없음). 출력후 한 줄을 내린다.
+		//System.out.print() : 괄호 안에 하나의 값을 받아서 출력한다. 줄을 바꾸지 않음.
+		//System.out.printf() : 괄호안에 서식과 값을 차례대로 전달바아서 출력한다.
 		System.out.println("a"); // 연산자는 값을 만들어내는 기호이기 때문에
-		System.out.println("b"); //	괄호 안에 계산이 먼저 실행되고
-		System.out.println("c"); //	계산의 결과값 하나가 출력되는 순서이다.
+		System.out.println("b"); //괄호 안에 계산이 먼저 실행되고
+		System.out.println("c"); //계산의 결과값 하나가 출력되는 순서이다.
 		
-		System.out.printf("d");	//둘 다 출력할 값의 자료형이 무엇이라도 출력할 수 있음.
+		System.out.printf("d");	//둘다 출력할 값의 자료형이 무엇이라도 출력할 수 있음.
 		System.out.printf("e");
 		System.out.printf("f");
 		
@@ -46,7 +46,7 @@ public class Ex01 {
 		System.out.println(1 + 2 ); 	//3 	양쪽 모두 숫자 -> 계산
 		System.out.println("1" + 2); 	//12	왼쪽이 문자열
 		System.out.println(1 + "2");	//12	오른쪽이 문자열
-		System.out.println("1" + "2");	//12	양쪽이 문자열, 글자 모양을 이어 붙임.
+		System.out.println("1" + "2");	//12	양쪽이 문자열, 글자모양을 이어 붙임.
 		
 		//print와 println의 차이는 주로 반복문 내부에서 값을 연속으로 출력할 때 활용함.
 		

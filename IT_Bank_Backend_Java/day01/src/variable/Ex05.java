@@ -1,6 +1,6 @@
 package variable;
 
-public class Ex05 {
+public class EX05 {
 
 	public static void main(String[] args) {
 		//자료형 변환
@@ -21,7 +21,7 @@ public class Ex05 {
 		
 		System.out.println("by: " + by);
 		
-		//값 자체가 변하는 것은 아니지만, 자료형에 따라서 수행할 수 있거나 수행할 수 없는 작업이있다.
+		//값 자체가 변하는 것은 아니지만, 자료형에 따라서 수행할 수 있거나 수행할수 없는 작업이있다.
 		//따라서 상황에 맞게 적절한 형 변환이 필요함.
 		
 		

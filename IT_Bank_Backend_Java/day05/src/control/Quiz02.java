@@ -32,7 +32,7 @@ public class Quiz02 {
 			addTime -= 1;
 		}
 
-		totalPrice = addTime * 500 + basicPrice; //총 가격 = 추가시간 * 500 + 기본 가격
+		totalPrice = addTime * 500 + basicPrice;
 
 		if (time <= 30) {
 			System.out.println("요금: " + basicPrice);

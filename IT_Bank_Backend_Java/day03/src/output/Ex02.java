@@ -28,7 +28,7 @@ public class Ex02 {
 		 * %s				string			문자열 (혹은 자바의 객체 및 값) 
 		 * %d				decimal			정수를 10진수 형태로 출력할 때 사용
 		 * %c				character		정수를 아스키코드 혹은 유니코드에 맞춰 글자로 출력
-		 * %f				floating number	부동 소수점 실수를 출력
+		 * %f				floating number	부동소수점 실수를 출력
 		 * %o				octal			정수를 8진수 형태로 출력
 		 * %x				hexa-decimal	정수를 16진수 형태로 출력 
 		 * 

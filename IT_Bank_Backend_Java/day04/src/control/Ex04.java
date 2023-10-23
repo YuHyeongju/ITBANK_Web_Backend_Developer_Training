@@ -8,7 +8,7 @@ public class Ex04 {
 		
 		int min = n1;
 		if(min > n2) min= n2;
-		if(min > n3)  min = n3;
+		if(min >n3)  min = n3;
 		System.out.println("최소값: " + min);
 		System.out.println();
 		

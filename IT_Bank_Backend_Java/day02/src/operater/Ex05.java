@@ -21,7 +21,7 @@ public class Ex05 {
 		
 		int n1 = 2, n2 = 1, n3 = 0 , n4 = -1;
 		int a1 = n1++ + ++n2;	//이 줄이 끝나면  n1 값이 1 증가
-		int a2 = (n1 += 1) + (n2 += 1);
+		int a2 = (n1+=1) + (n2 += 1);
 		System.out.println(a1);
 		System.out.println(a2);
 		

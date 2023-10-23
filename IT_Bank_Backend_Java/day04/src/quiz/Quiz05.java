@@ -8,7 +8,7 @@ public class Quiz05 {
 	public static void main(String[] args) {
 		Random ran = new Random();
 		int eleA, eleB, eleC;
-		int floor, FDA, FDB, FDC;
+		int floor, FDA,FDB,FDC;
 		int min_d;
 		String open_ele= " ";
 		
