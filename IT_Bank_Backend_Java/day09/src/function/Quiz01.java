@@ -7,8 +7,8 @@ public class Quiz01 {
 		return answer;
 	}
 	
-	static int getReverseNum(int num) {				//정수 거꾸로 뒤집는 알고리즘
-		int answer = 0;								//나눗셈을 활용한 자릿수 구분
+	static int getReverseNum(int num) {				//	정수 거꾸로 뒤집는 알고리즘
+		int answer = 0;								//	나눗셈을 활용한 자릿수 구분
 													//	num		answer	|				| 	
 		while(num != 0) {							//  1234	0		|	123		4	|	1	432
 			answer *= 10;							//  1234	0		|	123		40	|	1	4320

@@ -34,8 +34,8 @@ class Solution {
 public class Luhn_fuction {
 
 	public static void main(String[] args) {
-		String input = "1162-3434-1010-2111";	// 유효함
-		String input2 = "1162-3434-1010-2113";	// 유효함
+		String input = "1162-3434-1010-2111";// 유효함
+		String input2 = "1162-3434-1010-2113";// 유효함
 		
 		// 6) 검증이 끝나면 함수 형태로 변경하여 여러 값을 처리할 수 있도록 한다.
 		

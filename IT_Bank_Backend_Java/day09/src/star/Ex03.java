@@ -2,36 +2,27 @@ package star;
 
 public class Ex03 {
 	public static void main(String[] args) {
-/*		int size = 5;																	
-		int st = 5;
-		int sp = size - st;
-
-		for (int i = 0; i < size; i++) {
-			// 공백
-			for (int j = 0; j < sp; j++) {
-				System.out.print("  ");
-			}
-			// 별
-			for (int j = 0; j < st; j++) {
-				System.out.print("* ");
-			}
-			System.out.println(); // 한줄 끝나면 줄 변경
-			st -= 1;
-			sp += 1;
-		}
-
-	}
-
-}*/
-/*
- * * * * * 
-  * * * * 
-    * * * 
-      * * 
-        * 
- */
-
-
+//		int size = 5;																	
+//		int st = 5;
+//		int sp = size - st;
+//
+//		for (int i = 0; i < size; i++) {
+//			// 공백
+//			for (int j = 0; j < sp; j++) {
+//				System.out.print("  ");
+//			}
+//			// 별
+//			for (int j = 0; j < st; j++) {
+//				System.out.print("* ");
+//			}
+//			System.out.println(); // 한줄 끝나면 줄 변경
+//			st -= 1;
+//			sp += 1;
+//		}
+//
+//	}
+//
+//}
 
 //		int size = 5;
 //		int st = size;
@@ -67,7 +58,6 @@ public class Ex03 {
 //}
 
 		/*
-		 * 
 		*****
 		 ***
 		  *
@@ -109,3 +99,18 @@ public class Ex03 {
 		}
 	}
 }
+
+
+/*
+
+*               * 
+* *           * * 
+* * *       * * * 
+* * * *   * * * * 
+* * * * * * * * * 
+* * * *   * * * * 
+* * *       * * * 
+* *           * * 
+*               * 
+             
+ */
