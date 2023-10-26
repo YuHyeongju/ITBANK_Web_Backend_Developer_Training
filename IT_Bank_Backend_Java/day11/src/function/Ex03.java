@@ -41,13 +41,10 @@ public class Ex03 {
 					System.out.println("머니가 부족합니다.");
 					break LOOP;
 				}
-				for(int i = 0; i < 3; i++) {
-					System.out.print(".");
-					try{Thread.sleep(500);}catch(Exception e){};
-				}
+				
 				flag = enhance(lv);  // 강화시도 -> 결과 반환 (현재 아이템 레벨에 따라 성공 확률이 달라짐)
 				money -= fee;        // 강화비용 받기
-				lv += flag ? 1 : -1; // 성공하면 1이더해지고, 실패하면 -1이 더해짐.
+				lv += flag ? 1 : -1; // 성공하면 1이 더해지고, 실패하면 -1이 더해짐.
 				break;
 			case 0:
 				break LOOP; 		//LOOP라는 이름의 while문을 탈출함.
@@ -70,6 +67,7 @@ public class Ex03 {
 
 		int suc = 100 - (lv - 4) * 10;
 		
+
 		if(lv < 5) {
 			System.out.println("강화성공!!");
 		}
@@ -82,10 +80,17 @@ public class Ex03 {
 				success = false;	// 실패
 				System.out.println("강화실패!! 헤헷 손이 미끄러졌네");
 			}
-			
+			for (int i = 0; i < 3; i++) {
+				System.out.print(".");
+				try {
+					Thread.sleep(500);
+				} catch (Exception e) {
+				};
+			}
+			System.out.println();
 		}
-		System.out.println(R+ "/" + suc);
-		
+		System.out.printf("%d / %d (%s)\n",R,suc, R <=suc);
+		//%s는 true, false (강화 성공/실패) 보여줌
 		return success;
 	}
 	//end of class: main() 혹은 다른 함수들은 모두 class 내부에 있어야함. 
