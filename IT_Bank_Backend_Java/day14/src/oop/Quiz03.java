@@ -68,12 +68,13 @@ class TV {
 	void show() {
 		if (power) {
 			System.out.println("전원이 켜져있습니다.");
-			System.out.println("┌───────────────────────┐");
-			System.out.println("│	  채널:" + channel + "          │");
-			System.out.println("│	  볼륨:" + volume + "          │");
-			System.out.println("└───────────────────────┘");
+			System.out.println("┌─────────────────────────┐");
+			System.out.printf("│	    채널: %02d\t  │\n", channel);
+			System.out.printf("│	    볼륨: %02d\t  │\n", volume);
+			System.out.println("└─────────────────────────┘");
 		} else {
 			System.out.println("전원이 꺼져있습니다. 전원을 켜세요.");
+			System.out.println();
 		}
 	}
 
@@ -96,7 +97,7 @@ public class Quiz03 {
 		int menu;
 
 		LOOP: while (true) {
-			System.out.println("");
+			System.out.println("기능");
 			System.out.println("1번:tv켜기/끄기, 2번:채널올리기, 3번:채널내리기, 4번:볼륨올리기, 5번:볼륨내리기");
 			System.out.println();
 			System.out.println("6번: 음소거/해제, 0번: 프로그램종료");
