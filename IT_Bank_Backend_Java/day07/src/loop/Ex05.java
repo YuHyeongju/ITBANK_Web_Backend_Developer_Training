@@ -15,8 +15,8 @@ public class Ex05 {
 		currentSize = sc.nextInt();
 
 		System.out.print("[");
-		for (int i = 0; i < maxSize / 2; i++) {	//총 칸의 크기는 50칸
-			if (i == maxSize / 2 / 2) {			//50칸의 절반위치에 진행률 숫자 표시
+		for (int i = 0; i < maxSize / 2; i++) {	// 총 칸의 크기는 50칸
+			if (i == maxSize / 2 / 2) {			// 50칸의 절반위치에 진행률 숫자 표시
 				System.out.printf("%2d %%", currentSize);
 
 			} else if (i < currentSize / 2) {//	입력 퍼센트의 절반보다 작으면

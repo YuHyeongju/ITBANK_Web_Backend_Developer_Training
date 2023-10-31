@@ -29,8 +29,6 @@ public class Ex08 {
 			}System.out.println();
 		}System.out.println();
 		
-		
-		
 
 	}
 }

@@ -1,6 +1,6 @@
 package variable;
 
-public class EX05 {
+public class Ex05 {
 
 	public static void main(String[] args) {
 		//자료형 변환

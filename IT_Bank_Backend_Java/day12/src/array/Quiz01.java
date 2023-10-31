@@ -68,7 +68,7 @@ public class Quiz01 {
 					}
 				}
 			}
-			System.out.println("5) " +Arrays.toString(arr));
+			System.out.println("5) " + Arrays.toString(arr));
 		
 	}
 

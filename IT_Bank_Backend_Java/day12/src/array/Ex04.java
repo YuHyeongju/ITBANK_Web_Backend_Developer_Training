@@ -29,7 +29,7 @@ public class Ex04 {
 			if(min > arr[i]) {
 				min = arr[i];
 			}
-			if(max <arr[i]) {
+			if(max < arr[i]) {
 				max = arr[i];
 			}
 			
