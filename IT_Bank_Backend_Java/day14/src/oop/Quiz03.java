@@ -6,12 +6,12 @@ class TV {
 	// TV의 속성을 필드로 작성하세요
 	// 전원, 채널, 볼륨
 	boolean power;
-	int channel = 1;
-	int volume = 1;
-	int muteVolume = 0;
+	int channel;
+	int volume;
+	int muteVolume;
 
 	// TV의 기능을 메서드로 정의하세요.
-	void PowerTurn() {
+	void powerTurn() {
 		power = !power;
 		show();
 	}
@@ -69,12 +69,19 @@ class TV {
 		if (power) {
 			System.out.println("전원이 켜져있습니다.");
 			System.out.println("┌─────────────────────────┐");
-			System.out.printf("│	    채널: %02d\t  │\n", channel);
-			System.out.printf("│	    볼륨: %02d\t  │\n", volume);
+			System.out.println("│                         │");
+			System.out.printf("│	  채널: %02d\t  │\n", channel);
+			System.out.printf("│	  볼륨: %02d\t  │\n", volume);
+			System.out.println("│                         │");
 			System.out.println("└─────────────────────────┘");
 		} else {
-			System.out.println("전원이 꺼져있습니다. 전원을 켜세요.");
-			System.out.println();
+			System.out.println("┌─────────────────────┐");
+			System.out.println("│                     │");
+			System.out.println("│                     │");
+			System.out.println("│     power off	      │");
+			System.out.println("│                     │");
+			System.out.println("│                     │");
+			System.out.println("└─────────────────────┘");
 		}
 	}
 
@@ -87,6 +94,11 @@ class TV {
 	// 생성자에서 객체 생성시 초기값을 지정
 	// 매개변수로 받지 않아도 초기값을 지정할 수 없다.
 	// 예를 들면 채널의 초기값이 0인 것은 이상합니다. 다른 값이 초기값이 되도록 해야함.
+	TV(){
+		this.channel = 1;
+		this.volume = 1;
+		this.muteVolume = 0;
+	}
 }
 
 public class Quiz03 {
@@ -98,16 +110,16 @@ public class Quiz03 {
 
 		LOOP: while (true) {
 			System.out.println("기능");
-			System.out.println("1번:tv켜기/끄기, 2번:채널올리기, 3번:채널내리기, 4번:볼륨올리기, 5번:볼륨내리기");
+			System.out.println("1):tv 켜기/끄기, 2):채널 올리기, 3):채널 내리기, 4):볼륨 올리기, 5):볼륨 내리기");
 			System.out.println();
-			System.out.println("6번: 음소거/해제, 0번: 프로그램종료");
+			System.out.println("6): 음소거/해제, 0): 프로그램종료");
 			System.out.println();
 			System.out.print("tv에게 일을 시켜보자: ");
 			menu = sc.nextInt();
 			switch (menu) {
 			// 입력된 메뉴에 따라서 tv객체의 메서드를 호출하는 형태로 진행
 			case 1:
-				tv.PowerTurn();
+				tv.powerTurn();
 				break;
 			case 2:
 				tv.channelUp();

@@ -35,6 +35,7 @@ class Customer {
 	Customer(String name){
 		this.name = name;
 	}
+	
 }
 
 public class Quiz02 {
