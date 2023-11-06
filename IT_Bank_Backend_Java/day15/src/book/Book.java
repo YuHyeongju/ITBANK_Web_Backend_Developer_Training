@@ -1,10 +1,9 @@
 package book;
 
-
 // 단일 데이터를 필드와 getter/setter로 구성
 
 public class Book {
-	public String bookName, author;  
+	public String bookName, author;
 	public int bookNum;
 
 	public String getBookName() {
@@ -30,8 +29,5 @@ public class Book {
 	public void setBookNum(int bookNum) {
 		this.bookNum = bookNum;
 	}
-	
-	
-	
-	
+
 }

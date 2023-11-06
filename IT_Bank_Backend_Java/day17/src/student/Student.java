@@ -64,7 +64,7 @@ public class Student {
 		this.math = math;
 	}
 
-	public String info() {
+	public String info() {	// 책에서 나오는 문제를 풀기위한 메소드,이걸 가지고 출력해도 출력은 가능
 		String answer = "%s, %d, %d, %d, %d, %d";
 		answer = String.format(answer, name, ban, no, kor, eng, math);
 		return answer;

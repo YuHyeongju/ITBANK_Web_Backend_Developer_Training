@@ -40,7 +40,8 @@ public class Main {
 			System.out.println("1. 학생 추가");
 			System.out.println("2. 학생 전체 출력");
 			System.out.println("3. 학생 정보 검색");
-			System.out.println("4. 이름 오름차순 정렬");
+			System.out.println("4. 평균으로  정렬");
+			System.out.println("5. 이름으로 정렬");
 			System.out.println("0. 프로그램 종료");
 			System.out.println("입력>>>");
 			menu = sc.nextInt();
@@ -73,19 +74,25 @@ public class Main {
 				
 			case 3:
 				
-				System.out.println("학생이름입력: ");
-				searchName = sc.nextLine();
+				System.out.print("학생 이름 입력: ");
+				searchName = sc.next();
 				handler.studentSearch(searchName);
+				System.out.println();
 				break;
 				
 			case 4:	
 				
 				handler.sortStudentByAvg();
+				handler.showStudent();
 				break;
-				
+			case 5:
+				handler.sortStudentByName();
+				handler.showStudent();
 			case 0:
+				
 				sc.close();
 				return;
+				
 			default: 
 				System.out.println("잘못 입력하셨습니다.");
 				
