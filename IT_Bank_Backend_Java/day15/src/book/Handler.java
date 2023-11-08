@@ -42,10 +42,11 @@ public class Handler {
 			}
 		}
 	}
-	public void sortBookByName() {	// 문자열 비교: compareTo
-		for(int i = 0; i < arr.length; i++) {
-			for(int j = i + 1; j < arr.length; j++) {	
-				if(arr[i] != null && arr[j] != null && arr[i].getBookName().compareTo(arr[j].getBookName()) > 0) {
+
+	public void sortBookByName() { // 문자열 비교: compareTo
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = i + 1; j < arr.length; j++) {
+				if (arr[i] != null && arr[j] != null && arr[i].getBookName().compareTo(arr[j].getBookName()) > 0) {
 					Book tmp = arr[i];
 					arr[i] = arr[j];
 					arr[j] = tmp;

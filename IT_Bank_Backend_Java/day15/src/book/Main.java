@@ -26,18 +26,17 @@ public class Main {
 			System.out.println("4.책 이름순으로 정렬");
 			System.out.println("0.프로그램 종료");
 			System.out.print("입력 >>>");
-			menu = sc.nextInt();
+			menu = Integer.parseInt(sc.nextLine());
 			switch (menu) {
 			case 1:
 				System.out.println("책 이름 입력>>");
-				bookName = sc.next();
-				sc.nextLine(); // 개행문자 소비
+				bookName = sc.nextLine();
+				//sc.nextLine(); // 개행문자 소비
 				System.out.println("저자 입력>>");
-				author = sc.next();
-				sc.nextLine(); // 개행문자 소비
+				author = sc.nextLine();
+				//sc.nextLine(); // 개행문자 소비
 				System.out.println("책 번호 입력>>");
-				bookNum = sc.nextInt();
-				System.out.println();
+				bookNum = Integer.parseInt(sc.nextLine());
 				row = handler.addBook(bookName, author, bookNum);
 
 				System.out.println(row != 0 ? "추가성공" : "추가실패");
@@ -48,7 +47,7 @@ public class Main {
 				break;
 			case 3:
 				System.out.println("책 이름 입력: ");
-				searchBook = sc.next();
+				searchBook = sc.nextLine();
 				handler.showOneBook(searchBook);			
 				break;
 			case 4:
