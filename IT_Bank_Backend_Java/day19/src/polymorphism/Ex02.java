@@ -68,13 +68,13 @@ class Actor extends Human {
 class AirPlane {
 	private Human[] seat = new Human[4]; // 업캐스팅
 
-	public boolean entrance(Human guest) { // 손님이 입장을 시도하면
-		boolean result = false; // 결과 반환 변수(기본값 false)
+	public boolean entrance(Human guest) { 		// 손님이 입장을 시도하면
+		boolean result = false; 				// 결과 반환 변수(기본값 false)
 		for (int i = 0; i < seat.length; i++) { // 준비된 좌석(배열)중에서
-			if (seat[i] == null) { // 빈칸을 찾아서
-				seat[i] = guest; // 빈칸에 손님을 앉히고
-				result = true; // 반복을 중단한다.
-				break; // 만약 빈칸이 없다면 결과는 false가 됨.
+			if (seat[i] == null) { 				// 빈칸을 찾아서
+				seat[i] = guest; 				// 빈칸에 손님을 앉히고
+				result = true; 					// 반복을 중단한다.
+				break; 							// 만약 빈칸이 없다면 결과는 false가 됨.
 			}
 		}
 		return result;
@@ -99,7 +99,7 @@ class AirPlane {
 		if (tmp == null) {
 			System.out.println("탑승자들 중 의사가 없습니다.");
 		}
-		if(tmp == seat[index]) {
+		else if(tmp == seat[index]) {
 			System.out.println("자기 자신을 치료할 수 없습니다.");
 		}
 		else {	// 탑승객이 의사이고 치료대상이 자기 자신이 아닐때
