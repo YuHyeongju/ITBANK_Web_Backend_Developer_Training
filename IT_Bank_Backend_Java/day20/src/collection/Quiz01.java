@@ -79,7 +79,7 @@ public class Quiz01 {
 		
 		// list.sort() 함수는 내부에서 자기만의 방식으로 정렬을 수행함.
 		// 이때, 선택정렬 코드의  if조건에 해당하는 부분만 만들어내는 함수가 compare, compareTo이다.
-		// if (arr[i] - arr[j] > 0 {...} 에서 arr[i] - arr[j] 부분을 만드는 함수가 Comparerator이다.
+		
 	}
 
 }
