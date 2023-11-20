@@ -25,8 +25,8 @@ public class Handler {
 		return row;
 	}
 
-	public int delete(String name) throws Exception {
-		int row = dao.delete(name);
+	public int delete(int idx) throws Exception {
+		int row = dao.delete(idx);
 		return row;
 	}
 

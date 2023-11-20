@@ -30,6 +30,7 @@ public class Main {
 		PhonebookDTO dto = null;
 		Scanner sc = new Scanner(System.in);
 		String name, pnum;
+		int idx;
 		int row = -1;
 		int menu = -1;
 
@@ -57,15 +58,15 @@ public class Main {
 				dto = getDTOFromUserInput(sc);// 수정할 정보 입력
 				row = handler.insertPhonebook(dto);
 				System.out.println(row != 0 ? "추가성공" : "추가실패");
-			
+				break;
+				
 			case 3: // 수정할 전화번호 입력하고 이름이 맞으면 전화번호 수정 
 				
 				System.out.print("이름 입력: ");
 				name = sc.nextLine();
 				System.out.println("수정할 전화번호 입력: ");
 				pnum = sc.nextLine();
-				System.out.print(row != 0? "수정완료":"수정실패");
-				dto.setPnum(pnum); // dto의 setNum에게 전화번호를 넘겨줌
+				System.out.println(row != 0? "수정완료":"수정실패");
 				row = handler.updatePnum(name,pnum); // 핸들러의 updatePnum 호출후 결과를 row에 저장
 				break;
 				
@@ -79,9 +80,9 @@ public class Main {
 				break;
 				
 			case 5:
-				System.out.print("삭제할 이름 입력: ");
-				name = sc.nextLine();
-				row = handler.delete(name); // 핸들러에게 삭제할 이름 주고 결과를 row에 저장
+				System.out.print("삭제할 인덱스 입력: ");
+				idx = Integer.parseInt(sc.nextLine());
+				row = handler.delete(idx); // 핸들러에게 삭제할 이름 주고 결과를 row에 저장
 				System.out.println(row != 0 ? "삭제성공" : "삭제실패");
 				break;
 				

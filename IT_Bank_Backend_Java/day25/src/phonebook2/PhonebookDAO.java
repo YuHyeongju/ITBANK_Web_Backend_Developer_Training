@@ -38,7 +38,7 @@ public class PhonebookDAO {
 		String sql = "select * from Phonebook order by idx";
 
 		pstmt = conn.prepareStatement(sql); // sql문을 실행하는 코드
-		rs = pstmt.executeQuery(); //
+		rs = pstmt.executeQuery(); // select가 있을때만 rs사용
 
 		while (rs.next()) {
 			PhonebookDTO dto = new PhonebookDTO();
@@ -55,8 +55,8 @@ public class PhonebookDAO {
 
 	public int insertPhonebook(PhonebookDTO dto) throws Exception {
 
-		String sql = "insert into phonebook values(?,?,?,?)";
-
+		String sql = "insert into phonebook (name,pnum,age,favorite) values(?,?,?,?)";
+		// 인덱스가 있기때문에 값을 지정해주어야함.
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, dto.getName());
 		pstmt.setString(2, dto.getPnum());
@@ -86,11 +86,11 @@ public class PhonebookDAO {
 		return row;
 	}
 
-	public int delete(String name) throws Exception {
+	public int delete(int idx) throws Exception {
 
-		String sql = "delete from phonebook where name = ?";
+		String sql = "delete phonebook where idx = ?";
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, name);
+		pstmt.setInt(1, idx);
 		int row = pstmt.executeUpdate();
 		return row;
 	}
