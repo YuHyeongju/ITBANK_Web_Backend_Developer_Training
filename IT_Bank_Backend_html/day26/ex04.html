@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04.html</title>
+    <style>
+        fieldset{
+            background-color: gray;
+            font-family: 'Consolas';
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(0, 255, 0);
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>img 태그</h1>
+    <hr>
+
+    <fieldset>
+        &lt;img src="그림파일경로" alt="대체텍스트" width="너비" height="높이">
+         <!--표현 기호 기호의 코드값                         뜻
+                <         &lt;      오른쪽으로 열린 부등호  A < B로 표현할 시 B는 A보다 크다라는 뜻으로 사용 
+                                    마크업 기반의 코드에서 태그의 시작 기호 사용
+                 
+                >         &gt;      왼쪽으로 열린 부등호   A > B로 표현할 시 A는 B보다 크다라는 뜻으로 사용 
+                                    마크업 기반의 코드에서 태그의 끝기호로 사용
+        -->
+    </fieldset>
+    
+    <p><!--paragraph, 문단을 구분하기 위해 사용함.-->
+        <img src="day26\짱구\짱구.png" alt="짱구">
+        <br><!-- breakline, 문단 구분없이 혹은 문단 내부애서 줄을 바꿀려고 할 때 사용(\n) -->
+        대체 택스트는 그림이 출력되지 않을때, 어떤 요소인지 글자로 알려주기 위해 사용
+
+    </p>
+
+   
+    <h3>img 태그는 글자와 동일하게 취급한다. 그림 옆에 그림을 둘 수 있다.</h3>
+    <p>
+        
+        <img src="day26\짱구\훈이.png" width="100px">
+        <img src="day26\짱구\맹구.png" width="100px">
+    </p>
+
+    <h3>이미지의 너비나 높이를 하나만 지정하면, 비율에 따라 나머지 크기가 설정된다.</h3>
+    <h3>이미지의 너비와 높이를 모두 지정하면, 비율이 무너질 수 있음.</h3>
+    <p>
+        <img src="day26\짱구\훈이.png" width="100px" height="80px">
+    </p>
+
+    <h3>이미지도 글자취급하므로, 링크의 대상이 될 수 있음</h3>
+    <p>
+        <a href="https://search.naver.com/search.naver?query=유리&where=image">
+            <img src="day26\짱구\유리.png" height="150px"></a>
+        
+    </p>
+
+    <p>
+        <a href="https://search.naver.com/search.naver?query=수지&where=image">
+            <img src="day26\짱구\수지.png" height="150px"></a>
+        
+    </p>
+
+    <h3>img태그의 title속성으로 마우스 올렸을 때 툴팁을 설정할 수 있다.</h3>
+    <p>
+        
+        <img src="day26\짱구\흰둥이.png" title="귀여운 흰둥이">
+        
+    </p>
+
+    <h3>이미지의 경로에는 웹 경로도 지정할 수 있다.</h3>
+    <p>
+
+        <img src="data:image/jpeg;base64,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">
+
+    </p>
+    <!-- a 태그: 하이퍼링크를 걸어주는 태그 -->
+</body>
+</html>

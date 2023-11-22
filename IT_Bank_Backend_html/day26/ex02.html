@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 첫걸음</title>
+    <style>
+        body{
+            background-color: greenyellow;
+           
+        }
+        table{
+            background-color: violet;
+        }
+        fieldset{
+            background-color: #eee;
+        }
+        h3{
+            color: red;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <h1>ex02.html</h1>
+    <hr>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+
+        <thead>
+            <tr>
+                <th>Tag</th>
+                <th>설명</th>
+                <th>예시</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>html</td>
+                <td>HTML 문서의 시작과 끝 위치를 나타냄</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>head</td>
+                <td>머릿글, 문서에 전반적으로 적용되는 설정</td>
+                <!-- shift + alt ↓,↑ : 한줄 복사
+                     shift + alt + f : 정렬
+                
+                -->
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>body</td>
+                <td>본문, 브라우저에서 나타날 화면을 작성</td>
+                <td></td>
+
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <fieldset   style="background-color: while;
+                        font-size: 20px;">
+        <legend>태그의 구조</legend>
+        <pre>
+          &lt;여는 태그 속성1 = "값" 속성2 ="값"> <!--&lt: 부등호-->
+              글자 및 다른 태그 내용
+          &lt;/닫는태그>  <!-- 블럭 설정후 tab, 땡기는거 shift + tab-->  
+        </pre>
+    </fieldset>
+    
+    
+    <h3>태그이름과 속성은 띄어쓰기로 구분한다.</h3>
+    <h3>속성이름과 속성값은 =로 구분되고, 띄어쓰기를 사용하지 않는다. </h3>
+    <h3>속성값은 쌍따옴표(")로 묶어야 한다.</h3>
+    <h3>여는 태그와 닫는 태그의 깊이(depth)는 같아야 함.</h3>
+    <h3>여는 태그와 닫는 태그의 이름은 같아야함.</h3>
+    <h3>태그 종류에 따라 용도가 다르고, 사용할 수 있는 속성이 다르다.</h3>
+
+
+    <a href="https://www.advancedwebranking.com/seo/html-study" target="_blank">
+        <button>많이 사용하는 태그</button>     <!--target="_blank" : 새 창을 열어서 실행 -->
+    </a> <!-- a: 링크를 만들어줌 -->
+    <!--  하이퍼 텍스트: 링크가 적용된 글자, 누르면 그 주소로 이동함-->
+    
+    <hr>
+    <br>
+
+    <iframe width="720" height="400" src="https://www.youtube.com/embed/o90ulT97Vhw" title="전기자전거 국토종주 카메라 분실사건" 
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen></iframe>"
+    <!-- html문서내에서 다른 html문서를 보여줄 때 사용-->
+
+    <!-- get: url에 폼데이터를 포함시켜 전송 -->
+    <form method="get" action="https://search.naver.com/search.naver">
+
+        <input type = "text" name="query" placeholder="검색어를 입력하세요">
+        <input type ="submit" value="검색"> <!-- 검색 버튼 만듦 -->
+
+    </form>
+</body>
+
+</html>
+<!-- 아무것도 없을때 ! 하고 엔터 누르면 html 틀이 자동 완성됨 -->
+<!-- alt + b : 브라우저로 실행하여 보여줌 - open in brower를 설치해야함 -->
