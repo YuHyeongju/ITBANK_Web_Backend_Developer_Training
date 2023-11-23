@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz03.html</title>
+    <style>
+        a{
+            text-decoration: none; /*글자 꾸밈요소 제거(밑줄없음)*/
+            color: inherit;        /*글자 색상은 상위 요소의 색상 그대로 물러받음*/
+        }
+        a:hover{
+            text-decoration: underline; /*마우스 올리면 밑줄*/
+        }
+        table td{
+            text-align: center;
+
+        }
+        td{
+            background-color: rgb(255, 227 ,238 );
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 5px;
+            font-size: 14px;
+        }
+        table{
+            border-collapse:collapse ;
+            margin: auto;
+        }
+        td.hidden{
+            background-color: white;
+            border: 0px;
+        }
+       
+    </style>
+</head>
+<body>
+    <h3>돼지고기 나무위키</h3>
+    <hr>
+    <table id="pork">
+        <tr>
+            <td rowspan="3" bgcolor="pink"><a target="_blank" href="https://namu.wiki/w/%EB%8F%BC%EC%A7%80%EB%A8%B8%EB%A6%AC">돼지머리</a></td>
+            <td bgcolor="pink"><a target="_blank" href="https://namu.wiki/w/%EB%AA%A9%EC%82%B4">목살</a></td>
+            <td rowspan="2" bgcolor="pink"><a target="_blank" href="https://namu.wiki/w/%EA%B0%80%EB%B8%8C%EB%A6%AC%EC%82%B4">가브리살</a></td>
+            <td rowspan="2" bgcolor="pink"><a target="_blank" href="https://namu.wiki/w/%EB%93%B1%EC%8B%AC">등심</a></td>
+            <td rowspan="4" bgcolor="pink"><a target="_blank" href="https://namu.wiki/w/%EB%92%B7%EB%8B%A4%EB%A6%AC%EC%82%B4">뒷다리살</a></td>
+        </tr>
+        <tr>
+            
+            <td bgcolor="pink"><a target="_blank" href="https://namu.wiki/w/%ED%95%AD%EC%A0%95%EC%82%B4">항정살</a></td>
+            
+        </tr>
+        <tr>
+            <td bgcolor="pink"><a target="_blank" href="https://namu.wiki/w/%EB%8F%BC%EC%A7%80%EA%B0%88%EB%B9%84">갈비</a></td>
+            <td bgcolor="pink"><a target="_blank" href="https://namu.wiki/w/%EA%B0%88%EB%A7%A4%EA%B8%B0%EC%82%B4">갈매기살</a></td> 
+            <td bgcolor="pink"><a target="_blank" href="https://namu.wiki/w/%EC%95%88%EC%8B%AC(%EA%B3%A0%EA%B8%B0)">안심</a></td> 
+        </tr>
+        <tr>
+            <td rowspan="2" class="hidden"></td>
+            <td bgcolor="pink"><a target="_blank" href="https://namu.wiki/w/%EC%95%9E%EB%8B%A4%EB%A6%AC%EC%82%B4">앞다리살</a></td>
+            <td colspan="2" bgcolor="pink"><a target="_blank" href="https://namu.wiki/w/%EC%82%BC%EA%B2%B9%EC%82%B4">삼겹살</a></td>
+        </tr>
+        <tr>
+            <td bgcolor="pink"><a target="_blank" href="https://namu.wiki/w/%EC%A1%B1%EB%B0%9C">돈족</a></td>
+            <td colspan="2" class="hidden"></td>
+            <td bgcolor="pink"><a target="_blank" href="https://namu.wiki/w/%EC%A1%B1%EB%B0%9C">돈족</a></td>
+        </tr>
+    </table>
+</body>
+</html>

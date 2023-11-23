@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz02.html</title>
+    <style>
+        table{
+            margin:50px auto;
+        }
+        tr{
+            text-align: center;
+        }
+        table  tr:nth-child(3) > td{
+            width: 80px;
+        }
+        table tr{
+            height: 80px;
+        }
+        h1{
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>표 만들기(줄,칸 합치기)</h1>
+    <hr>
+    <h1>능력단위별 평가 일정표</h1>
+    <hr>
+    <input type="color"><!-- 색상값을 확인할 수 있는 스포이드가 나옴 --> 
+
+    <table border="1"cellpadding="10" cellspacing="0">
+        <tr >
+            <th colspan="2"></th>    
+            <th bgcolor="#00AAFF" colspan="16">NCS 전공 교과(720시간)</th>
+
+        </tr>
+        <tr bgcolor="cccccc">
+            <td colspan="2">교과목</td>
+            <td colspan="2">객체지향 프로그래밍</td>
+            <td colspan="3">데이터베이스 구현</td>
+            <td colspan="1">웹 표준 UI 구현</td>
+            <td colspan="5">웹 융합 SW개발</td>
+            <td colspan="1">애플리케이션 테스트</td>
+            <td colspan="4">클라우드 시스템</td>
+        </tr>
+        <tr>
+            <td colspan="2" bgcolor="cccccc">능력 단위</td>
+            <td colspan="1">프로그래밍언어활용(47시간)</td>
+            <td colspan="1">네트워크프로그래밍구현(42시간)</td>
+            <td colspan="1">데이터베이스구현(42시간)</td>
+            <td colspan="1">SQL 활용(30시간)</td>
+            <td colspan="1">SQL 응용(30시간)</td>
+            <td colspan="1">UI구현(120시간)</td>
+            <td colspan="1">요구사항 확인(40시간)</td>
+            <td colspan="1">애플리케이션 설계(40시간)</td>
+            <td colspan="1">인터페이스 구현(40시간)</td>
+            <td colspan="1">서버 프로그램 구현(60시간)</td>
+            <td colspan="1">통합 구현(40시간)</td>
+            <td colspan="1">애플리케이션 테스트 수행(40시간)</td>
+            <td colspan="1">빅데이터 수집시스템 개발(40시간)</td>
+            <td colspan="1">빅데이터 저장시스템 개발(40시간)</td>
+            <td colspan="1">빅데이터 처리시스템 개발(40시간)</td>
+            <td colspan="1">빅데이터 분석시스템 개발(39시간)</td>
+        </tr>
+        <tr>
+            <td colspan="2" bgcolor="cccccc">평가 방법</td>
+            <td colspan="2">혼합형(서술형+ 문제해결시나리오)</td>
+            <td colspan="3">혼합형(서술형+ 문제해결시나리오)</td>
+            <td colspan="1">혼합형(서술형+ 문제해결시나리오)</td>
+            <td colspan="5">혼합형(서술형+ 기타(단답형등))</td>
+            <td colspan="1">혼합형(서술형+ 문제해결시나리오)</td>
+            <td colspan="4">혼합형(서술형+ 문제해결시나리오)</td>
+        </tr>
+        <tr>
+            <td colspan="2" bgcolor="cccccc">평가교사</td>
+            <td colspan="16">원종래</td>
+        </tr>
+        <tr>
+           <td rowspan="3" bgcolor="cccccc">평가 일시</td>
+           <td bgcolor="cccccc">평가</td>
+
+           <td rowspan="1" colspan="2">23.10.30</td>
+            <td rowspan="1" colspan="3">23.11.21</td>
+            <td rowspan="1" colspan="1">23.12.19</td>
+            <td rowspan="1" colspan="5">24.2.16</td>
+            <td rowspan="1" colspan="1">24.2.27</td>
+            <td rowspan="1" colspan="4">24.04.02</td> 
+        </tr> 
+        <tr>
+            <td bgcolor="cccccc">시간</td>
+            <td colspan="16">14:00 ~ 15:30</td>
+            
+        </tr>
+        <tr>
+            <td bgcolor="cccccc">재평가</td>
+            <td  colspan="2">23.11.03</td>
+            <td  colspan="3">23.11.27</td>
+            <td  colspan="1">23.12.26</td>
+            <td  colspan="5">24.02.22</td>
+            <td  colspan="1">24.03.04</td>
+            <td  colspan="4">24.04.04</td> 
+        </tr>
+    </table>
+</body>
+</html>
