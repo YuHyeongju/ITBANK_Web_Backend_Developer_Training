@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz01.html</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 50px auto;
+            font-size: 12px;
+            /*별도 사이즈지정이 없으면 16px*/
+
+        }
+
+        td,
+        th {
+            padding: 10px;
+            border: 1px solid #dadada;
+            text-align: center;
+            
+        }
+
+        th {
+            background-color: #f5f7f9;
+        }
+
+        button {
+            border: 0;
+            background-color: #00acac;
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px 20px;
+        }
+        #insert{
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>능력단위 평가표</h1>
+    <hr>
+
+
+    <form>
+        <table border="1" cellpadding="10" cellspaceing="0">
+            <thead>
+                <tr>
+                    <th>능력단위요소</th>
+                    <th>문항</th>
+                </tr>
+            </thead>
+            <tr>
+                <th rowspan="2">DBMS 설치하기</th>
+                <td style="text-align: left;"><span style="color: red;">[문항1]</span>
+                    파일시스템과 DBMS의 차이 및 장단점을 아는가(배점10)</td>
+            </tr>
+            <tr>
+                <td>훈련교사:
+                    <input type="radio" name="q1" value="5">매우우수하다.
+                    <input type="radio" name="q1" value="4">우수하다
+                    <input type="radio" name="q1" value="3">보통이다.
+                    <input type="radio" name="q1" value="2">미흡하다.
+                    <input type="radio" name="q1" value="1">매우 미흡하다.
+                </td>
+            </tr>
+            <tr>
+                <th rowspan="2">데이터베이스 오브젝트 생성하기</th>
+                <td style="text-align: left;"><span style="color: red;">[문항2]</span>
+                    DBMS사용자 계정의 패스워드 설정 방법을 아는가(배점10)
+                </td>
+            </tr>
+            <td>훈련교사:
+                <input type="radio" name="q2" value="5">매우우수하다.
+                <input type="radio" name="q2" value="4">우수하다
+                <input type="radio" name="q2" value="3">보통이다.
+                <input type="radio" name="q2" value="2">미흡하다.
+                <input type="radio" name="q2" value="1">매우 미흡하다.
+            </td>
+
+            <tr>
+                <th rowspan="2">기본 SQL 작성하기</th>
+                <td style="text-align: left;"><span style="color: red;">[문항3]</span>
+                    DDL,DML을 구분하여 알고 있는가(배점10)</td>
+            </tr>
+            <td>훈련교사:
+                <input type="radio" name="q3" value="5">매우우수하다.
+                <input type="radio" name="q3" value="4">우수하다
+                <input type="radio" name="q3" value="3">보통이다.
+                <input type="radio" name="q3" value="2">미흡하다.
+                <input type="radio" name="q3" value="1">매우 미흡하다.
+            </td>
+            <tr>
+                <th rowspan="2">고급 작성하기</th>
+                <td style="text-align: left;"><span style="color: red;">[문항4]</span>
+                    제약조건을 적용하여 테이블을 생성할 수 있는가?(배점10)
+                </td>
+            </tr>
+            <td>훈련교사:
+                <input type="radio" name="q4" value="5">매우우수하다.
+                <input type="radio" name="q4" value="4">우수하다
+                <input type="radio" name="q4" value="3">보통이다.
+                <input type="radio" name="q4" value="2">미흡하다.
+                <input type="radio" name="q4" value="1">매우 미흡하다.
+            </td>
+            <tr>
+                <th rowspan="2">절차형 SQL 작성하기</th>
+                <td style="text-align: left;"><span style="color: red;">[문항5]</span>
+                    시퀀스 및 인덱스를 알고 활용할 수 있는가(배점10)</td>
+            </tr>
+            <td>훈련교사:
+                <input type="radio" name="q5" value="5">매우우수하다.
+                <input type="radio" name="q5" value="4">우수하다
+                <input type="radio" name="q5" value="3">보통이다.
+                <input type="radio" name="q5" value="2">미흡하다.
+                <input type="radio" name="q5" value="1">매우 미흡하다.
+            </td>
+            <tr>
+                <th rowspan="2">응용 SQL 작성하기</th>
+                <td style="text-align: left;"><span style="color: red;">[문항6]</span>
+                    오라클의 제약조건의 종류와 특징을 알고있는가?(배점10)
+            </tr>
+            </tr>
+            <td>훈련교사:
+                <input type="radio" name="q6" value="5">매우우수하다.
+                <input type="radio" name="q6" value="4">우수하다
+                <input type="radio" name="q6" value="3">보통이다.
+                <input type="radio" name="q6" value="2">미흡하다.
+                <input type="radio" name="q6" value="1">매우 미흡하다.
+            </td>
+            <tr>
+                <th rowspan="2">고급 작성하기</th>
+                <td style="text-align: left;"><span style="color: red;">[문항7]</span>
+                    자바에서JDBC를 이용하여 DB에 접속할 수 있는가(배점10)
+            </tr>
+            </tr>
+            <td>훈련교사:
+                <input type="radio" name="q7" value="5">매우우수하다.
+                <input type="radio" name="q7" value="4">우수하다
+                <input type="radio" name="q7" value="3">보통이다.
+                <input type="radio" name="q7" value="2">미흡하다.
+                <input type="radio" name="q7" value="1">매우 미흡하다.
+            </td>
+            <tr>
+                <th rowspan="2">고급작성하기</th>
+                <td style="text-align: left;"><span style="color: red;">[문항8]</span>
+                    날짜형태의 자료를 처리할 수 있는가?(배점10)
+            </tr>
+            </tr>
+            <td>훈련교사:
+                <input type="radio" name="q8" value="5">매우우수하다.
+                <input type="radio" name="q8" value="4">우수하다
+                <input type="radio" name="q8" value="3">보통이다.
+                <input type="radio" name="q8" value="2">미흡하다.
+                <input type="radio" name="q8" value="1">매우 미흡하다.
+            </td>
+            <tr>
+                <th rowspan="2">고급작성하기</th>
+                <td style="text-align: left;"><span style="color: red;">[문항9]</span>
+                    문제상황을 인식하고 해결할 수 있는가?(배점10)
+            </tr>
+            </tr>
+            <td>훈련교사:
+                <input type="radio" name="q9" value="5" checked>매우우수하다.
+                <!-- 기본으로 체크 되어있음.-->
+                <input type="radio" name="q9" value="4">우수하다
+                <input type="radio" name="q9" value="3">보통이다.
+                <input type="radio" name="q9" value="2">미흡하다.
+                <input type="radio" name="q9" value="1">매우 미흡하다.
+            </td>
+            <tr>
+                <th colspan="1">평가 근거자료 1</th>
+                <td align="center"><a href="#">유형주2A.zip</a></td>
+
+
+            </tr>
+            <tr>
+                <th colspan="1" >평가 근거 첨부 1</th>
+                <td style="text-align: left;"><input type="file"><br>
+                    <input type="checkbox">삭제(파일명:유형주2A.zip)
+                </td>
+
+            </tr>
+            <tr>
+                <th rowspan="3">교수자 총평</th>
+                <td>
+                    <textarea style="resize: none;" cols="70" rows="5"></textarea>
+                </td>
+            </tr>
+        </table>
+
+
+
+        <p align="center">
+            <button>←</button>
+            <button>→</button>
+        </p>
+        <p align="center">
+
+            <input type="submit" value="채점하기">
+            <!-- 반응이 없는이유: form태그가 아니다.-->
+            <!--방법 2가지-->
+            <!--form 태그로 묶어준다.-->
+            <!-- 자바스크립트로 작동을 직접 만들어준다.-->
+
+        </p>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02.html</title>
+</head>
+<body>
+    <h1>form, input 연습</h1>
+    <hr>
+
+    <h3>form내부의 input이 하나만 있으면, 엔터키 입력시 submit이 수행된다.</h3>
+    <h3>input:image는 button의 역할을 수행한다.</h3>
+
+    <form action="https://www.google.com/search">
+        <p><input type="search" name="q" placeholder="구글 검색"
+            autocomplete="off" required autofocus></p>
+            <!-- 이 구문을 반드시 입력해야함, 페이지가 로드될 때  포커스가 input요소로 이동함-->
+        <p><input type="reset" value="초기화"></p>    
+        <p><input type="submit"></p>    
+        <p><input type="image" src="D:\2023_10월_취업반_유형주\htmlWorkSpace\day26\짱구\흰둥이.png" width="100" alt="흰둥이"></p>
+    </form>
+    
+</body>
+</html>

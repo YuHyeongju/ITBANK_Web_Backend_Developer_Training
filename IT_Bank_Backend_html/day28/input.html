@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-input.html</title>
+    <style>
+        table {
+            border: 2px solid black;
+            margin: 20px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td, th {
+            padding: 5px 10px;
+            border: 1px solid grey;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>input.html</h1>
+    <hr>
+
+    <h3>사용자의 입력값을 서버에 전송하기 위한 요소. form과 연계하여 사용한다</h3>
+
+    <table>
+        <tr>
+            <th>태그</th>
+            <th>type</th>
+            <th>특징</th>
+            <th>예시</th>
+        </tr>
+        <tr>
+            <td rowspan="10">input</td>
+            <td>text</td>
+            <td>일반적인 텍스트를 입력받는다</td>
+            <td><input type="text" name="greeting" value="하이" placeholder="글자 입력"></td>
+        </tr> <!--여러 값을 입력받기때문에 이름이 필요함 
+                name은 변수이름에 해당함.-->
+        <tr>
+            <td>password</td>
+            <td>마스킹된 텍스트를 입력받는다</td>
+            <td><input type="password" placeholder="비밀번호 입력"></td>
+            <!-- value로 값을 미리 넣어놓거나 입력받을 수 있음.-->
+        </tr>
+        <tr>
+            <td>number</td>
+            <td>숫자를 입력받는다</td>
+            <td><input type="number" placeholder="숫자 입력"></td>
+        </tr>
+        <tr>
+            <td>date</td>
+            <td>날짜를 입력받는다</td>
+            <td><input type="date"></td>
+        </tr>
+        <tr>
+            <td>range</td>
+            <td>마우스로 범위사이의 숫자를 입력받는다</td>
+            <td><input type="range" min="0" max="10" value="1"></td>
+            <!--최대 최소 값을 넣을 수 있음-->
+        </tr>
+        <tr>
+            <td>file</td>
+            <td>사용자의 첨부파일을 입력받는다</td>
+            <td><input type="file" name="upload"></td>
+            <!-- value를 지정할 수 없음: 파일 주소를 넣는다고 그파일이 넣어지지않음
+                오로지 마우스로 파일 위치를 지정하는거만 인정함
+            파일은 유일하게 자료형이 문자열이 아님-->
+        </tr>
+        <tr>
+            <td>radio</td><!--모양이 라디오 모양이여서 radio라고 이름 지어짐-->
+            <td>여러 요소 중 하나를 선택하여 입력받는다</td>
+            <td>
+                <label><input type="radio" name="adult" value="true">성인</label>
+                <label><input type="radio" name="adult" value="false">미성년자</label>
+                <!--라벨태그로 묶어놓으면 글자를 클릭해도 선택이 되지만 라벨태그가 없으면
+                글자는 그냥 글자일뿐이고 선택이 되지않음-->
+               
+            </td>
+        </tr>
+        <tr>
+            <td>checkbox</td>
+            <td>여러 요소중 해당하는 값을 복수 선택하여 입력받는다</td>
+            <td>
+                <label><input type="checkbox" name="pet_type" value="dog">강아지</label>
+                <label><input type="checkbox" name="pet_type" value="cat">고양이</label>
+                <label><input type="checkbox" name="pet_type" value="turtle">거북이</label>
+                <!--변수 이름은 동일한데 여러개의 값중에  선택하여 집어넣는것.-->
+                <!--자바에서는 String[] pet_Type = {dog,cat...}-->
+            </td>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>이름과 값이 정해져있으나, 시각적으로 보이지 않는다 (display: none)</td>
+            <!-- 숨긴상태로 정보를 전송할 수 있다.-->
+            <td>
+                <input type="hidden" name="csrf_token" value="abcdefghi">
+            </td>
+        </tr>
+        <tr>
+            <td>color</td>
+            <td>색상값을 입력받는다</td>
+            <td>
+                <input type="color">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">select</td>
+            <td>여러 선택지 중 하나를 입력받는다 (radio와 방식이 유사하다)</td>
+            <td>
+                <select name="lang">
+                    <option value="">=== 언어를 선택하세요 ===</option>
+                    <option value="korean">한글</option>
+                    <option value="chinese">中文</option>
+                    <option value="japanese">日本語</option>
+                    <!-- 시각적으로 보이고 싶은것은 <>밖에 작성-->
+                </select>
+                <!-- input과 비슷한 역할 select-->
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">textarea</td>
+            <td>여러 줄로 구성된 텍스트를 입력받는다</td>
+            <td>
+                <textarea name="content" placeholder="내용을 입력하세요">하이</textarea>
+                <!-- 안에 값을 적으려면 위에 하이처럼 입력해주어야함.-->
+                <!-- ><밖에 작성하는 값은 띄어쓰기가 그대로 적용된다.-->
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>

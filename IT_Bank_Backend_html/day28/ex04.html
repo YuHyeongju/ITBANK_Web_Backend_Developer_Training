@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04.html</title>
+</head>
+
+<body>
+
+    <h1>수량 입력받는 input</h1>
+    <hr>
+    <form>
+        <table>
+
+            <tr>
+                <td>
+                    <img src="https://static.wtable.co.kr/image/production/service/recipe/1686/8f555f96-07e3-40d7-90f9-e9467d8f54a6.jpg?size=800x800"
+                        width="500">
+                </td>
+                <td>
+                    <p>가격: 19,800원</p>
+                    <p>수량: <input type="number" required  min="1" max="10" value="1" step="1"></p> 
+                    <p>옵션:            <!--type:number를 지정했을경우, 범위를 벗어나면 경고문을 출력-->
+                        <select>
+                            <option value="small">1인분</option>
+                            <option value="medium" selected>2~3인분</option> <!--checked와 흡사, 미리 선택되어있음-->
+                            <option value="large">4~5인분</option>
+                        </select>
+
+                    </p>
+                    <p>
+                        <input type="submit" value="구매">
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>
