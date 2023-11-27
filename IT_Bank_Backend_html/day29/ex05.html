@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05.html</title>
+    <style>
+        div.box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            color: white;
+            margin: 10px; /* 상하좌우 전부 10px */
+
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px; /*줄 높이 지정*/
+        }
+
+    </style>
+</head>
+<body>
+    <h1>flex</h1>
+    <hr>
+
+    <h3>내부 block 요소를 가로로 배치하는 display</h3>
+    <!-- vscode에서 ctrl + \ 하면 한 파일을 두개의 편집창으로 분리-->
+    <div style="display: block;"> <!--블럭 처럼 쌓인다.-->
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+    <!--justify-content: 가로축 중심의 정렬을 지정함-->
+    <div style="display:flex; justify-content: flex-start;" >  <!--justify-content: flex-start 가로축에 초반에 배치-->
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+    </div>
+    <div style="display: flex; justify-content: flex-end;"> <!-- justify-content: flex-end; 가로축에 끝에 배치-->
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+    </div>
+    <div style="display: flex; justify-content: center;"> 
+        <div class="box">10</div>                         <!--justify-content: center - 반대축을 기준으로 가운데 배치됨-->
+        <div class="box">11</div>
+        <div class="box">12</div>
+    </div>
+    <div style="display: flex; justify-content: space-between;"> <!--space-between 박스간에만 여유공간을 주고 양끝은 공백이 없음-->
+        <div class="box">13</div>
+        <div class="box">14</div>
+        <div class="box">15</div>
+    </div>
+    <div style="display: flex; justify-content: space-around;"> <!--space-around 모든 면에 여유공간을 둠-->
+        <div class="box">16</div>
+        <div class="box">17</div>
+        <div class="box">18</div>
+    </div>
+    <div style="display: flex; justify-content: space-evenly;"> <!--space-evenly 일정한 간격으로 동일한 공백을 생성-->
+        <div class="box">19</div>
+        <div class="box">20</div>
+        <div class="box">21</div>
+    </div>
+</body>
+</html>

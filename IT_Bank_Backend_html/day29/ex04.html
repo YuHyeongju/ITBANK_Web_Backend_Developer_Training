@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04.html</title>
+    <style>
+        div.header {
+            border: 1px dashed red;
+            width: 900px;
+            margin: 10px auto;
+            height: 200px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            /* 밑줄 제거 */
+        }
+
+        a:hover {
+            text-decoration: underline;
+            /* 마우스 올리면 밑줄 */
+        }
+
+        div.nav {
+            width: 450px;
+            margin: 0 auto;
+            /*가운데 정렬*/
+            margin-top: 100px;
+            /* nav의 상단여백을 지정함.*/
+        }
+
+        div.menu {
+            display: inline-block;
+            /* 가로로 배치할수 있고 크기 조정도 가능함. */
+            width: 80px;
+            height: 35px;
+            background-color: aqua;
+        }
+
+        div.main {
+            border: 1px dashed blue;
+            width: 900px;
+            margin: auto;
+        }
+
+        div.left {
+            display: inline-block;
+            /* inline은 넓이을 지정할 수 없기때문에 지금까지 지정한 넓이 속성이 다 없어진다.*/
+            width: 200px;
+            background-color: aquamarine;
+            padding: 20px;
+            
+            position: relative; /* 요소 자기자신을 기준으로 배치*/
+            top: -200px;
+        }
+
+        div.left > ul {
+            list-style: none;
+            /* 리스트의 점을 없애버림*/
+            padding-left: 0;
+        }
+
+        div.left  > ul > li {
+            margin: 10px auto;
+            /* 위아래 10px 좌우 0 */
+            width: 100px;
+            /*배경의 넓이와 li의 넓이가 200px로 동일하기 때문에 움직일수 없다.
+                            따라서 100px으로 줄여서 움직일 수 있게 만든다.*/
+        }
+
+        div.right {
+            /*넓이를 아무리 수정해봐야 display속성을 바꾸지 않으면 위의 빈공간으로 올라가지 못한다.*/
+            width: 500px;
+            border: 1px dashed black;
+            display: inline-block;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="header">
+        <div class="logo">
+            <h1><a href="#">LOGO</a></h1>
+        </div>
+        <div class="nav">
+            <div class="menu">menu1</div>
+            <div class="menu">menu2</div>
+            <div class="menu">menu3</div>
+            <div class="menu">menu4</div>
+            <div class="menu">menu5</div>
+        </div>
+
+    </div>
+
+
+    <div class="main">
+        <div class="left">
+            <ul>
+                <li><a href="#">sub-menu1</a></li>
+                <li><a href="#">sub-menu2</a></li>
+                <li><a href="#">sub-menu3</a></li>
+                <li><a href="#">sub-menu4</a></li>
+                <li><a href="#">sub-menu5</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="section">
+                <img src="../day26/짱구/짱구.png" width="100">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint consequuntur inventore ipsam totam nihil
+                impedit, autem voluptas quos iusto, vel doloremque veniam voluptatibus odit quisquam hic tempora amet!
+                Molestias, laborum.
+            </div>
+            <div class="section">
+                <img src="../day26/짱구/유리.png" width="100">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam eligendi harum minus iste. Ducimus magnam,
+                quis totam blanditiis cumque esse voluptatem incidunt, dolor iure corrupti, inventore impedit rerum
+                perspiciatis accusantium!
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

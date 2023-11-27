@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz.html</title>
+    <style>
+        body>div {
+            /* border: 1px dashed red; */
+            width: 900px;
+            margin: 10px auto;
+            padding: 10px;
+        }
+
+        /* body>div>div {
+             border: 1px dashed green; 
+        } */
+
+        div.top {
+            display: flex;
+            justify-content: space-between;
+        }
+        div.top > div.left{
+            color: green;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        div.top > div.right > ul{
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        div.top > div.right > ul > li {
+           margin: 0 5px;
+
+        }
+        div.mid >img{
+            width: 100%;
+        }
+        div.bottom{
+            border: 1px solid #ccc;
+        }
+        div.bottom > ul{
+            display: flex;
+            padding-left: 0;
+            overflow: hidden; /* 영역을 벗어난 내용을 숨김 */
+        }
+        div.bottom > ul > li{
+            margin-right: 25px ;
+        }
+        div.top > div.right > ul > li > a{
+            color: inherit;
+            text-decoration: none;
+        }
+        div.top > div.right > ul > li > a:hover{
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class=left>NAVER</div>
+        <div class=right>
+            <ul>
+                <li><a href="#">카페홈</a></li>
+                <li><a href="#">이웃</a></li>
+                <li>
+                    <select style="border: 0;"> 
+                        <option>가입카페</option>
+                        <option>스타벅스</option>
+                        <option>텐퍼센트</option>
+                        <option>할리스커피</option>
+                        <option>블루샥</option>
+                    </select>
+                </li>
+                <li><a href="#">새글</a></li>
+                <li><a href="#">내소식</a></li>
+                <li><a href="#">채팅</a></li>
+                <li>
+                    <button>로그인</button>
+                </li>
+                <li>
+                    <button>⁝</button>  
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="mid">
+        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyMzA4MThfMjcy/MDAxNjkyMzMzODEyOTIz.vFH50d_VJS1dyq7AEQGjdwSzaE8rF3_hkZqhuEeuh1gg.1wLYJTbPMZsStALjmPmhyont_bL5I9Vyo_r7j4oJb2Ug.JPEG/%EC%BA%A0%ED%95%91%ED%8D%BC%EC%8A%A4%ED%8A%B8%EB%8C%80%EB%AC%B8.jpg">
+    </div>
+
+    <div class="bottom">
+        <ul>
+            <li>전체글보기</li>
+            <li>인기글</li>
+            <li>이미지더보기</li>
+            <li>카페태그보기</li>
+            <li>초캠 명예의 전당</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

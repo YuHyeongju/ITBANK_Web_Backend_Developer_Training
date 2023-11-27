@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02.html</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            /* 표의 테두리와 셀의 테두리 사이 간격을 없앰 */
+            border: 2px solid block;
+        }
+
+        td,
+        th {
+            padding: 5px 5px;
+            border: 1px solid grey;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>div와 span 비교</h1>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>태그</th>
+                <th>display</th>
+                <th>특징</th>
+            </tr>
+        </thead>
+        <tbody>
+            <td>div</td>
+            <td>block</td>
+            <td>
+                <ul>
+                    <li>혼자서 한 줄을 차지한다.</li>
+                    <li>연속으로 배치하면 세로로 배치된다.</li>
+                    <li>style을 이용하여 너비(width),높이(height)를 지정할 수 있다.</li>
+                </ul>
+            </td>
+            <tr>
+
+                <td>span</td>
+                <td>inline</td>
+                <td>
+                    <ul>
+                        <li>한 줄에 여러 요소를 배치할 수 있다.</li>
+                        <li>연속으로 배치하면 가로로 배치된다.</li>
+                        <li>style을 이용하여 너비 및 높이를 지정해도 적용되지 않는다.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>inline-block</td>
+                <td>
+                    <ul>
+                        <li>inline과 block의 특성을 반반 합친 형태</li>
+                        <li>한 줄에 여러 요소를 배치할 수 있고, 가로로 배치됨.</li>
+                        <li>inline과 달리 너비 및 높이를 지정할 수 있음.</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <fieldset>
+        <legend>div</legend>
+        <div style="background-color: red; color: white;">div1</div>
+        <div style="background-color: red; color: white;">div2</div>
+        <div style="background-color: red; color: white;">div3</div>
+        <br>
+        <div style="border: 1px solid black; width: 100px; height: 100px;">div4</div>
+        <div style="border: 1px solid black; width: 100px; height: 100px;">div5</div>
+        <div style="border: 1px solid black; width: 100px; height: 100px;">div6</div>
+    </fieldset>
+
+    <fieldset>
+        <legend>span</legend>
+        <span style="background-color: blue; color: white;">span1</span>
+        <span style="background-color: blue; color: white;">span2</span>
+        <span style="background-color: blue; color: white;">span3</span>
+        <br>
+        <span style="border: 1px solid black; width: 100px; height:100px">span4</span>
+        <span style="border: 1px solid black; width: 100px; height:100px">span5</span>
+        <span style="border: 1px solid black; width: 100px; height:100px">span6</span>
+        <!-- span 태그는 인라인 속성을가진 요소라 공간을 차지하지않음
+            기본적으로 글자가 차지하는 공간만큼만 차지할 수 있도록 되어있음.
+            그래서width 랑 height를 줘도 먹히지가 않음-->
+
+        <!--inline 엘리먼트를 사용할 때 주의할 점은, width와 height 속성을 지정해도 무시된다. 
+            왜냐하면 해당 태그가 마크업하고 있는 컨텐츠의 크기 만큼만 공간을 차지하도록 되어 있다. 
+            또한, margin과 padding 속성은 좌우 간격만 반영이 되고, 상하 간격은 반영이 되지 않는다.-->
+
+    </fieldset>
+    <fieldset>
+        <legend>inline-block</legend>
+        <!-- span처럼 나란히 배치할 수 있으면서 width와 height같은 속성을 지정할 수 있음 -->
+        <style>
+            div.test {
+                display: inline-block;
+                width: 100px;
+                height: 70px;
+                border: 1px solid black;
+
+                line-height: 50px;
+                text-align: center;
+            }
+        </style>
+        <div class="test">menu1</div>
+        <div class="test">menu2</div>
+        <div class="test">menu3</div>
+    </fieldset>
+</body>
+
+</html>
