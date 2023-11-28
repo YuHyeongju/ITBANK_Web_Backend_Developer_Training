@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07.html</title>
+    <style>
+        ul > li > a {
+            text-decoration: none;
+            color: inherit;
+            display: block;  /* 이러면 글자 옆에 마우스를 올려도 마우스 모양이 바뀐다*/
+            width: 100%;
+            height: 100%;
+              
+        }
+
+        div.nav {
+            width: 1020px;
+            height: 40px;
+            margin: auto;
+            
+        }
+
+        ul {
+            padding-left: 0;
+            list-style: none;
+            display: flex;
+            height: 100%;
+        }
+
+        ul>li {
+            flex: 1;
+            text-align: center;
+            font-size: 13px;
+            font-weight: bold;
+            background-color: #061c25;
+            color: white;
+            height: 100%;
+            line-height: 40px;
+            border-top: 3px solid #00b2cf;
+            border-right: 1px solid black;
+        }
+
+        ul>li:hover {
+            color: #00b2cf;
+            border-bottom: 3px solid #00b2cf;
+        }
+
+        ol {
+            list-style: none;
+            background-color: #123643;
+            color: white;
+            padding-left: 10px;
+            text-align: left;
+            font-size: 12px;
+            display: none; /*평상시에 안보임*/
+            border: 0.5px solid #00b2cf;
+
+        }
+
+        ul > li:hover > ol{ /* 마우스를 올리면 보임 */
+            display: block;
+
+
+        }
+
+        ol > li{
+            height: 25px;
+            line-height: 25px;
+        }
+
+        ol>li>a{
+
+            color: white;
+            font-weight: normal;
+            text-decoration: none;
+
+        }
+        ol > li > a:hover{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>lol.inven.co.kr</h1>
+    <hr>
+
+    <div class="nav">
+        <ul>
+            <li><a href="#">홈</a></li>
+            <li>
+                <a href="#">기록실</a>
+                <ol>
+                    <li><a href="#">LOL 기록실 - 경기기록</a></li>
+                    <li><a href="#">LOL 기록실 - 선수기록</a></li>
+                    <li><a href="#">LOL 기록실 - 팀 통산</a></li>
+                    <li><a href="#">LOL 기록실 - 선수 통산</a></li>
+                    <li><a href="#">LOL 기록실 - 챔피언 픽/밴</a></li>
+                    <li><a href="#">LOL 기록실 - 래더 랭킹</a></li>
+                    <li><a href="#">프로팀 정보</a></li>
+                </ol>
+            
+            </li>
+            <li><a href="#">스킨갤러리</a></li>
+            <li>
+                <a href="#">챔피언</a>
+                <ol>
+                    <li><a href="#">LOL 챔피언 정보</a></li>
+                    <li><a href="#">챔피언 능력치 랭킹</a></li>
+                    <li><a href="#">실시간 챔피언 평가</a></li>
+                    <li><a href="#">카운터 픽</a></li>
+                </ol>
+            
+            </li>
+
+            <li><a href="#">공략</a></li>
+            <li>
+                <a href="#">LOL DB</a>
+                <ol>
+                    <li><a href="#">시즌13 룬 시뮬</a></li>
+                    <li><a href="#">시즌13 아이템 DB</a></li>
+                    <li><a href="#">소환사 주문 DB</a></li>
+                </ol>
+
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

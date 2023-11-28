@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05.html</title>
+    <style>
+        div.root {
+            width: 700px;
+            margin: auto;
+        }
+
+        p.target {
+            border: 1px solid black;
+            /* display: none; 요소의 자리차지함을 없애버림 */
+            /* opacity: 0; */
+            /*투명도 0 */
+            
+            /* visibility: hidden;  요소가 자리는 차지하지만 안보임 */
+            height: 0;
+
+            overflow: hidden; /*높이제어 범위를 벗어나면 숨겨짐*/
+
+            transition-duration: 0.2s; /*접힐때  딜레이*/
+        }
+
+        div.root>p:first-child:hover + p.target { /* 첫번째 p요소에 마우스를 올렸을때, p.target 그다음 p*/
+            /* 조건을 만족하면 보인다.*/
+            /*display: block;*/
+
+            
+            /* opacity: 1; */
+            /* opacity 사용할때 */
+            /* visibility: visible; */
+            height: 63px;
+            transition-duration: 1s; /*펼칠때 딜레이*/
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <h1>display: none</h1>
+    <hr>
+    <h3>모습이 보이지 않는다. 화면상의 자리차지도 없어진다.</h3>
+
+    <div class="root">
+        <p><button>버튼</button></p>
+        <p class="target">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, harum, iste ea, temporibus blanditiis
+            minus quo quod vero excepturi facere quam esse incidunt tempore sed neque earum itaque odio expedita.
+        </p>
+        <p><img src="danbi.jpg" width="100"></p>
+    </div>
+</body>
+
+</html>

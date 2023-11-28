@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex04.html</title>
+</head>
+<body>
+    <h1>flex 예시</h1>
+    <hr>
+
+    <fieldset>
+        <legend>여러 요소를 가로로 배치하고 싶을때</legend>
+        <div style="display: flex;">
+            <div style="border: 1px solid black; padding: 5px; margin: 5px;">홈</div>
+            <div style="border: 1px solid black; padding: 5px; margin: 5px;">카페</div>
+            <div style="border: 1px solid black; padding: 5px; margin: 5px;">메일</div>
+            <!-- 버튼이 아니지만 버튼인거 처럼 위장 -->
+        </div>
+    </fieldset>
+    <br>
+
+    <fieldset>
+        <legend>일정 너비 안에서 양옆으로 배치할 때</legend>
+        <div style="display: flex; justify-content: space-between;">
+            <div class="left">LOGO</div>
+            <div class="right" style="display: flex;
+                        width: 400px;
+                        justify-content: space-around;"> 
+                <button>Home</button>
+                <button>나의정보</button>
+                <button>회원관리</button>
+                <div>문자전송</div> <!--원래는 div특성상 세로이겠지만 flex안에서는 가로로 배치됨 -->
+                <button>로그아웃</button>
+            
+            </div>
+        </div>
+    </fieldset>
+    <br>
+
+    <fieldset>
+        <legend>일정 너비 안에서 꽉 채워서 분할 하고 싶을때</legend>
+        <div style="width: 500px; display: flex; text-align: center; margin: auto;">
+            <div style="border: 1px solid grey; flex: 1">ID로그인</div>
+            <div style="border: 1px solid grey; flex: 1">일회용 번호</div>
+            <div style="border: 1px solid grey; flex: 1">QR 코드</div>
+        
+        </div>
+        
+    </fieldset>
+    <br>
+
+    <fieldset>
+        <legend>상하좌우 한 가운데 배치하고 싶을때</legend>
+        <div style="display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 500px;
+                    height: 600px;
+                    margin: auto;">  
+                <div>
+                <img src="danbi.jpg">
+                <h3 style="width: fit-content;">단비 쮸쮸바 먹고 싶단 말이야 !!</h3>
+                <!--div는 한 줄을 다차지하는 속성이지만 fit-content를 걸어주면 요소의 넓이에 맞게 
+                    div넓이를 축소 시킴-->
+                </div>
+            </div>    
+    </fieldset>
+    <br>
+
+    <fieldset>
+        <legend>여러 아이템을 바둑반식으로 나열하고 싶을때</legend>
+        <div style="display: flex;
+                    flex-flow: wrap;
+                    width: 500px;
+                    margin: auto;">
+        <div><img src="danbi.jpg" width="100" style="margin: 10px;"></div>            
+        <div><img src="danbi.jpg" width="100" style="margin: 10px;"></div>            
+        <div><img src="danbi.jpg" width="100" style="margin: 10px;"></div>            
+        <div><img src="danbi.jpg" width="100" style="margin: 10px;"></div>            
+        <div><img src="danbi.jpg" width="100" style="margin: 10px;"></div>            
+        <div><img src="danbi.jpg" width="100" style="margin: 10px;"></div>            
+        <div><img src="danbi.jpg" width="100" style="margin: 10px;"></div>            
+        </div>
+    </fieldset>
+    
+
+</body>
+</html>
