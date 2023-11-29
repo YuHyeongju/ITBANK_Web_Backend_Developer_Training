@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02.html</title>
+    <style>
+        #table {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid darkgray;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <h1>css selector</h1>
+    <hr>
+
+
+    <table id="table">
+        <tr>
+            <th>선택자</th>
+            <th>예시</th>
+            <th>설명</th>
+        </tr>
+        <tr>
+            <td>기본 속성 선택자</td>
+            <td>input[name="pw"]{ ... }</td>
+            <td>태그 중에서 특정 속성 및 값을 가지는 요소를 선택한다.</td>
+        </tr>
+    </table>
+    <style>
+        input[type="text"]{
+            all: unset;          /* 태그에 자체적으로 부여된 기본속성을 다 없앰.*/
+            padding: 10px;
+            border: 0;
+            border-bottom: 2px solid gray;
+            width: 200px;
+        }
+        input[type="password"]{
+            all: unset;
+            width: 200px;
+            background-color: rgba(255, 192, 0, 0.2); /*alpha: 투명도*/
+            padding: 10px;
+        }
+        input[type="reset"]{
+            background-color: red;
+            color: white;
+            border-radius: 20px;
+            border: 0;
+            padding: 10px;
+        }
+        input[type="submit"]{
+            background-color: blue;
+            color: white;
+            border-radius: 20px;
+            border: 0;
+            padding: 10px;
+        }
+        input[name="writer"]{
+            border-bottom: 2px solid hotpink;
+        }
+        /* 전제 포괄적인 스타일은 맨위에 써주고 세부적인 스타일은 아래에 작성한다.*/
+        /*마지막에 대입한 스타일이 최종적으로 반영된다.*/
+    </style>
+
+    <form action="">
+
+        <p>
+            <input type="text" name="title" placeholder="제목"> <!-- name 속성으로 구분-->
+            <input type="text" name="writer" placeholder="작성자">
+        </p>
+        <p>
+            <input type="date" name="birth">
+        </p>
+        <p>
+            <input type="password" name="pw" placeholder="비밀번호">
+        </p>
+        <p>
+            <input type="reset">
+            <input type="submit">
+        </p>
+
+    </form>
+
+</body>
+
+</html>

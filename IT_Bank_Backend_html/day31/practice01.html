@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice.html</title>
+    <style>
+        .inner{
+            border: 1px solid grey;
+            height: 410px;
+            width:1100px;
+            margin: auto auto;
+        }
+        div.inner > div.top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(214,214,214);
+            height: 100px;
+            margin-bottom: 15px;
+            
+        }
+        div.inner > div.top > div.logo{
+            background-color: rgb(76,139,240);
+           font-size: 30px;
+           font-weight: bold;
+           color: white;
+           text-align: center;
+           width: fit-content;
+           padding: 5px 5px;
+        }
+        div.detail{
+            display: flex;
+        }
+        div.inner > div.detail > div.left{
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            
+            background-color: black;
+            color: white;
+
+        }
+        div.inner > div.detail > div.left > ul{
+            padding-top: 10px;
+            padding-left: 10px;
+
+        }
+        div.inner > div.detail > div.right{
+            margin: 10px;
+        }
+        div.inner > div.detail > div.right> div.hello{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        div.inner > div.line > div.hr > hr{
+            margin-top: 40px;
+            margin-bottom: 15px;
+            width: 90%;
+        }
+        div.inner > div.footer > div{
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <input type="color">
+    <div class="inner">
+        <div class="top">
+            <div class="logo">LOGO</div>
+        </div>
+        
+        <div class="detail">
+            <div class="left">
+                <ul>Menu-1</ul>
+                <ul>Menu-2</ul>
+                <ul>Menu-3</ul>
+            </div>
+            <div class="right">
+                <div class="hello">
+                    <p>Hello world</p>
+                </div>
+                <div class="text1">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus nisi ex impedit voluptas accusamus veritatis totam minima nostrum eveniet illo ab, dolorum rem earum soluta minus sequi repudiandae error expedita?</p>
+                </div>
+                <div class="text2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis eius necessitatibus ab laboriosam, velit dignissimos vitae non quas ut doloribus ipsam accusantium incidunt recusandae autem consectetur ex sed magni aspernatur?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="line">
+            <div class="hr">
+                <hr>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div>ⓒcopy</div>
+        </div>
+ 
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'ARLES01.html</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        a.pink {
+            color: hotpink;
+        }
+        body > div{
+            border: 1px solid gray;
+        }
+        body > div > div {
+            border: 2px dashed orangered;
+        }
+        body > div > div > div {
+            border: 2px dashed green;
+        }
+        .frame{
+            width: 1400px;
+            margin: 0 auto;
+        } 
+        .f{
+            display: flex;
+            justify-content: space-between;
+        }
+        .center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        ul{
+            list-style: none;
+            padding-left: 0;
+        }
+        .top > .frame > .left > ul.f{
+            width: 500px;
+        }
+        .top > .frame > .right > ul.f{
+            width: 300px;
+        }
+        
+        .icons > ul.f{
+            width: 100px;
+
+        }
+        .nav > .f > div{
+            width: 50px;
+        }
+        .nav > .f > ul.f{
+            width: 100%;
+        }
+        .nav > .f > ul.f > .nav_li > a:hover{
+            opacity: 0.5;
+        }
+        .nav > .f > ul.f > .nav_li > ol{
+            
+            list-style: none;
+            display: none;
+            position: relative;
+        }
+        ol{
+            list-style: none;
+            background-color: white;
+            padding: 20px 20px 20px 20px;
+            font-size: 12px;
+            margin-top: 20px;
+            border: 1px solid gray;
+            text-align: left;
+        }
+        .nav > .f > ul.f > .nav_li:hover > ol{
+            padding-left: 0;
+            display: block;
+            position: absolute;
+            
+        }
+        .banner img{
+            width: 100%;
+        }
+        .top > .remote{
+            position: fixed;
+            right: 10px;
+            top: 400px;
+            margin-left: -720px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="remote">
+            <div style="padding-left: 10px;">
+                <button>≺</button>
+            </div>
+            <div style="padding-left: 10px;">
+                <a href="#">🔍</a>
+            </div>
+            <div style="padding-left: 5px;">
+               <button >🚐</button> 
+            </div>
+            <div style="padding-left: 5px;">
+                <button>❤</button>
+            </div>
+            <div style="padding-left: 5px;">
+                <button>⌚</button>
+            </div>
+            <div >
+                <img src="https://mblogthumb-phinf.pstatic.net/MjAxODAyMDJfMzQg/MDAxNTE3NTAyODA4ODA1.aYtwH9e-REqhMJ-y4FntHDf9cG--EQq76kK3k27DQd8g.Bv8IKu7PShK6fJCmgifry9yIFuBBJpQ1utdqGXUrT7kg.PNG.marketstory24/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1_%EB%A1%9C%EA%B3%A0_1.png?type=w800"
+                style="width: 40px; height: 40px; padding-left: 5px; padding-top: 5px;">
+            </div>
+
+        </div>
+        <div class="frame f">
+            <div class="left">
+                <ul class="f">
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">JOIN US</a></li>
+                    <li><a href="#">CART</a></li>
+                    <li><a href="#">ORDER</a></li>
+                    <li><a href="#">MY PAGE</a></li>
+                    <li><a href="#">BOOKMARK</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul class="f">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">상품문의</a></li>
+                    <li><a href="#">상품후기</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="logo">
+        <div class="frame center">
+            <h1>D'ARLES</h1>
+        </div>
+    </div>
+
+    <div class="icon_and_search">
+        <div class="frame f">
+            <div class="icons">
+                <ul class="f" >
+                    <a href="#">페</a>
+                    <a href="#">인</a>
+                    <a href="#">유</a>
+                </ul>
+                
+            </div>
+    
+            <div class="search center">
+                <input type="search">
+                🔍
+            </div>  
+        </div> 
+    </div>
+
+    <div class="nav">
+        <div class="frame f">
+            <div>≡</div>
+            <ul class="f">
+                <li><a class="pink" href="#">RONA universe</a></li>
+                <li class="nav_li">
+                    <a href="#">남성의류</a>
+                    <ol>
+                        <li><a href="#">아우터</li>
+                        <li><a href="#">탑</li>
+                        <li><a href="#">세트</li>
+                        <li><a href="#">바텀</li>
+                        <li><a href="#">악세사리</li>
+                    </ol>
+                </li>
+                    
+                <li><a href="#">아우터</a></li>
+                <li class="nav_li">
+                    <a href="#">탑</a>
+                    <ol>
+                        <li><a href="#"></a>니트</li>
+                        <li><a href="#"></a>셔츠</li>
+                        <li><a href="#"></a>블라우스</li>
+                        <li><a href="#"></a>후드,맨투맨</li>
+                        <li><a href="#"></a>반팔T</li>
+                        <li><a href="#"></a>긴팔T</li>
+                    </ol>
+                </li>
+                    
+                <li class="nav_li">
+                    <a href="#">드레스</a>
+                    <ol>
+                        <li>롱/미디</li>
+                        <li>미니</li>
+                    </ol>
+                </li>
+                <li class="nav_li">
+                    <a href="#">바텀</a>
+                    <ol>
+                        <li>팬츠</li>
+                        <li>스커트</li>
+                    </ol>
+                
+                </li>
+                <li class="nav_li">
+                    <a href="#">악세사리</a>
+                    <ol>
+                        <li>ER</li>
+                        <li>NC</li>
+                        <li>BC</li>
+                        <li>Etc</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="frame">
+            <img src="https://darles.co.kr/web/upload/NNEditor/20210504/0bf1a699ea515735d0841f86daa11cc0.jpg">  
+        </div>
+        
+    </div>
+</body>
+</html>

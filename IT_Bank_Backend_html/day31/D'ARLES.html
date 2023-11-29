@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'ARLES.html</title>
+    <style>
+        div.root>div.top>div.top_header {
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+
+        }
+
+
+        div.root>div.top>div.top_header>div.top_header_left>ul {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            padding-right: 40px;
+        }
+
+        div.root>div.top>div.top_header>div.top_header_left>ul >li {
+            padding: 10px;
+        }
+
+        div.root>div.top>div.top_header>div.top_header_right>ul {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            padding-right: 40px;
+            font-size: 13px;
+        }
+        div.root>div.top>div.top_header>div.top_header_right>ul >li {
+            padding: 10px;
+        }
+
+        div.root>div.top>div.top_center>div.top_center_name {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+
+        }
+        div.root>div.top>div.top_center>div.top_center_bottom {
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        div.root>div.top>div.top_center>div.top_center_bottom > div.top_center_bottom_right > .search {
+           border: 1px solid black;
+
+        }
+        div.root>div.top>div.top_center>div.top_center_bottom > div.top_center_bottom_right > .search > input{
+           border: 0;
+           line-height: 20px;
+           margin-bottom: 10px;
+           
+
+        }
+        div.root>div.top>div.top_center>div.top_center_bottom > div.top_center_bottom_right > .search > img{
+           width: 28px;
+           height: 26px;
+           margin-top: 15px;
+           
+
+        }
+        div.root>div.top>div.top_center >  {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        div.root>div.top>div.top_bottom> div.top_bottom_top > ol{
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            width: 900px;
+            margin: auto;
+        }
+        div.root>div.top>div.top_bottom > div.top_bottom_line > hr{
+            margin-bottom: 0;
+        }
+
+        div.root > div.center > img{
+            display: flex;
+            justify-content: center;
+            
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <div class="top">
+            <div class="top_header">
+
+                <div class="top_header_left">
+                    <ul>
+                        <li>LOGIN</li>
+                        <li>JOIN US</li>
+                        <li>CART</li>
+                        <li>ORDER</li>
+                        <li>|</li>
+                        <li style="font-weight: bold;">MY PAGE</li>
+                        <li>|</li>
+                        <li style="font-weight: bold;">BOOKMARK</li>
+                    </ul>
+                </div>
+                <div class="top_header_right">
+                    <ul>
+                        <li>공지사항</li>
+                        <li>이벤트</li>
+                        <li>상품문의</li>
+                        <li>상품후기</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="top_header_line">
+                <hr>
+            </div>
+
+            <div class="top_center">
+
+                <div class="top_center_name">
+                    <p>D'ARLES</p>
+                </div>
+
+                <div class="top_center_bottom">
+
+                    <div class="top_center_bottom_left">
+                        <div class="links">
+                            <img src="링크들.PNG">
+                        </div>
+    
+                    </div>
+    
+                    <div class="top_center_bottom_right">
+                        <div class="search">
+                            <input type="search">
+                            <img src="data:image/jpeg;base64,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">
+
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="top_center_line">
+                <hr>
+            </div>
+
+            <div class="top_bottom">
+                <div class="top_bottom_top">
+                    <ol>
+                        <li>≡</li>
+                        <li>RONA universe</li>
+                        <li>남성의류</li>
+                        <li>아우터</li>
+                        <li>탑</li>
+                        <li>드레스</li>
+                        <li>bottom</li>
+                        <li>악세서리</li>
+                    </ol>
+                </div>
+                <div class="top_bottom_line">
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <div class="center">
+            <img src="https://darles.co.kr/web/upload/NNEditor/20210504/0bf1a699ea515735d0841f86daa11cc0.jpg">
+        </div>
+    </div>
+</body>
+
+</html>

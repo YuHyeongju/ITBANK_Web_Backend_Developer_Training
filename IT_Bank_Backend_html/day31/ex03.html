@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex03.html</title>
+    <style>
+        table{
+            border-collapse:collapse;
+            border: 2px solid black;
+        }
+        td, th{
+            padding: 10px;
+            border: 1px solid grey;
+        }
+        img{
+            height: 100px;
+        }
+        img[src^="짱"]{
+            border: 3px solid red;
+        }
+        img[src$="png"]{
+            background-color: lightgoldenrodyellow;
+        }
+        img[src$="jpg"]{
+            border-radius: 20px;
+        }
+        
+        
+
+
+    </style>
+</head>
+<body>
+
+    <h1>문자열 속성 선택자</h1>
+    <hr>
+
+    <table id="table">
+        <tr>
+            <th>선택자</th>
+            <th>예시</th>
+            <th>설명</th>
+        </tr>
+        <tr>
+            <td>문자열 속성 선택자</td>
+            <td>선택자[속성^="값"]{ ... }</td>
+            <td>속성이 특정 값으로 시작하는 요소 선택</td>
+        </tr>
+        <tr>
+            <td>문자열 속성 선택자</td>
+            <td>선택자[속성$="값"]{ ... }</td>
+            <td>속성이 특정 값으로 끝나는 요소 선택</td>
+        </tr>
+        <tr>
+            <td>문자열 속성 선택자</td>
+            <td>선택자[속성!="값"]{ ... }</td>
+            <td>속성이 일치하지 않는 요소 선택</td>
+        </tr>
+        
+    </table>
+    <p><img src="짱구.png"></p>
+    <p><img src="짱아.png"></p>
+    <p><img src="유리.png"></p>
+    <p><img src="danbi.jpg"></p>
+    <p><img src="danbi.png"></p>
+</body>
+</html>
