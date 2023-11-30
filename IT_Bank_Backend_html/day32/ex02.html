@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex02.html</title>
+    <style>
+        div.back{
+            background-color: aqua;
+            background-image: url(../day26/짱구/짱구.png),
+                              url(../day26/짱구/수지.png),
+                              url(../day26/짱구/흰둥이.png);
+            background-position: top, center,bottom;
+            background-repeat: repeat-x;
+            background-size: 100px auto;
+            opacity: 0.8;
+            width: 95%;
+        }
+
+        div.text{
+            background-color: rgba(255,255,255,0.5);
+            font-size: 20px;
+            padding: 10px;
+            opacity: 1;
+            border: 1px solid coral;
+        }
+    </style>
+</head>
+<body>
+    <h1>투명한 배경에 또렷한 글자</h1>
+    <hr>
+
+    <div class="back">
+        <div class="text">
+            <marqee direction ="up" scrollamount="2">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo maxime ducimus doloremque laborum. Excepturi cupiditate architecto, porro voluptatibus ullam voluptas soluta. Soluta dolorem provident quidem. Omnis impedit numquam cum nam?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptate repellat itaque non eum reprehenderit velit, incidunt et. Veritatis voluptatibus illum dolores possimus doloremque aut nihil, perferendis impedit dolor esse.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero voluptates cumque, veniam, porro qui explicabo doloremque odio fugit sequi ea impedit? Quaerat repellendus tempore saepe eligendi placeat excepturi. Ut, molestiae.</p>
+            </marqee>
+            
+        </div>
+    </div>
+
+
+</body>
+</html>

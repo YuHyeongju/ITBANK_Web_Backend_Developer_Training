@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex01.html</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+
+        td, th {
+            padding: 10px;
+            border: 1px solid grey;
+        }
+        fieldset{
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>background</h1>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>속성</th>
+                <th>설명</th>
+                <th>예시</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            <tr>
+                <td>background-image</td>
+                <td>요소의 배경 그림을 지정함.</td>
+                <td>background-image: url ('danbi.jpg');</td>
+            </tr>
+            <tr>
+                <td>background-size</td>
+                <td>배경의 크기(넓이 높이) 를 지정한다.</td>
+                <td>background-size: 150px;<br>
+                    background-size: 100% auto;
+
+                </td>
+            </tr>
+            <tr>
+                <td>background-repeat</td>
+                <td>배경의 반복을 설정한다.</td>
+                <td>background-repeat: no-repeat;</td>
+            </tr>
+            <tr>
+                <td>background-position</td>
+                <td>배경의 위치를 설정한다.</td>
+                <td>
+                    background-position: center center;
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <fieldset>
+        요소 자체에 크기가 정해지지 않으면 배경이 나타나지 않음.
+        <div style="width:100px; 
+                    height:100px; 
+                    background-image: url('../day31/danbi.jpg');
+                    background-size: 100px auto; "></div>
+    </fieldset>
+    <!--넓이와 높이를 지정하지 않은 상태에서 background-size를 지정하면 배경이 안나온다.
+        그래서 반드시 높이와 넓이를 지정해야함.-->
+    
+
+    <fieldset>
+        기본적으로 배경이 반복하도록(채워야하기때문에) 설정 되어 있고,
+        background-repeat: no-repeat;을 걸면 <br> 반복하지않는다.
+        <div style="height: 100px;
+                    background-image: url('../day31/danbi.jpg');
+                    background-size: 100px auto;
+                    background-repeat: no-repeat;
+                    background-position: center center;"><!--배경의 위치 설정-->
+                    </div>
+    </fieldset>
+
+    <fieldset>
+        두 개 이상의 이미지를 배경으로 사용하여 패턴을 구성할 수 있다.
+        <div style="width:100%;
+                    height: 300px;
+                    background-image:   url(../day31/danbi.png),
+                                        url(../day26/짱구/짱구.png);
+                    /* background-repeat: repeat-x,repeat-y; */
+                    background-repeat: repeat-x, no-repeat;
+                    background-size: 100px auto;
+                    background-position: 0 0, 0 70%;"></div>
+    </fieldset>
+
+    <fieldset>
+        <div style="width: 200px;
+                    height: 200px;
+                    background-image: url(../day26/짱구/흰둥이.png);
+                    background-size: 100% auto;
+                    background-color: aqua;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: flex-start;">
+                    <h3 style="color: red;">흰둥흰둥</h3>
+                    </div>
+    </fieldset>
+</body>
+
+</html>

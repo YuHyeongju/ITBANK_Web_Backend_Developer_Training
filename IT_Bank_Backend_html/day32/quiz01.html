@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz01.html</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .frame {
+            width: 1280px;
+            margin: 0 auto;
+        }
+
+        body>div {
+            border: 1px dashed grey;
+        }
+
+        body>div>* {
+            border: 1px dashed orangered;
+        }
+
+        body>div>*>* {
+            border: 1px dashed green;
+        }
+
+        .logo {
+            padding: 10px;
+        }
+
+        .sa {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 10px;
+
+        }
+
+        .sa>.intro {
+            width: 100%;
+        }
+
+        .top1>.sa {
+            width: 300px;
+        }
+
+        .top1>.sa>.B {
+            color: blue;
+        }
+
+        .sb {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main>.text1 {
+            font-size: 72px;
+        }
+
+        .main>.text1>.b {
+            font-weight: bold;
+            color: #0055A5;
+        }
+
+        .main>.text2 {
+            font-size: 25px;
+            color: #8b8b8b;
+        }
+
+        div.top2>ul {
+            padding-left: 0;
+            margin: 0;
+            padding: 10px 0;
+            list-style: none;
+            flex: 0;
+            height: max-content;
+
+        }
+
+        ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        div.top2>ul>li {
+            flex: 1;
+        }
+
+        div.top2>ul {
+            padding-left: 0;
+            list-style: none;
+            flex: 9;
+        }
+
+        div.top2>ul>li {
+            flex: 1;
+        }
+
+        div.top2>div.hamburger {
+            flex: 1;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        div.news div.image>img {
+            width: 386px;
+        }
+
+        div.news>div.left {
+            display: flex;
+        }
+
+        div.news>div.left>.nh-news {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        div.news>div.left>.nh-news_top {
+            padding: 20px;
+            font-size: 24px;
+            color: #0055A5;
+            font-weight: bold;
+        }
+
+        div.news>div.left>.nh-news>.nh-news_left>img {
+            margin: 10px;
+            margin-top: 0;
+            border-radius: 40px;
+            width: 400px;
+            height: 300px;
+            margin-bottom: 100px;
+
+        }
+
+        .news {
+            background-color: #0055A5;
+            border-radius: 20px;
+            padding: 2px;
+        }
+
+        .news>.nh-news1 {
+            margin-left: 40px;
+            margin: auto;
+        }
+
+        div.news>div.left {
+            background-color: white;
+            border-radius: 20px;
+        }
+
+        div.news>div.left>.nh-news>.nh-news_right>.text1 {
+            margin: 20px;
+            font-size: 16px;
+            background-color: #0055A5;
+            width: 80px;
+            color: white;
+            font-weight: bold;
+            border-radius: 15px;
+            padding-left: 20px;
+            padding-right: 0;
+
+        }
+
+        div.news>div.left>.nh-news>.nh-news_right>.text2 {
+            margin: 20px;
+            font-size: 24px;
+            color: gray;
+        }
+
+        div.news>div.left>.nh-news>.nh-news_right>.text3 {
+            margin: 20px;
+            font-size: 24px;
+            color: gray;
+        }
+
+        div.news>div.left>.nh-news>.nh-news_right>.text4 {
+            margin: 24px 24px;
+            font-size: 14px;
+        }
+
+        div.news>div.left>.nh-news>.nh-news_right>.text5 {
+            margin: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+
+
+        div.news>div.right {
+            flex: 1;
+            padding: 20px;
+            background-color: #0055A5;
+            border-radius: 30px;
+            border: 0;
+            margin: 10px 10px;
+
+        }
+
+        div.news>div.right>.more_1 {
+            display: flex;
+            justify-content: flex-end;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        div.news>div.right>.more_2 {
+            color: white;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+
+        div.news>div.right>.more_3 {
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        div.news>div.right>.more_4 {
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        div.news>div.right>.more_5 {
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        div.news>div.right>.more_6 {
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+
+        div.news>div.left {
+            display: block;
+        }
+
+        .sa>.introduce {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .sa>.introduce {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .sa>.introduce>.intro {
+            flex: 1;
+            width: 50px;
+            padding: 20px;
+            border: 2px solid gray;
+            border-radius: 20px 20px 70px 20px;;
+            margin-right: 20px;
+            background-image: url(https://www.nhbank.com/KO/images/main/green.png);
+            background-position: right, bottom;
+            background-size: 400px 200px;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .sa>.introduce>.intro>h3 {
+            font-size: 30px;
+            color: #0055A5;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        .sa>.introduce>.intro>.intro_1 {
+            font-size: 20px;
+            color: grey;
+        }
+
+        .sa>.introduce>.intro>.intro_2 {
+            font-size: 25px;
+            color: grey;
+            margin-top: 20px;
+        }
+
+        .sa>.introduce>.info {
+            flex: 1;
+            padding: 20px;
+            border: 2px solid gray;
+            border-radius: 20px 20px 70px 20px;
+            margin-left: 20px;
+            background-image: url(https://www.nhbank.com/KO/images/main/yellow.png);
+            background-position: right, bottom;
+            background-size: 400px 200px;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+        .sa>.introduce>.info>h3 {
+            color: #0055A5;
+            font-size: 30px;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+        .sa>.introduce>.info >.info_1{
+            color: #7c7d7e;
+            font-size: 20px;
+
+        }
+        .sa>.introduce>.info >.info_2{
+            color: #7c7d7e;
+            margin-top: 20px;
+            font-size: 25px;
+
+        }
+        .voc > .faq{
+            width:100%;
+            border-radius: 20px;
+            border: 2px solid gray;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .voc > .faq > .faq_1{
+            padding: 20px;
+
+        }
+        .voc > .faq >.faq_1 > h3{
+            font-weight: bold;
+            margin-bottom: 0;
+            margin-top: 0;
+            font-size: 24px;
+            color: #0055A5;
+            
+            
+
+        }
+        .voc > .faq >.faq_1 > .faq_1_1{
+            color: gray;
+        }
+        .voc > .faq >.faq_2{
+            flex: 1;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            
+        }
+        .voc > .faq >.faq_2 > .faq_2_2{
+           color: #7c7d7e;
+           font-weight: bold;
+        }
+        .voc > .faq >.faq_2 > .faq_2_4{
+           color: #7c7d7e;
+           font-weight: bold;
+        }
+        .voc > .faq >.faq_2 > .faq_2_6{
+           color: #7c7d7e;
+           font-weight: bold;
+        }
+        
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="top">
+        <div class="top1 frame sb">
+            <div class="logo">
+                <img src="https://www.nhbank.com/KO/images/common/logo.png">
+            </div>
+            <div class="sa">
+                <div class="L">Language ▼</div>
+                <div class="B">Banking ▼</div>
+            </div>
+        </div>
+        <div class="top2 frame sb">
+            <ul class="sb">
+                <li class="center"><a href="#">은행안내</a></li>
+                <li class="center"><a href="#">윤리경영</a></li>
+                <li class="center"><a href="#">금융소비자보호</a></li>
+                <li class="center"><a href="#">기업지배구조</a></li>
+                <li class="center"><a href="#">경영정보</a></li>
+                <li class="center"><a href="#">ESG 경영</a></li>
+                <li class="center"><a href="#">채용정보</a></li>
+                <li class="center"><a href="#">홍보센터</a></li>
+            </ul>
+            <div class="hamburger center">≡</div>
+        </div>
+
+    </div>
+
+    <div class="main">
+        <div class="text1 frame center">사랑받는<span class="b">일등 민족은행</span></div>
+        <div class="text2 frame center">농업인과 고객 모두가 행복한 금융을 만들어갑니다.</div>
+
+
+        <div class="news frame sb">
+            <div class="left sb">
+                <div class="nh-news_top">NH뉴스</div>
+                <div class="nh-news">
+                    <div class="nh-news_left">
+                        <img src="https://www.nhbank.com/upload/nhnews/6052/imgpc_1.jpg">
+                    </div>
+                    <div class="nh-news_right">
+                        <div class="text1">NH뉴스</div>
+                        <div class="text2">NH농협은행, 올원 뱅크 생활금융</div>
+                        <div class="text3">서비스 신규 오픈 이벤트 실시</div>
+                        <div class="text4">NH농협은행, 올원뱅크 생활 금융 서비스 신규 오픈 <br>
+                            이벤트 실시</div>
+                        <div class="text5">2023-11-06</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="more_1">더보기</div>
+                <div class="more_2">NH 농협은행『제 1회 퇴.연.숨.고(퇴직연금숨은고...)</div>
+                <div class="more_3">2023-11-03</div>
+                <div class="more_4">-----------------------------</div>
+                <div class="more_5">NH농협은행,농촌일손돕기와 자산관리 상담실시</div>
+                <div class="more_6">2023-11-03</div>
+            </div>
+        </div>
+
+
+        <div class="frame sa">
+            <div class="introduce">
+                <div class="intro">
+                    <h3>NH 농협은행 소개</h3>
+                    <div class="intro_1">대한민국의 행복파트너!</div>
+                    <div class="intro_2">자세히보기 ></div>
+                </div>
+                <div class="info">
+                    <h3>경영정보</h3>
+                    <div class="info_1">경영∙재무현황 및 공시자료</div>
+                    <div class="info_2">자세히보기 ></div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="voc frame">
+            <div class="faq"> 
+                <div class="faq_1">
+                    <h3>고객의 소리</h3>
+                    <div class="faq_1_1">자세히 보기 ></div>
+                </div>
+                <div class="faq_2">
+                    <div class="faq_2_1"><img src="https://www.nhbank.com/KO/images/main/img_suggest.png"></div>
+                    <div class="faq_2_2">칭찬/불만/제안/민원</div>
+                    <div class="faq_2_3"><img src="https://www.nhbank.com/KO/images/main/img_cuquestion.png"></div>
+                    <div class="faq_2_4">민원사례(FAQ)</div>
+                    <div class="faq_2_5"><img src="https://www.nhbank.com/KO/images/main/img_document.png"></div>
+                    <div class="faq_2_6">민원사무편람</div>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer1 frame">하단</div>
+    </div>
+
+
+</body>
+
+</html>
