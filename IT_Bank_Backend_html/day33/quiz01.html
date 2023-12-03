@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz1.html</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .frame {
+            width: 1280px;
+            margin: 0 auto;
+        }
+
+        body>div {
+            /* border: 2px dashed grey; */
+        }
+
+        body>div>* {
+            /* border: 2px dashed orangered; */
+        }
+
+        body>div>*>* {
+            /* border: 2px dashed green; */
+        }
+
+        .sa {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .sb {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.top {
+            border-top: 1px solid lightgray;
+            border-bottom: 1px solid lightgray;
+
+        }
+
+        div.top2>ul {
+            padding-left: 0;
+            margin: 0;
+            padding: 10px 0;
+            list-style: none;
+            flex: 9;
+            font-family: 'NanumGothic';
+            font-weight: 500;
+            font-size: 18px;
+
+        }
+
+        div.top2>ul>li {
+            /*li에 패딩을 줌으로써 ul에 마우스를 올린후
+                            드랍다운 메뉴로 갈때 마우스가 끊기는걸 방지*/
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+
+
+        div.top2>div.hamburger {
+            text-align: right;
+            width: 50px;
+            font-size: 40px;
+            line-height: 32px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        div.news div.image>img {
+            width: 386px;
+        }
+
+        div.news>div.left {
+            flex: 2;
+        }
+
+        div.news>div.right {
+            flex: 1;
+            border-radius: 25px 25px 70px 25px;
+        }
+
+        div.intro {
+            background-image: url(https://www.nhbank.com/KO/images/main/green.png);
+            background-size: 100%;
+            background-position: right bottom;
+            background-repeat: no-repeat;
+            flex: 1;
+            padding: 20px;
+            margin: 0;
+            margin-right: 20px;
+            border-radius: 20px 20px 75px 20px;
+            border: 1px solid #0055a555;
+            /*red green blue alpha*/
+            box-shadow: 5px 5px 5px grey;
+            /*가로세로 그라데이션 크기*/
+        }
+
+        div.info {
+            background-image: url(https://www.nhbank.com/KO/images/main/yellow.png);
+            background-size: 100%;
+            background-position: right bottom;
+            background-repeat: no-repeat;
+            padding: 20px;
+            margin: 0;
+            margin-left: 20px;
+            border-radius: 20px 20px 75px 20px;
+            border: 1px solid #0055a555;
+            /*red green blue alpha*/
+            flex: 1;
+            box-shadow: 5px 5px 5px grey;
+            /*가로세로 그라데이션 크기*/
+        }
+
+        h3 {
+            color: #0055a5;
+            font-size: 30px;
+            margin-top: 0;
+        }
+
+        div.voc {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            padding: 25px;
+            border: 3px solid #0055a555;
+            box-sizing: border-box;
+            /*테두리 와 패딩을 먼저 계산하여 
+            전체 크기에서 뺴고 나머지를 박스 크기로 지정함.*/
+            /*margin > border > padding > box*/
+            border-radius: 25px 25px 70px 25px;
+            box-shadow: 10px 5px 10px darkgrey;
+        }
+
+        div.voc>h3 {
+            margin-bottom: 0;
+            width: 85%;
+
+        }
+
+        div.voc>.sb {
+            padding-right: 100px;
+
+        }
+
+        div.footer {
+            background-color: #f5f5f5;
+        }
+
+        .t-blue {
+            color: #0055a5;
+            font-weight: bold;
+        }
+
+        .menu,
+        .submenu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: white;
+            /* border: 1px solid red; */
+
+        }
+
+        .memu {
+            position: relative;
+            font-weight: bold;
+        }
+
+        .submenu {
+            position: absolute;
+            font-weight: normal;
+            color: gray;
+            border: 1px solid gray;
+            top: 40px;
+            display: none;
+            width: 70px;
+            z-index: 5;
+
+        }
+
+        .menu>li:hover>.submenu {
+            display: block;
+
+
+        }
+
+        div.top1 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        div.top1 ul.menu {
+            width: 150px;
+        }
+
+        .text1 {
+            font-size: 65px;
+            padding-top: 40px;
+            padding-bottom: 10px;
+        }
+
+        .text2 {
+            color: gray;
+            font-size: 24px;
+        }
+
+        .news {
+            background-color: #0055a5;
+            border-radius: 25px;
+            margin-bottom: 40px;
+            margin-top: 40px;
+            border-radius: 25px 25px 70px 25px;
+            box-shadow: 10px 5px 10px darkgrey;
+        }
+
+        .news>.left {
+            background-color: white;
+            border: 3px solid #0055a5;
+            border-radius: 25px;
+            padding: 25px;
+        }
+
+        .image>img {
+            border-radius: 25px;
+
+        }
+
+        .nh-news {
+            padding: 0 30px;
+            display: flex;
+            flex-flow: column;
+            /*중심축방향을 뒤집기 (left to right -> top to bottom)*/
+            justify-content: space-between;
+        }
+
+        .nh-news>.button {
+            background-color: #070808;
+            color: white;
+            width: fit-content;
+            padding: 2px 18px;
+            border-radius: 5px;
+            font-size: 15px;
+
+        }
+
+        div.nh-news>div:nth-child(2) {
+            font-size: 25px;
+            color: #555;
+            line-height: 30px;
+        }
+
+        div.nh-news>p:last-child {
+            color: #777;
+        }
+
+        div.news>div.right {
+            background-color: #0055a5;
+            color: white;
+            padding: 25px;
+        }
+
+        div.right>h3 {
+            color: white;
+            text-align: right;
+            font-size: 20px;
+        }
+
+        div.dashed-line {
+            border: 2px dashed white;
+        }
+
+        div.more {
+            padding: 0 60px;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            height: 80%;
+        }
+
+        div.more>div>div {
+            font-size: 20px;
+            width: 85%;
+        }
+
+        div.footer>div.frame {
+            position: relative;
+            /*기준*/
+            height: 200px;
+            margin-top: 50px;
+            padding-bottom: 50px;
+            font-size: 17px;
+            font-weight: bold;
+            font-family: 'NanumGothic';
+            color: gray;
+        }
+
+        ul.footer1 {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            width: 500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        div.footer2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        div.footer3 {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        div.footer4 {
+            position: absolute;
+            right: 0;
+            bottom: 50px;
+        }
+
+        div.footer select {
+            padding: 10px 20px;
+            padding-right: 100px;
+            font-size: 20px;
+        }
+
+        div.remocon {
+            width: 70px;
+            height: 70px;
+            background-color: white;
+            position: fixed;
+            bottom: 150px;
+            right: 100px;
+            color: #0055a5;
+            font-size: 40px;
+            font-family: 'Consolas';
+            box-shadow: 5px 5px 5px darkgray;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        div.remocon>a {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        div.top2>ul.sb>li {
+            position: relative;
+        }
+
+        div.top2>ul.sb a:hover {
+            color: #0055a5;
+        }
+
+        div.top2>ul.sb>li>ol {
+            position: absolute;
+            top: 61px;
+            left: -10px;
+            width: 260px;
+            list-style: none;
+            padding: 0;
+            border: 1px solid lightgray;
+            background-color: white;
+            padding-top: 40px;
+            padding-left: 10px;
+            border-bottom: 4px solid #0055a5;
+            z-index: 2;
+            display: none;
+
+            padding-bottom: 20px;
+            border-bottom: 5px solid #0055a5;
+        }
+
+        div.top2>ul.sb>li:hover>ol {
+            display: block;
+        }
+
+        div.top2>ul.sb>li>ol>li {
+            padding: 8px;
+
+        }
+
+        div.marker {
+            background-color: white;
+            border-top: 1px solid lightgrey;
+            border-left: 1px solid lightgrey;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: -6px;
+            left: 25px;
+            transform: rotateY(45deg) rotate(45deg);
+        }
+
+        div.main {
+            background-image: url('https://www.nhbank.com/KO/images/main/back1.png'),
+                              url('https://www.nhbank.com/KO/images/main/back2.png');
+            background-repeat: no-repeat;
+            background-position: -420px top, 920px -260px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top">
+        <div class="top1 frame sb">
+            <div>
+                <img src="https://www.nhbank.com/KO/images/common/logo.png">
+            </div>
+            <div class="sa">
+                <ul class="menu sb">
+                    <li>Language
+                        <ol class="submenu">
+                            <li>한국어</li>
+                            <li>English</li>
+                            <li>日本語</li>
+                            <li>中國語</li>
+                        </ol>
+                    </li>
+                    <li class="t-blue">
+                        Banking
+                        <ol class="submenu">
+                            <li>개인</li>
+                            <li>기업</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="top2 frame sb">
+            <ul class="sb">
+                <li class="center">
+                    <a href="#">은행안내</a>
+                    <ol>
+                        <div class="marker"></div>
+                        <li><a href="#">CEO 인사말</a></li>
+                        <li><a href="#">기업이념</a></li>
+                        <li><a href="#">연혁</a></li>
+                        <li><a href="#">조직도</a></li>
+                        <li><a href="#">찾아오시는길</a></li>
+                        <li><a href="#">영업점안내</a></li>
+                        <li><a href="#">공고</a></li>
+                    </ol>
+                </li>
+                <li class="center">
+                    <a href="#">윤리경영</a>
+                    <ol>
+                        <div class="marker"></div>
+                        <li><a href="#">윤리경영소개</a></li>
+                        <li><a href="#">윤리경영추진전략</a></li>
+                        <li><a href="#">윤리경영추진경과</a></li>
+                        <li><a href="#">윤리경영시스템</a></li>
+                        <li><a href="#">자주묻는질문</a></li>
+                        <li><a href="#">신고제도</a></li>
+
+                    </ol>
+                </li>
+                <li class="center">
+                    <a href="#">금융소비자보호</a>
+                    <ol>
+                        <div class="marker"></div>
+                        <li><a href="#">금융소비자보호소개</a></li>
+                        <li><a href="#">금융소비보호체계</a></li>
+                        <li><a href="#">고객의소리</a></li>
+                        <li><a href="#">금융소비자보호 공시</a></li>
+                        <li><a href="#">금융소비자보호 우수사례</a></li>
+                        <li><a href="#">금융소비자정보</a></li>
+                        <li><a href="#">금융소비자보호 금융포털</a></li>
+                        <li><a href="#">보이스피싱 피해예방</a></li>
+                    </ol>
+                </li>
+                <li class="center">
+                    <a href="#">기업지배구조</a>
+                    <ol>
+                        <div class="marker"></div>
+                        <li><a href="#">이사회</a></li>
+                        <li><a href="#">이사회 공시</a></li>
+                    </ol>
+                </li>
+                <li class="center">
+                    <a href="#">경영정보</a>
+                    <ol>
+                        <div class="marker"></div>
+                        <li><a href="#">공시</a></li>
+                        <li><a href="#">재무현황</a></li>
+                        <li><a href="#">국제신용등급</a></li>
+                    </ol>
+                </li>
+                <li class="center">
+                    <a href="#">ESG경영</a>
+                    <ol>
+                        <div class="marker"></div>
+                        <li><a href="#">ESG 경영</a></li>
+                        <li><a href="#">사회공헌</a></li>
+                    </ol>
+                </li>
+                <li class="center">
+                    <a href="#">채용정보</a>
+                    <ol>
+                        <div class="marker"></div>
+                        <li><a href="#">인재상</a></li>
+                        <li><a href="#">인사제도</a></li>
+                        <li><a href="#">채용절차</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ol>
+
+                </li>
+                <li class="center">
+                    <a href="#">홍보센터</a>
+                    <ol>
+                        <div class="marker"></div>
+                        <li><a href="#">NH뉴스</a></li>
+                        <li><a href="#">영상광고</a></li>
+                        <li><a href="#">인쇄광고</a></li>
+                        <li><a href="#">CI</a></li>
+                        <li><a href="#">올원프렌즈 캐릭터</a></li>
+                        <li><a href="#">연차보고서</a></li>
+                        <li><a href="#">스포츠단</a></li>
+                        <li><a href="#">NH WM마스터즈</a></li>
+                        <li><a href="#">NH농협은행 10년사</a></li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="hamburger center">≡</div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="text1 frame center">
+            <span>사랑받는&nbsp;</span> <!-- non boder space-->
+            <span class="t-blue">일등 민족은행</span>
+        </div>
+        <div class="text2 frame center">농업인과 고객 모두가 행복한 금융을 만들어 갑니다.</div>
+
+        <div class="news frame sb">
+            <div class="left">
+                <h3>NH 뉴스</h3>
+                <div class="sb">
+                    <div class="image">
+                        <img src="https://www.nhbank.com/upload/nhnews/6052/imgpc_1.jpg">
+                    </div>
+                    <div class="nh-news">
+                        <div class="button">NH뉴스</div>
+                        <h4>NH농협은행, 올원뱅크 생활금융 서비스 신규 오픈 이벤트 실시</h4>
+                        <p><b>NH농협은행, 올원뱅크 생활금융 서비스 신규 오픈 이벤트 실시</b></p>
+                        <p>2023-11-06</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h3>더보기 ></h3>
+                <div class="more">
+                    <div class="card1">
+                        <div>H농협은행,「제1회 퇴.연.숨.고(퇴직연금숨은고⋯</div>
+                        <p>2023-11-03</p>
+                    </div>
+                    <div class="dashed-line"></div>
+                    <div class="card2">
+                        <div>NH농협은행, 농촌일손돕기와 자산관리 상담 실시</div>
+                        <p>2023-11-03</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="frame sa">
+            <div class="intro">
+                <h3>NH 농협은행 소개</h3>
+                <p>대한민국의 행복 파트너!!</p>
+                <p>자세히 보기></p>
+
+
+            </div>
+            <div class="info">
+                <h3>경영정보</h3>
+                <p>경영∙재무현황 및 공시자료</p>
+                <p>자세히 보기></p>
+            </div>
+        </div>
+
+        <div class="voc frame">
+            <h3>고객의 소리</h3>
+            <div class="sb">
+                <div class="center">자세히 보기</div>
+                <div class="center"><img src="https://www.nhbank.com/KO/images/main/img_suggest.png">칭찬/불만/제안/민원</div>
+                <div class="center"><img src="https://www.nhbank.com/KO/images/main/img_cuquestion.png">민원사례(FAQ)</div>
+                <div class="center"><img src="https://www.nhbank.com/KO/images/main/img_document.png">민원사무편람</div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="frame">
+            <ul class="footer1">
+                <li><a href="">농협인터넷뱅킹</a></li>
+                <li><a href="">농협중앙회</a></li>
+                <li><a href="">영업점안내</a></li>
+                <li><a href="">고객센터</a></li>
+                <li><a href="">경영공시</a></li>
+            </ul>
+
+            <div class="footer2">
+                <p>국내 1661-3000/1522-3000 (인터넷전화가능)해외 82-2-3704-1004 100-707 서울중구 통일로 120 NH농협은행</p>
+                <p>COPYRIGHTS (C) 2021 BY NongHyup.ALL RIGHTS RESERVED.</p>
+            </div>
+
+            <div class="footer3">
+                <select name="" id="">
+                    <option>계열사/관련사이트</option>
+                    <option>계열사/관련사이트</option>
+                    <option>계열사/관련사이트</option>
+                    <option>계열사/관련사이트</option>
+                </select>
+            </div>
+
+            <div class="footer4">
+                <img src="https://www.nhbank.com/KO/images/common/ICON_youtube_42.png">
+                <img src="https://www.nhbank.com/KO/images/common/ICON_instagram_42.png">
+                <img src="https://www.nhbank.com/KO/images/common/ICON_facebook_42.png">
+                &nbsp;
+                <img src="https://www.nhbank.com/KO/images/common/ICON_wa_pc.png">
+            </div>
+
+
+            <div class="remocon center">
+                <a class="center" href="#">↑</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
