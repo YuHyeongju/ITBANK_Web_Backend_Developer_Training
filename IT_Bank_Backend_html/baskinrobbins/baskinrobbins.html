@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>베스킨라빈스</title>
+    <style>
+        
+        html{
+            background: url('https://www.baskinrobbins.co.kr/assets/images/main/bg_hero.jpg')repeat;       
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color:black;
+        }
+
+
+        img {
+            border: 0;
+
+            display: block;
+        }
+
+        .frame {
+            width:100%;
+            height:100vh;
+
+            position: relative;
+        }
+
+        .header{
+            position: absolute;
+            top:0;
+            left:0;
+
+            display: flex;
+            align-items:center;
+            width: 100%;
+            justify-content: space-between;
+            height: 90px;
+            background-color: transparent;
+
+            z-index: 9999;
+            
+        }
+        .header:hover{
+            background-color: #f986bd;
+
+            transition: 0.5s all;
+            transition-duration: 700;
+
+        }
+        .header-container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+            width: 1500px;
+            
+
+        }
+        
+        .header-left{
+            display: flex;
+           align-items: center;
+        }
+
+        .header-left > .logo-img {
+            width: 52px;
+            height:60px;
+            background-image: url("https://www.baskinrobbins.co.kr/assets/images/common/h_logo.png");
+            background-repeat: no-repeat;
+        }
+
+        .header:hover .header-left > .logo-img  {
+            width: 52px;
+            height:60px;
+            background-image: url("https://www.baskinrobbins.co.kr/assets/images/common/h_logo_white.png");
+            background-repeat: no-repeat;
+        }
+
+        .header-left > .header-menu{
+            margin-left:40px;
+        }
+       
+       
+        .header-left > .header-menu> .header-menu-list >li{
+            padding : 0 15px;
+
+            display: list-item;
+            
+        }
+        .header-menu-list > li > a{
+            font-size:13px;
+            font-weight: 900;
+        }
+        
+        .header:hover .header-menu-list >li > a {
+            color:white;
+        }
+
+        .header-left > .header-menu> .header-menu-list >li:hover a{
+            color:black;
+        }
+
+        .header-right{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+
+        }
+        .header-right > .header-search {
+            
+            border-bottom: 2px solid hotpink ;
+            padding: 0;
+            margin: 0;
+            height: 40px;
+            
+        }
+        
+        .header-right > .header-search > input {
+            border: none;
+            background-color: transparent;
+            height: 100%;
+            width: 143px; 
+            padding-bottom: 10px;
+
+            outline: none;
+        }
+        
+        .header-right > .header-search > button {
+            width: 30px;
+            height: 100%;
+            background-color: transparent;    
+            border: none;
+            
+            
+        }
+
+        .header-right > .header-userMenu {
+          margin-left:24px;
+        }
+
+        .header-right > .header-userMenu > button{
+            background-color: transparent;
+
+            border:none;
+        }
+        
+        .header-right > .header-userMenu > button >img{
+            background-color: transparent;
+
+        }
+        .header-menu-list { 
+            padding-left: 0;
+
+            font-weight: bold;
+            color: black;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+        .submenu{
+            width:100%;
+            height:140px;
+            background-color: white;
+            padding: 0 10px;
+
+            position: fixed;
+            top:90px;
+            left:0;
+
+            overflow: hidden;
+
+            opacity:0;
+        }
+
+        .header-menu-list > li:hover .submenu {
+            height: 140px;
+
+            transition: 0.5s all;
+            transition-duration: 700;
+
+            opacity: 1;
+        }
+        .line{
+            border: 1px dashed gray;
+            height: 50px;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+         .submenu > li {
+            width: 1500px;
+            height: 140px;
+            margin: 0 auto;
+
+            display: flex; 
+            align-items: center;
+            
+            font-size: 24px;
+        }
+        .promotion{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .header-menu-list > li:hover .submenu > li > a {
+            margin-right:80px;
+        }
+        
+        
+        /* center */
+        .center {
+            position: absolute;
+            top:10px;
+            left:0;
+
+            width:100%;
+            padding-top: 30px;
+            
+            display: flex;
+            justify-content: center;
+        }
+
+        .box-container {
+            width: 1500px;
+            height: 800px;
+            margin: 0 auto;
+        }
+
+        .box-image {
+            width:auto;
+            height:732px;
+            object-fit: contain;
+
+          margin-top:70px;
+
+          border-radius:200px;
+          border:20px solid #b01e64;
+          overflow: hidden;
+
+        }
+        
+        .event-list{
+            position: absolute; 
+            top: 133px;
+            right:250px;
+           
+
+        }
+        .event-list > li:nth-child(1){
+            margin-bottom: 10px;
+            
+        }
+        .event-list > li:nth-child(2){
+            margin-bottom: 10px;
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+<div class="root">
+    <div class="frame">
+        <div class="header">
+            <div class="header-container">
+                <div class="header-left">
+                    <div class="logo-img"></div>
+                    <nav class="header-menu">
+                        <ul class="header-menu-list">
+                                           
+                            <li>
+                                <a href="">
+                                    Menu
+                                    <ol class="submenu">
+            
+                                        <li>
+                                            <a href="">이달의 맛</a>
+                                            <a href="">아이스크림</a>
+                                            <a href="">블록팩/레디팩</a>
+                                            <a href="">아이스크림 케이크</a>
+                                            <a href="">디저트</a>
+                                            <a href="">음료</a>
+                                            <a href="">커피</a>
+                                        </li>
+                
+                                    </ol>
+                                
+                                </a>
+                                
+                            </li>
+
+                            <li><a href="">
+                                BR Play
+                                <ol class="submenu">
+                                    <li>
+                                        <a href="">
+                                            이벤트</a>
+                                            <ol class="promotion">
+                                               <li>
+                                                    <a href="">프로모션</a>
+                                               </li>
+                                                    <a href="">제휴혜택</a>
+                                               </li> 
+                                            </ol>
+                                        
+                                        <div class="line"></div>
+                                        
+                                        <a href="">
+                                            BR Play
+                                            <ol>
+                                               <li>
+                                                    <a href="">베라광장</a>
+                                                    <a href="">BR 레시피</a>
+                                                    <a href="">마이플레이버리스트</a>
+                                               </li> 
+                                            </ol>
+                                        </a>
+
+
+                                    </li>
+                                    
+
+
+                                </ol>
+                            </a></li>
+
+                            <li><a href="">
+                                BR Story
+                                <ol class="submenu">
+                                    <li>
+                                        <a href="">브랜드 스토리</a>
+                                        <a href="">이달의 맛 히스토리</a>
+                                        <a href="">Be Better</a>
+                                    </li>
+                                </ol>
+                            
+                            </a></li>
+
+                            <li><a href="">
+                                Delivery/Store
+                                <ol class="submenu">
+                                    <li><a href="">
+                                        Store
+                                        <ol>
+                                            <li>
+                                                <a href="">매장찾기</a></li>
+                                                <a href="">100flavor 플레그십 스토어</a></li>
+                                                <a href="">flow 매장</a></li>
+                                                <a href="">점포 개설 문의</a></li>
+                                        </ol>
+                                        </a>    
+                                        <a href="">
+                                            Delivery
+                                            <ol>
+                                                <li><a href=""> 배달주문</a></li>
+                                                <li><a href=""> 단체주문</a></li>
+                                            </ol>
+                                        </a>
+                                        
+                                    </li>
+                                </ol>
+                            </a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-right">
+                    <div class="header-search">
+                        
+                        <input type="search" >
+
+                        <button ><img src="https://www.baskinrobbins.co.kr/assets/images/common/btn_search.png"></button>
+                    </div>
+
+                    <div class="header-userMenu"><button><img src="https://www.baskinrobbins.co.kr/assets/images/common/btn_user_menu.png"></button></div>
+                        
+                </div>
+    
+            </div>
+        </div>
+
+        <div class="center">
+            <div class="box">
+                <div class="box-container">
+                    <div class="box-image">
+                      <img src="https://www.baskinrobbins.co.kr/upload/main/banner/23110ba57cbeab9f894d4dd6ef8ed6fc.jpg"/>
+                    </div>
+
+                        <div class="event">
+                            <ul class="event-list">
+                                <li><img src="https://www.baskinrobbins.co.kr/upload/main/banner/18f689aa98b937134a8966b4a8461532.png"></li>
+                                <li><img src="https://www.baskinrobbins.co.kr/upload/main/banner/7c2e1312b421f2f6037c129b8f16c452.png"></li>
+                                <li><img src="https://www.baskinrobbins.co.kr/upload/main/banner/be4b9aab0081c48d6c0bc93f81715972.png"></li>
+                            </ul>
+                        </div>
+                    
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
