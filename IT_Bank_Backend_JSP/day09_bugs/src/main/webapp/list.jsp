@@ -10,6 +10,7 @@
 table {
 	border: 2px solid black;
 	border-collapse: collapse;
+	margin: 0 auto;
 }
 
 tr {
@@ -17,8 +18,9 @@ tr {
 }
 
 th, td {
-	/* border: 2px solid grey; */
+	border: 2px solid grey; 
 	padding: 10px;
+	text-align: center;
 }
 
 thead {
@@ -30,6 +32,16 @@ tbody>tr:hover {
 	color: black;
 	cursor: pointer;
 }
+.sb{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.nav{
+	width:1144px;
+	margin: 0 auto;
+}
+
 </style>
 </head>
 <body>
@@ -38,12 +50,8 @@ tbody>tr:hover {
 
 	<h1>list.jsp</h1>
 	<hr>
-	<form action="add.jsp">
 	
-		<button>추가</button>
-	
-	</form>
-	    
+<div class="nav sb">	    
 	<form action="list.jsp">
 		<p>
 			<input type="search" name="search" placeholder="검색어를 입력하소" autofocus
@@ -51,9 +59,10 @@ tbody>tr:hover {
 		</p>
 		
 	</form>
-
-
-
+	<div>
+			<a href="add.jsp"><button>추가</button></a>
+	</div>
+</div>	
 	<table>
 		<thead>
 			<tr>
@@ -61,7 +70,7 @@ tbody>tr:hover {
 				<th>ARTIST_NAME</th>
 				<th>ALBUM_NAME</th>
 				<th>NAME</th>
-				<th>PLAYTime</th>
+				<th>PLAYTIME</th>
 				<th>기능</th>
 			</tr>
 		</thead>
@@ -73,9 +82,9 @@ tbody>tr:hover {
 
 				<tr bgcolor="${dto.isTitle == 1 ? 'lightpink':'white' }">
 					<td>${dto.id }</td>
-					<td><img src="artist_img/${dto.artist_img }" height="50">
+					<td><img src="artist_img/${dto.artist_img }"  height="50">
 						${dto.artist_name }</td>
-					<td><img src="album_img/${dto.album_img }" height="50">
+					<td><img src="album_img/${dto.album_img }"  height="50">
 						${dto.album_name }</td>
 					<td>${dto.name }</td>
 					<td>${dto.playTime }</td>
