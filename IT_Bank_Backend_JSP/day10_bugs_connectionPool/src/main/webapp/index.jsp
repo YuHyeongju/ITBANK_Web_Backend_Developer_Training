@@ -4,10 +4,11 @@
 
 <section>
 	<div class="sb">
-		<form action="header.jsp">
-			<p>
+		<form action="index.jsp">
+			<p class ="search">
 				<input type="search" name="search" placeholder="검색어를 입력하소" autofocus
-					value="${param.search }" /> <input type="submit" value="검색">
+					value="${param.search }">
+				<input type="submit" value="검색">
 			</p>
 
 		</form>
@@ -41,8 +42,11 @@
 					<td><a href="view.jsp?id=${dto.id }">${dto.name }</a></td>
 					<td>${dto.playTime }</td>
 					<td>
-						<a href="modify.jsp?id=${dto.id }"><button>수정</button></a> <a
-						href="delete.jsp?id=${dto.id }"><button>삭제</button></a>
+						<a href="modify.jsp?id=${dto.id }"><button>수정</button></a> 
+						<button class="deleteBtn" itemId="${dto.id }">삭제</button>
+						<%-- id는 고유해야하는데 삭제버튼이 하나가 아니기때문에 클래스로 지정함.
+							jsp코드에서는 하나지만 html에서 구현되면 삭제버튼이 수 없이 많아지기때문이다.
+						 --%>
 					</td>
 				</tr>
 			</c:forEach>
@@ -50,5 +54,27 @@
 
 	</table>
 </section>
+
+
+<script>
+	const url = 'delete.jsp?id=' // 삭제할 때 사용할 주소(문자열)
+	
+	// 문서 안에 있는 모든 삭제 버튼(클래스가 deleteBtn인 모든 요소)
+	const deleteBtnList = document.querySelectorAll('.deleteBtn') 
+	
+	// 버튼의 개수만큼 반복문을 실행
+	for(let i = 0; i < deleteBtnList.length; i++){
+		const btn = deleteBtnList[i] // [i] 번째 요소를 btn에 저장
+		btn.onclick = function(event){
+			const id = event.target.getAttribute('itemId')// 클릭 대상의 itemId 가져오기
+			const flag = confirm(id + ' : 정말 삭제 할래?')//물어보기
+			if(flag){
+				location.href = url + id
+			}
+		}
+		
+	}
+</script>
+
 </body>
 </html>

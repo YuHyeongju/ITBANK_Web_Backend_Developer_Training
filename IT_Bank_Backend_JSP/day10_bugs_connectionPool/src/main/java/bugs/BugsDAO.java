@@ -44,6 +44,7 @@ public class BugsDAO {
 			ds = (DataSource) init.lookup("java:comp/env/jdbc/oracle");
 			// 반환형 object타입 -> 안에 무슨 형의 자원이 들어올지 모르니 object로 반환
 			// -> 다운캐스팅 하여 사용
+			// lookup 함수가 작동할 때, web.xml을 참고하여 찾음. 
 		} catch (NamingException e) {
 			System.out.println("지정한 이름의 객체를 찾을 수 없습니다.: " + e);
 		} finally {
@@ -104,5 +105,67 @@ public class BugsDAO {
 		}
 		// System.out.printf("불러온 목록의 개수: " + list.size());
 		return list;
+	}
+	public BugsDTO selectOne(int id){
+		BugsDTO dto = null;
+		String sql = "select * from bugs where id = ?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				dto = mapping(rs); //하나 들고와서 
+				return dto;        //  바로 반환 
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		}finally {  // while의 리턴에서 함수가 종료되었지만 
+			close(); // finally는 실행되고 나서 종료된다.
+		}
+		return dto;
+	}
+	
+	public int insert(BugsDTO dto) {
+		int row = 0;
+		String sql = "insert into (artist_name,artist_img,album_img,album_name,genre,playTime,lyrics,isTitle)"
+				+ "		values(?,?,?,?,?,?,?,?,?)";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getArtist_img());
+			pstmt.setString(2, dto.getArtist_name());
+			pstmt.setString(3, dto.getAlbum_img());
+			pstmt.setString(4, dto.getAlbum_name());
+			pstmt.setString(5, dto.getName());
+			pstmt.setString(6, dto.getGenre());
+			pstmt.setInt(7, dto.getPlayTime());
+			pstmt.setString(8, dto.getLyrics());
+			pstmt.setInt(9, dto.getIsTitle());
+			row = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return row;
+	}
+	
+	public int delete(int id) {
+		int row =0;
+		String sql = "delete bugs where id = ?";
+		try {
+			conn = ds.getConnection();
+			pstmt =conn.prepareStatement(sql);
+			pstmt.setInt(1,id);
+			// sql이 select면 excuteQuery(); -- ResultSet형태 반환
+			// sql이 insert/update/delete면 executeUpdate();이다.
+			// -- int 형태 반환
+			row = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return row;
 	}
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="bugs.*"%>
+    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 
 <%--어디서나ㅡ 문서 최상위 경로(webapp)에 접근 할 수 있도록 한다. --%>
@@ -78,6 +79,17 @@ tbody>tr:hover {
 	justify-content: space-between;
 	align-items: center;
 }
+.view{
+	display:flex;
+	background-color: #0000ff33;
+}
+.view > div{
+	padding: 10px;
+}
+.search{
+	
+
+}
 
 
 </style>
@@ -85,7 +97,7 @@ tbody>tr:hover {
 <body>
 
 <header>
-	<h1><a href="">day11-Bugs</a></h1>
+	<h1><a href="${cpath }">day11-Bugs</a></h1>
 </header>
 
 </body>

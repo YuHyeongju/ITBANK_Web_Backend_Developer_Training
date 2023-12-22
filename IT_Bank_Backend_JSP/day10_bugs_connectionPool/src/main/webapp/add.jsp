@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ include file="header.jsp" %>
+	pageEncoding="UTF-8"%>
+<%@ include file="header.jsp"%>
 <section>
 	<form action="add-action.jsp">
 		<div class="box">
@@ -27,29 +27,18 @@
 			</p>
 			<p>
 				<textarea name="lyrics" rows="10" cols="80" placeholder="가사입력"
-				style="resize:none"></textarea>
+					style="resize: none"></textarea>
 			</p>
 			<p>
 				<label><input type="radio" name="isTitle" value="1" required>타이틀</label>
 				<label><input type="radio" name="isTitle" value="0" required>수록곡</label>
 			</p>
 			<p>
-				<input type="submit">
-				<a href="header.jsp"><input type="button" value="목록으로 이동"></a>
+				<input type="submit"> <a href="header.jsp"><input
+					type="button" value="목록으로 이동"></a>
 			</p>
 		</div>
 	</form>
-
-
-
-
-
-
-
-
 </section>
-
-
-
 </body>
 </html>
