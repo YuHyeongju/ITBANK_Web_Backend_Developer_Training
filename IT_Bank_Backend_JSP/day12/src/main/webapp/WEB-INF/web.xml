@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource-ref>
+	<description>ConnectionPool</description>
+	<res-ref-name>jdbc/oracle</res-ref-name> <!--  Resource의  name과 동일하게 입력 -->
+	<res-type>javax.sql.DataSource</res-type><!--  Resource의  type과 동일하게 입력-->
+	<res-auth>Container</res-auth>			<!--  Resource의  auth와 동일하게 입력-->
+</resource-ref>
+
+<!-- 프로젝트를 시작할때 web.xml을 구동한다.-->
+<!-- 실제로 서버가 실행될때 context.xml을 참고하여 이 xml이 실행된다. -->
