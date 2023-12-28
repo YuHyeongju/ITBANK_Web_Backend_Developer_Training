@@ -70,10 +70,6 @@
 	.buttons{
 		margin:0 auto;
 	}
-	#member{
-		margin:0;
-		padding:0;
-	}
 </style>
 </head>
 <body>

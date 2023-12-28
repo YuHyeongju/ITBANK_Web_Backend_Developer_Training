@@ -13,7 +13,7 @@
 	</p>
 </div>
 <section>
-	<h4 id="member">회원목록</h4>
+	<h1 id="member">회원목록</h1>
 	<table>
 		<thead>
 			<tr>
