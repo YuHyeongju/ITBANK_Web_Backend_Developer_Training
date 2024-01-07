@@ -8,6 +8,16 @@ public class BoardDTO {
 	private String writer;
 	private String content;
 	private Date writeDate;
+	
+	private int replyCount;
+
+	public int getReplyCount() {
+		return replyCount;
+	}
+
+	public void setReplyCount(int replyCount) {
+		this.replyCount = replyCount;
+	}
 
 	public Date getWriteDate() {
 		return writeDate;

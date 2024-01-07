@@ -62,20 +62,25 @@ public class BoardDAO {
 	// 게시글 목록
 	public List<BoardDTO> selectList(){
 		ArrayList<BoardDTO> list = new ArrayList<>();
-		String sql = "select * from board order by idx";
+		String sql = "select (select count(*) from reply where board_idx  = board.idx) as replyCount, board.* from board order by idx desc";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
-				list.add(mapping(rs));
+				BoardDTO dto  = mapping(rs);
+				dto.setReplyCount(rs.getInt("replyCount"));
+				list.add(dto);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			close();
 		}
 		return list;
 	}
+	
 	//게시글 상세보기
 	public BoardDTO selectOne(int idx) {
 		BoardDTO dto = null;
@@ -114,6 +119,42 @@ public class BoardDAO {
 			e.printStackTrace();
 		}
 		
+		return row;
+	}
+	//게시글 삭제
+	public int delete(int idx) {
+		int row = 0;
+		String sql = "delete board where idx = ?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, idx);
+			row = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return row;
+	}
+	//게시글 수정
+	public int modify(BoardDTO dto) {
+		int row = 0;
+		String sql = "update board set title = ?, writer = ?, content = ? where idx = ?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1,dto.getTitle());
+			pstmt.setString(2,dto.getWriter());
+			pstmt.setString(3, dto.getContent());
+			pstmt.setInt(4, dto.getIdx());
+			row = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
 		return row;
 	}
 
