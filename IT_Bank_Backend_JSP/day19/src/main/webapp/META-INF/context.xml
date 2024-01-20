@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 각각의 웹 애플리케이션마다 주워지는 자원을 설정한다. -->
+<Context>	<!-- 음식점에서의 주문서에 해당한다. 여기에 작성해두면 객체를 미리 만들어둔다. -->
+	<Resource
+		name="jdbc/oracle"
+		auth="Container"
+		type="javax.sql.DataSource"
+		driverClassName="oracle.jdbc.driver.OracleDriver"
+		url="jdbc:oracle:thin:@192.168.1.100:1521:xe"
+		username="c##itbank"
+		password="it"
+		maxTotal="20"
+		maxIdle="10"
+		maxwaitMillis="-1"
+	/>
+
+	<Resources>
+		<PreResources
+			className="org.apache.catalina.webresources.DirResourceSet"
+			webAppMount="/reviewImage" 
+			base="C:\\upload" />
+			<!-- webAppMount 경로로 접근하면  base에서 파일을 찾아준다.-->
+	</Resources>
+</Context>
+
+	<!-- 
+
+	name: 컨테이너 내부 객체를 참조하기 위한 이름
+	auth:  객체 참조 인증 방식, 컨테이너에서 객체를 꺼내서 가져온다.
+	type: 자원(Resource)의 자료형
+	driverClassName: 어떤 DB를 사용하는가에 따라 달라지는 클래스이름
+	url: DB에 접속할 주소, 커넥션 푸ㅠㄹ
+	username: DB 접속에 사용되는 계정이름
+	password: DB 접속에 사용되는 비밀번호
+	maxTotal: 커넥션풀에서 생성할 커넥션의 최대 개수
+	maxidle: 커넥션풀에서 생성된 커넥션이 작업중이지 않은 개체의 최대 개수
+	maxWaitMillis: 접속불가시 대기할 최대 시간(밀리초)
+
+ 	-->
