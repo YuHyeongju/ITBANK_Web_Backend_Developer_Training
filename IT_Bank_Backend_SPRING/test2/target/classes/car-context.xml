@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context.xsd">
+		
+		<!-- base-package 에 지정한 패키지 내부의 모든 클래스를 스캔한다
+			 스캔할 클래스 중에서 다음 어노테이션이 명시되어있는 클래스를 스프링 빈으로 등록
+			 기본 생성자가 있어야함.
+			 @controller, @Service , @Repository, @Component
+			 스프링이 컨테이너에 알아서 스프링 빈으로 등록해준다.
+			 내가 만든 클래스는 어노테이션을 붙일수있다.
+			 HikariConfig, HikariDataSource, sqlSessionFactory,sqlSessionTemplate 
+			 같은 애들은 내가 만든것이 아니라 어노테이션을 붙일 수 없다.
+		 -->				
+	
+	<context:component-scan base-package="p3"/>
+	<!--
+		스캔해서 클래스 들 중에서 어노테이션 달린 애들은 알아서 객체 만들어줘라  
+		스프링 빈으로 등록한다 -> 객체를 생성해줘라
+	-->
+	
+				
+</beans>

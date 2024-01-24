@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- <jsp:useBean id="" class=""/> 
+		<jsp:setProperty name="" property="userid" value="${param.userid}"/> 
+		빈태그도 동일하게 객체 생성
+	-->
+	
+	<bean id="hello" class="p1.Hello">
+		<property name="text" value="Hello Spring"/>
+	</bean>	
+	
+	<!-- p1 패키지의 Hello 클래스를 이용하여 스피링 빈을 생성한다. 
+		 객체를 생성하면서 , setter를 이용하여 "Hello Spring" 문자열을 text 필드에 저장한다.
+		 hello.setText("hello Spring"); 
+		 
+		 setter는 많은 곳에서 사용된다.
+	
+	-->				
+
+</beans>

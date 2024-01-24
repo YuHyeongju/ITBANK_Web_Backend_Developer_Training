@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="test2">
+	<select id="selectVersion" resultType="string"> <!--resultType -> returnType이라 생각해라  -->
+		select banner from v$version
+	</select>
+	<select id="selectSysdate" resultType="java.sql.Date">
+		select sysdate from dual
+	</select>
+</mapper>
+
+
+<!-- 
+	마이바티스를 사용하면 자바코드에는 쿼리문을 작성하지않고 
+	xml에 쿼리문을 작성한다.
+ -->
