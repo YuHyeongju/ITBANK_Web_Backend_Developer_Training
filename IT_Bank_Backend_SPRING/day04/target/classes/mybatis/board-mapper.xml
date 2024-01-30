@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itbank.repository.BoardDAO">
+
+	<select id="selectList" resultType="board"> <!-- com.itbank.model.BoardDTO를 적어줘야되나  줄이는 설정이 있다.-->
+							<!-- resultType, ParameterType 은 별명을 지정하여 사용할 수 있다.  
+								namespace는 alias에 영향을 받지 않는다.
+								마이바티스는 sql문의 레코드가 2개이상이면 리스트로 반환해주고 
+								하나면 단일 DTO형식으로 반환해준다.
+							-->
+		select * from board3
+			order by isNotice desc, idx desc					
+	</select>
+	<select id="selectOne" resultType="board" parameterType="int"> <!-- parameterType 매개변수가 있으면 지정 -->
+		select * from board3										<!-- 매개변수는 2개이상 받지 않는 것이 원칙 -->
+			where idx = #{idx}										<!-- insert update delete는 int타입 고정이라 -->
+		order by idx												<!-- resultType을 생략한다. -->
+	
+	</select> 
+	
+	<insert id="insert" parameterType="board">
+	
+		insert into board3 (title,writer, content, isNotice) values
+			(#{title}, #{writer}, #{content}, #{isNotice})
+	
+	</insert>
+	<delete id="delete" parameterType="int">
+	
+		delete board3 where idx = #{idx}
+	
+	</delete>
+	<update id="modify"  parameterType="board">
+		update board3 set title = #{title}, content = #{content}, isNotice = #{isNotice}
+			where idx = #{idx}
+	</update>
+	
+</mapper>
+
+
