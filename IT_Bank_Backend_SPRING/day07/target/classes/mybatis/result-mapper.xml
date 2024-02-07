@@ -4,8 +4,20 @@
 
 <mapper namespace="com.itbank.repository.ResultDAO">
 	<select id="selectList" resultType="survey">
-		select * from survey_result order by idx
+			select A.*,
+		    CASE WHEN survey_count > 0 THEN response1Count * 100 / survey_count ELSE 0 END as response1_rate,
+		    CASE WHEN survey_count > 0 THEN response2Count * 100 / survey_count ELSE 0 END as response2_rate
+		from (
+		    select 
+		        s.*,
+		        (select count(*) from result where survey_idx = s.idx) as survey_count,
+		        (select count(*) from result where survey_idx = s.idx and response = 0) as response1Count,
+		        (select count(*) from result where survey_idx = s.idx and response = 1) as response2Count
+		    from survey s
+		) A
 	
 	</select>
+	
+	
 
 </mapper>

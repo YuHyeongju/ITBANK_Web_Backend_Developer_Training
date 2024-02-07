@@ -5,14 +5,15 @@
 <section>
 	<h3>설문 목록</h3>
 	<table border="1" cellpadding="10" cellspacing="0">
-		<c:forEach var="dto" items="${list }">
-			<thead>
-				<tr>
+
+		<thead>
+			<tr>
 				<th>번호</th>
 				<th>제목</th>
 				<th>작성자</th>
-				</tr>
-			</thead>
+			</tr>
+		</thead>
+		<c:forEach var="dto" items="${list }">
 			<tbody>
 				<tr>
 					<td>${dto.idx }</td>

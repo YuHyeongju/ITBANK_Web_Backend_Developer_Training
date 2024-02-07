@@ -14,10 +14,14 @@ public class ResultService {
 	@Autowired private ResultDAO dao;
 
 	public List<SurveyDTO> getResultList() {
-	
+		
 		
 		return dao.selectList();
 	}
+
+	
+
+	
 
 	
 

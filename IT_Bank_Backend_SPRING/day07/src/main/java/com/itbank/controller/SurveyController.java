@@ -5,7 +5,9 @@ package com.itbank.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,6 +32,16 @@ public class SurveyController {
 		mav.addObject("list", list);
 		return mav;
 	}
+	
+	@ExceptionHandler(DuplicateKeyException.class)
+	public ModelAndView dupkey() {
+		ModelAndView mav = new ModelAndView("alert");
+		mav.addObject("url", "/survey/list");
+		mav.addObject("msg", "이미 참여한 설문입니다.");
+		
+		return mav;
+	}
+	
 
 	@GetMapping("/write")
 	public void write() {}

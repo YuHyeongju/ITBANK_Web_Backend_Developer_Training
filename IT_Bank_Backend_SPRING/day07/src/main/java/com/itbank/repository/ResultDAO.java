@@ -11,6 +11,8 @@ public interface ResultDAO {
 
 	List<SurveyDTO> selectList();
 
+	int getCount(int idx);
+
 	
 
 }
