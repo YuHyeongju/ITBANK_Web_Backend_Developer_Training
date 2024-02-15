@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itbank.repository.Product2DAO">
+	<select id="selectList" resultType="product">
+		select * from product2 order by idx
+	</select>
+	<insert id="insert" parameterType="product">
+		insert into product2 (name,img, price,count) values(#{name},#{img},#{price},#{count})
+	</insert>
+	
+	<update id="modify">
+		update product2 set count = #{count} where idx = #{idx}
+	</update>
+	<select id="selectOne" resultType="product" parameterType="int">
+		select * from product2 where idx = #{idx} 
+	
+	</select>
+	
+	<delete id="delete">
+		delete from product2 where idx = #{idx}
+	
+	</delete>
+</mapper>
