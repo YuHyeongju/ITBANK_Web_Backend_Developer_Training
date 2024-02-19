@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7_JS화면구현.html</title>
+    <style>
+        .item{
+            display: flex;
+            border: 2px solid black ;
+            margin: 10px;
+            padding: 10px;
+            background-color: aqua;
+        }
+        .item:hover{
+            cursor: pointer;
+            background-color: hotpink;
+        }
+
+        .item > div{
+
+            flex: 1;
+        }
+        .item > div:nth-child(2){
+
+            flex: 3;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="root"></div> <!-- 스크립트에서 처리한 데이터를 담는 역할-->
+
+    <script>
+
+            // 스프링에서 MyBatis로 select를 수행한 결과를 LIST<DTO>로 받았다고 가정
+            
+            // (1) arr 배열에 들어갈 데이터 들을 정의    
+
+        const arr=[
+            {
+            idx: 1,
+            name: '새벽 겨울 딸기 500g(팩)',
+            salesPrice:9990, 
+            grade:4.6,
+
+
+        },
+        {
+
+            idx: 2,
+            name: '알 큰 딸기 700g(박스)',
+            salesPrice:14990, 
+            grade:4.5,
+
+        },
+        {
+
+        idx: 3,
+        name: '살살녹는 장희 딸기 750g(팩)',
+        salesPrice:14990, 
+        grade:4.5,
+
+        },
+        {
+
+        idx: 4,
+        name: '슈퍼푸드 블루베리(칠레) 310g(팩)',
+        salesPrice:9990, 
+        grade:4.6,
+
+        },
+    ]
+    console.log(arr) // 배열을 콘솔에 출력
+
+
+    // 태그 id를 가져와서 root에 저장
+    const root  = document.getElementById('root')
+    // 반복을 돌려서 dto에 값을 매핑하고 그것을 tag에 저장
+    arr.forEach(dto => {
+        let tag = ''
+        tag +=`<div class="item">`
+        tag +=`     <div class="idx">${dto.idx}</div>`    
+        tag +=`     <div class="name">${dto.name}</div>`
+        tag +=`     <div class="salesPrice">${dto.salesPrice}</div>`
+        tag +=`     <div class="grade">${dto.grade}</div>`
+        tag +=`</div>`
+        root.innerHTML += tag
+
+    })
+    </script>
+
+
+    <!-- html에서 대략적인 레이아웃을 만들고 데이터는 자바스크립트에서 처리한다.-->
+
+
+</body>
+</html>

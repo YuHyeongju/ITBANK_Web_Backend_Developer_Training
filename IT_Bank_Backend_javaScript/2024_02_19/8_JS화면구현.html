@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8_JS화면구현.html</title>
+    <style>
+    .flex{
+        display: flex;
+    }
+    #root{
+        display: flex;
+        flex-wrap: wrap;
+        width: 1200px;
+        margin: auto auto;
+    }
+    .item{
+        background-color: hotpink;
+        color: white;
+        width: 300px;
+        height: 200px;
+        border: 1px solid red;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 20px;
+        box-sizing: border-box;
+    }
+    .item:hover{
+        background-color: aqua;
+        color: black;
+        transition-duration: 0.5s;
+    }
+   
+    
+    
+    </style>
+</head>
+<body>
+    <h1>JSON파일 내용 불러와서 화면에 출력하기</h1>
+    <hr>
+
+    
+    <div id="root"></div>
+
+
+    <script src="homeplus(berry).js"></script>
+    <script>
+        
+        console.log(arr)
+       
+       const root = document.getElementById('root')
+
+
+
+       // 원하는 조건으로 정렬한 (가격순으로 내림차순)
+       arr.sort((a,b) => a[column] - b[column])
+
+        // 원하는 단어로 필터링 (검색어: 딸기)
+       const arr2 = arr.filter(element => element.name.includes('딸기'))
+
+       // json데이터를 화면에 반영할 수 있다.
+       arr2.forEach(element => {
+            let tag = ''
+            tag +=`<div class="item">`
+            tag +=`     <div class="idx">상품명:${element.name}</div>`    
+            tag +=`     <div class="name">가격:${element.price}</div>`
+            tag +=`     <div class="salesPrice">판매가격:${element.salePrice}</div>`
+            tag +=`     <div class="salesCount">판매한 갯수:${element.salesCount}</div>`
+            tag +=`     <div class="grade">별점:${element.grade}</div>`
+            tag +=`     <div class="grade">리뷰개수:${element.reviewCount}</div>`
+            tag +=`</div>`
+            root.innerHTML += tag 
+
+       })
+
+
+    </script>
+
+</body>
+</html>
