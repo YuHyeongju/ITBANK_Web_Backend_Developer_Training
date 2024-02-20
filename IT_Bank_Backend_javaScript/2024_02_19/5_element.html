@@ -64,8 +64,10 @@
             const ob = {}
             ob.name = item.querySelector('.name').innerHTML
             ob.age = +item.querySelector('.age').innerText // 문자열 앞에 + 를 붙이면 숫자로 바뀐다. Integer.parseInt(str) 과 동일한 역할
-            // innerText는 요소에서 태그를 제외한 글자만 가져온다.
-            // innerHTML을 사용하면 요소에서 태그를 포함한 전체를 가져온다.
+           // 요약하자면, innerText는 텍스트 콘텐츠를 반환하고, 
+        //    outerText는 텍스트와 자식 요소의 텍스트를 반환합니다. 
+        //    innerHTML은 내부 HTML 코드를 반환하고, 
+        //    outerHTML은 전체 HTML 코드를 반환합니다.
             return ob
         })
         console.log(dataArray) // 값만으로 구성한 객체 배열

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12_post.html</title>
+    <style>
+        table{
+            border: 2px solid black;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        td,th{
+            padding: 5px 10px;
+        }
+        tr{
+            border-bottom: 1px solid grey;
+        }
+        
+
+    </style>
+</head>
+<body>
+    
+    <h1>12_post.html</h1>
+    <hr>
+
+    <table>
+        <tr>
+            <td class="id"></td>
+            <td class="title"></td>
+
+        </tr>
+        <tr>
+            <td class="userId" colspan="2"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><pre class="body"></pre></td>
+        </tr>
+    </table>
+    <div style="display: flex; justify-content: space-between;">
+        <div>
+            <a href="11_posts.html"><button>목록으로 돌아가기</button></a>
+        </div>
+    </div>
+
+    <script>
+        // 자바스크립트에서 쿼리스트링 가져오기
+        const id = new URLSearchParams(location.search).get('id')
+        // 현재 페이지의 url의 쿼리 파라미터에서 id값을 가져오는 역할을 함.
+        // location.search: 현재 페이지의 url에서 쿼리 파라미터 부분을 나타내는 문자열을 반환함.
+        const url = `https://jsonplaceholder.typicode.com/posts/${id}`
+
+       // console.log(url)
+
+        //async/await를 이용하여 json 반환값으로 받기
+         async function loadHandler(){ // 비동기 함수 정의 : async, 비동기 함수 호출 : await, fetch: 비동기 함수
+            const json = await fetch(url)
+                        .then(resp => resp.json())
+            console.log(json)  
+
+            // await 호출은 javaScript 코드의 최상위에서 호출 할 수 없음
+
+            // json 객체의 변수(필드) 이름과 HTML element의 클래스 이름을 맞춰두고 하나씩 대입
+            
+            for(let key in json){// key는 index역할 index에 접근하려면 for ... in
+                console.log(key)
+                const value = json[key]
+                const element = document.querySelector('.' + key)
+                element.innerText = value
+            }
+
+            // 불러온 json 객체에서 userId를 불러와서 username을 작성자 위치에 덮어쓰기
+            const username = await fetch('https://jsonplaceholder.typicode.com/users/' + json.userId)
+                                .then(resp => resp.json())  // 사이트를 요청해서 받은 응답을 json객체로 변환하는 작업
+                                .then(json => json.username) // then: 작업이 끝나면
+
+            document.querySelector('.userId').innerText = username
+
+         } 
+         window.onload = loadHandler // 실행    
+         
+         // async await 를 걸지않으면 fetch가 끝나기도 전에 JSON객체를 호출해서 JSON객체에 아무것도 없는 상태가 된다.
+         // fetch를 하지않으면 프로미스 타입으로 반환되는데 캡슐화가 되어있어서 json을 볼 수는 있어도 참조 할 수는 없다.
+         // fetch가 처리될 때 까지 기다리게 해야하는데 await는 async안에서만 할 수 있기때문에 function 앞에 async를 붙여줘야함.
+         // 순서를 잡기 위해서 async await를 사용한다. 자바에서는 이게 기본값이다.
+
+    </script>
+</body>
+</html>
+
+<!--
+    async await를 안쓰면 
+    
+function loadHandler() {
+  const id = new URLSearchParams(location.search).get('id');
+  const url = `https://jsonplaceholder.typicode.com/posts/${id}`;
+
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (json) {
+      for (let key in json) {
+        const value = json[key];
+        const element = document.querySelector('.' + key);
+        element.innerText = value;
+      }
+
+      fetch('https://jsonplaceholder.typicode.com/users/' + json.userId)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (userJson) {
+          document.querySelector('.userId').innerText = userJson.username;
+        });
+    });
+}
+
+window.onload = loadHandler;
+
+
+이런 중첩된 코드 생성
+-->

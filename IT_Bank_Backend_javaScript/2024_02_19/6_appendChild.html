@@ -14,7 +14,7 @@
     <script>
         // 자바스크립트에서 html 요소를 생성해서 문서에 반영할 수 있다.
         // 1) document 내장함수 createElement 활용
-        const e1  =document.createElement('div') //태그이름
+        const e1  = document.createElement('div') //태그이름
 
         e1.className='item'
         e1.innerText = '돈까스'
@@ -23,7 +23,7 @@
 
 
         // 2) innerHTML을 이용하여 문자열 형식으로 태그를 작성하여 추가하기
-        const e2 = '<div class = "item">초밥</div>'
+        const e2 = '<div class ="item">초밥</div>'
         root.innerHTML += e2
 
 
@@ -44,8 +44,13 @@
         const item1 = document.querySelector('.item')
         root.appendChild(item1) // 내부요소를 불러와서  재배열(원래 자리에서 없어짐) 
 
-        const tag = document.querySelector('.item').outerHTML // outerHTML은 HTML태그 부분을 포함하여 불러온다.
-        root.innerHTML += tag                                 // innerHTML은 HTML태그 부분은 제외하고 태그 안에 내용만 불러온다.
+        const tag = document.querySelector('.item').outerHTML
+        root.innerHTML += tag    
+        
+        //    innerText는 텍스트 콘텐츠를 반환하고, 
+        //    outerText는 텍스트와 자식 요소의 텍스트를 반환합니다. 
+        //    innerHTML은 내부 HTML 코드를 반환하고, 
+        //    outerHTML은 전체 HTML 코드를 반환합니다.
 
 
 
