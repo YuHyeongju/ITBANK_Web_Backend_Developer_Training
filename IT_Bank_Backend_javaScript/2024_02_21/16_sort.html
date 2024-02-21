@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16_sort.html</title>
+</head>
+<body>
+    <p>
+        <button id="sortAsc">가격 낮은 순</button>
+    </p>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>메뉴</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>맥 크리스피 디럭스 버거 세트</td>
+                <td>9200</td>
+            </tr>
+            <tr>
+                <td>트리플 치즈 버거 세트</td>
+                <td>8500</td>
+            </tr>
+            <tr>
+                <td>슈비 버거 세트</td>
+                <td>9100</td>
+            </tr>
+            <tr>
+                <td>슈슈 버거 세트</td>
+                <td>7300</td>
+            </tr>
+            <tr>
+                <td>맥스파이시 상하이 버거 세트</td>
+                <td>8200</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // tbody 안에 있는 tr을 불러와서 
+        // tr 내부의 두번째 td의 내부텍스트를 정수 형태로 비교하여 정렬을 수행
+        // 정렬이 끝난 tr을 다시 tbody에 appendChild 해서 자리를 변경한다.
+        const sortAsc = document.getElementById('sortAsc')
+        const tbody = document.querySelector('tbody')
+
+        sortAsc.onclick = function(){
+            const trList = document.querySelectorAll('tbody > tr') // 그냥 tr이라고 하면 thead의 tr인지 tbody의 tr인지 알 수 없음
+            const trArray = Array.from(trList)
+
+            console.log('=====================')
+            console.log(trArray)
+            console.log('=====================')
+
+            const resultArray = trArray.toSorted((a,b) => +a.querySelector('td:nth-child(2)').innerText - +b.querySelector('td:nth-child(2)').innerText)
+            // 천단위까지는 괜찮은데 만원이 넘으면 정렬이 꼬일수있어서 문자열을 +를 붙여서 숫자로 변환 후 비교해줘야된다.
+            console.log('=====================')
+            console.log(resultArray)
+            console.log('=====================')
+            
+
+            // 결과 배열을 tbody에 아래에 추가한다.
+            resultArray.forEach(e => tbody.appendChild(e))
+        }
+
+    </script>
+</body>
+</html>

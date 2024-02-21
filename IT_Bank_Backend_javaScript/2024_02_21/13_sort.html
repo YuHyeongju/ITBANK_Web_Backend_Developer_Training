@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>13_sort.html</title>
+</head>
+<body>
+
+    <ul class="test1"></ul>
+
+
+    
+    <script>
+        const arr = [4, 8, 2, 7, 6]
+        console.log(arr)
+
+        const arr2 = arr.toSorted((a,b) => a - b) // arr[i] - arr[j] 
+        //console.log(arr2)
+        const ul = document.querySelector('ul.test1')
+        arr2.forEach(element => {
+            
+            ul.innerHTML+='<li>' + element +  '</li>'
+        });
+
+    </script>
+
+
+</body>
+</html>
