@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #root {
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .item {
+            display: flex;
+        }
+
+        .item > div {
+            border: 1px solid black;
+            flex: 1;
+            padding: 5px 10px;
+            text-align: center;
+        }
+        .item > div:nth-child(2) {
+            
+            flex: 2;
+            
+        }
+        .columns{
+            width: 1400px;
+            margin: auto;
+            background-color: #eee;
+            position: sticky;
+            top: 0;
+        }
+        .sort {
+            width: 1400px;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sort">   
+        <button id="pkCnt">주차 가능 대수  ↓ / ↑</button>
+        <button id="tenMin">10분당 금액 ↓ / ↑</button>
+        <button id="ftDay">일 주차 금액 ↓ / ↑</button>
+        <button id="ftMon">월 주차 금액 ↓ / ↑</button>
+    </div>
+    <div class="columns item">
+        <div>담당 구청</div>
+        <div>주차장 위치</div>
+        <div>노외/노상</div>
+        <div>주차가능대수</div>
+        <div>10분당 금액</div>
+        <div>일 주차 금액</div>
+        <div>월 주차 금액</div>
+    </div>
+
+    <div id="root"></div>
+
+    <script src="parking.js"></script>
+
+
+    <script>
+         
+        const root = document.getElementById('root')
+        let cnt = 1
+        // 데이터 불러오는 함수
+        function load(){
+            arr.forEach(dto => {
+                let tag = ''
+                tag += `<div class="item">`
+                tag += `     <div class="guNm">${dto.guNm}</div>`
+                tag += `     <div class="pkNam">${dto.pkNam}</div>`
+                tag += `     <div class="pkFm">${dto.pkFm}</div>`
+                tag += `     <div class="pkCnt">${dto.pkCnt == "-" ? "0":dto.pkCnt}</div>`
+                tag += `     <div class="tenMin">${dto.tenMin  == "-" ? "0":dto.tenMin}</div>`
+                tag += `     <div class="ftDay">${dto.ftDay  == "-" ? "0":dto.ftDay}</div>`
+                tag += `     <div class="ftMon">${dto.ftMon  == "-" ? "0":dto.ftMon}</div>`
+                tag += `</div>`
+                root.innerHTML += tag 
+            });
+            
+        }
+        window.addEventListener('DOMContentLoaded',load)
+
+        // 정렬 함수
+        function sort(event){
+            
+            const id = event.target.id
+            const arr2 = Array.from(document.querySelectorAll('#root > .item'))
+
+            arr2.sort((e1,e2) => {
+                const e3 = +e1.querySelector('.' + id).innerText
+                const e4 = +e2.querySelector('.' + id).innerText
+                const ret = (e3 - e4 >= 0 ? 1 : -1)
+                return ret * cnt
+            })
+            cnt *= -1
+            arr2.forEach(e => root.appendChild(e))
+            console.log(id)
+            console.log(cnt)
+        }
+        const btnList = document.querySelectorAll('.sort > button')
+        console.log(btnList)
+        btnList.forEach(btn => btn.onclick = sort)
+
+    </script>
+</body>
+</html>

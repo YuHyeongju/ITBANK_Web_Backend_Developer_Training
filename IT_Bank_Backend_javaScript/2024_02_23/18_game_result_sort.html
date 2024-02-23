@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18_game_result_sort.html</title>
+    <style>
+        #root {
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .item {
+            display: flex;
+        }
+
+        .item>div {
+            border: 1px solid black;
+            flex: 1;
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        .item>div:nth-child(1) {
+            flex: 3;
+        }
+
+        .columns {
+            width: 1400px;
+            margin: auto;
+            background-color: #eee;
+        }
+        #sort {
+            width: 1400px;
+            margin: auto;
+            padding: 10px;
+        }
+        .item.blue{
+            background-color: skyblue;
+        }
+        .item.red{
+            background-color: lightpink;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <!-- <div id="sort">
+        <button id="user-dasc">유저 이름 오름차순</button> 
+        <button id="user-asc">유저 이름 내림차순</button> 
+        <button id="champion-dasc">챔피언 이름 오름차순</button>   
+        <button id="champion-asc">챔피언 이름 내림차순</button>   
+        <button id="kill-desc">킬 수 높은 순 </button>
+        <button id="kill-asc">킬 수 낮은 순 </button>
+        <button id="death-desc">데스 높은 순</button>
+        <button id="death-asc">데스 낮은 순</button>
+        <button id="assist-desc">어시스트 높은 순</button>
+        <button id="assist-asc">어시스트 낮은 순</button>
+        <button id="damage-desc">피해량 높은 순</button>
+        <button id="damage-asc">피해량 낮은 순</button>
+        <button id="cs-desc">cs 많이 먹은 순</button>
+        <button id="cs-asc">cs 적게  먹은 순</button>
+    </div> -->
+    <div id="sort">   
+        <button id="kill">킬  ↓ / ↑</button>
+        <button id="death">데스 ↓ / ↑</button>
+        <button id="assist">어시스트 ↓ / ↑</button>
+        <button id="damage">피해량 ↓ / ↑</button>
+        <button id="cs">cs ↓ / ↑</button>
+    </div>
+
+
+
+    <div class="columns item">
+        <div>닉네임</div>
+        <div>챔피언</div>
+        <div>블루팀/레드팀</div>
+        <div>킬</div>
+        <div>데스</div>
+        <div>어시스트</div>
+        <div>피해량</div>
+        <div>먹은 cs</div>
+    </div>
+
+    <div id="root"></div>
+
+    <script src="opgg_result.js"></script>
+
+    <script>
+        const root = document.getElementById('root')
+        let cnt = 1 
+        // 데이터 불러오기
+        function load() {
+            arr.forEach(dto => {
+                let tag = ''
+                tag += `<div class="item"  style="background-color: ${dto.team == '블루' ? 'lightskyblue' : 'lightpink'};">`
+                tag += `     <div class="user">${dto.user}</div>`
+                tag += `     <div class="champion">${dto.champion}</div>`
+                tag += `     <div class="team">${dto.team}</div>`
+                tag += `     <div class="kill">${dto.kill}</div>`
+                tag += `     <div class="death">${dto.death}</div>`
+                tag += `     <div class="assist">${dto.assist}</div>`
+                tag += `     <div class="damage">${dto.damage}</div>`
+                tag += `     <div class="cs">${dto.cs}</div>`
+                tag += `</div>`
+                root.innerHTML += tag
+            });
+        }
+        
+        window.addEventListener('DOMContentLoaded', load)
+        
+        // 정렬 함수
+        function sort(event){
+
+            const id = event.target.id
+            const column = id.split('-')[0]
+            const arr2 = Array.from(document.querySelectorAll('#root > .item'))
+            
+            arr2.sort((e1,e2) => {
+                const e3 = +e1.querySelector('.' + column).innerText
+                const e4 = +e2.querySelector('.' + column).innerText
+                const ret =  (e3 - e4 >=  0 ? 1 : -1)  // 크기비교를 해서 크면 1 아니면 -1 
+                return ret * cnt // cnt 초기값이 1이므로 ret이 1이면 오름차순 -1이면 내림차순
+            })
+            cnt *= -1 // 그 다음을 위해서 곱해준다.
+            arr2.forEach(e => root.appendChild(e))
+            console.log(id)
+            console.log(cnt)
+        }
+        const btnList = document.querySelectorAll('#sort > button')
+        btnList.forEach(btn => btn.onclick = sort) // 버튼을 클릭하면  sort 함수를 실행
+
+
+
+        
+
+    </script>
+</body>
+
+</html>
