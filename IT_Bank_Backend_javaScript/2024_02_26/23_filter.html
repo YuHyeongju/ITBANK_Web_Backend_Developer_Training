@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #root{
+            display: flex;
+            width: 1400px;
+            margin: auto;
+        }
+
+        .left{
+            width: 150px;
+            display: flex;
+            flex-direction: column; /*세로로 배치*/
+
+        }
+        .right{
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 85vh; /* viewHeight: 보여지는 높이(브라우저 창 기준)*/
+        }
+        .item {
+            display: flex;
+        }
+
+        .item>div {
+            border: 1px solid black;
+            flex: 1;
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        .item>div:nth-child(1) {
+            flex: 4;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root">
+        <div class="left">
+            <label><input type="checkbox" name="p0">10000원 미만</label>
+            <label><input type="checkbox" name="p1">10000원 대</label>
+            <label><input type="checkbox" name="p2">20000원 대</label>
+            <label><input type="checkbox" name="p3">30000원 대</label>
+            <label><input type="checkbox" name="p4">40000원 대</label>
+            <label><input type="checkbox" name="p5">50000원 대</label>
+        </div>
+        <div class="right"></div>
+    </div>
+
+
+    <script src="homeplus(berry).js"></script>
+
+    <script>
+            const root = document.querySelector('div.right')
+          function load() {
+            arr.forEach(dto => {
+                let tag = ''
+                tag += `<div class="item">`
+                tag += `    <div class="name">${dto.name}</div>`
+                tag += `    <div class="price">${dto.price}</div>`           
+                tag += `    <div class="grade">${dto.grade}</div>`
+                tag += `</div>`
+                root.innerHTML += tag
+
+            });
+        }
+        window.onload = load
+
+        const checkedList = document.querySelectorAll('div.left > label > input[type="checkbox"]')
+        console.log(checkedList)
+
+        function filterHandler(event){
+            const checkedArray = Array.from(checkedList).filter(e => e.checked).map(e => +e.name.replace('p',''))
+            console.log(checkedArray)
+
+            const productList = document.querySelectorAll('div.right > div.item')
+            console.log(productList)
+           
+            productList.forEach(product =>{
+                const p_price = Math.floor(+product.children[1].innerText / 10000)
+                console.log(p_price)
+                if(checkedArray.includes(p_price)){
+                    product.classList.remove('hidden')
+                }else{
+                    product.classList.add('hidden')
+                }if(checkedArray == 0){
+                    product.classList.remove('hidden')
+                }
+
+            }) 
+            
+        }
+        checkedList.forEach(box => box.onclick = filterHandler)
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #root {
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .item {
+            display: flex;
+        }
+
+        .item>div {
+            border: 1px solid black;
+            flex: 1;
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        .item>div:nth-child(2) {
+
+            flex: 2;
+
+        }
+
+        .columns {
+            width: 1400px;
+            margin: auto;
+            background-color: #eee;
+            position: sticky;
+            top: 0;
+        }
+
+        .sort {
+            width: 1400px;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>부산광역시 주차장 요금 현황</h1>
+    <hr>
+
+
+
+    <div id="root">
+        <div class="columns item">
+            <div order = "1" class="pkNum"><span class="text">주차장 이름</span><span class="arrow"></span></div>
+            <div order = "1" class="guNm"><span class="text">지역</span><span class="arrow"></span></div>
+            <div order = "1" class="pkFm"><span class="text">형식</span><span class="arrow"></span></div>
+            <div order = "1" class="tenMin"><span class="text">10분 주차 요금</span><span class="arrow"></span></div>
+            <div order = "1" class="ftDay"><span class="text">일 주차 금액</span><span class="arrow"></span></div>
+            <div order = "1" class="ftMon"><span class="text">월 주차 금액</span><span class="arrow"></span></div>
+            <div order = "1" class="pkCnt"><span class="text">전체 주차 대수</span><span class="arrow"></span></div>
+        </div>
+        <div class="main"></div>
+    </div>
+    
+    
+    
+    <script src="parking.js"></script>
+    <script>
+
+        const arr2 = arr.slice(0, 300)
+
+        const main = document.querySelector('.main')
+        
+        arr2.forEach(dto => {
+        /**********************************/
+        // JSON 데이터 화면에 띄우기
+            let tag = ''
+            tag += `<div class="item">`
+            tag += `     <div class="guNm">${dto.guNm}</div>`
+            tag += `     <div class="pkNam">${dto.pkNam}</div>`
+            tag += `     <div class="pkFm">${dto.pkFm}</div>`
+            tag += `     <div class="pkCnt">${dto.pkCnt == "-" ? 0 : dto.pkCnt}</div>`
+            tag += `     <div class="tenMin">${dto.tenMin == "-" ? 0 : dto.tenMin}</div>`
+            tag += `     <div class="ftDay">${dto.ftDay == "-" ? 0 : dto.ftDay}</div>`
+            tag += `     <div class="ftMon">${dto.ftMon == "-" ? 0 : dto.ftMon}</div>`
+            tag += `</div>`
+            main.innerHTML += tag
+        });
+        //JSON 데이터 화면에 띄우기
+        //============================================
+
+        /*클릭 이벤트 설정 (정렬)*/
+        const columns = Array.from(document.querySelectorAll('div.columns > div'))
+
+        // 정렬 함수
+        function sortHandler(event) {
+
+            // 내가 클릭한 대상(div)은 columns에서 몇변째 인덱스를 가지는가
+            let target = event.target
+            while(target.tagName != 'DIV'){
+                target = target.parentNode
+            }
+            const idx = columns.indexOf(target) 
+           
+            const order = +target.getAttribute('order')
+            target.setAttribute('order', -order) // -order는 -1(다음에는 -1이 불러와짐(부호반전))
+            document.querySelectorAll('span.arrow').forEach(e => e.innerText ='')  // 모든 화살표 지정
+            target.querySelector('span.arrow').innerText = order > 0  ? '🔻':'🔺'
+
+
+            console.log(idx) // -1이 나오면 대상을 찾지 못했다.
+            console.log(order)
+
+            const arr3 = Array.from(document.querySelectorAll('div.main > div.item'))
+
+            arr3.sort((e1, e2) => {
+                const e3 = +e1.children[idx].innerText // 각 정렬 대상의 idx번째의 값으로 비교
+                const e4 = +e2.children[idx].innerText
+                return (e3 >= e4 ? 1 : -1) * order      // 부등호 방향 변경으로 오름차순 내림차순 변경 가능
+            })
+            arr3.forEach(e => main.appendChild(e))
+        }
+
+        columns.slice(3, 7).forEach(e => e.onclick = sortHandler) // 3부터 7 인덱스 까지만 클릭 이벤트 적용 
+        // 주차장 이름 지역 형식 을 클릭하면 함수 작동 안함.
+    </script>
+</body>
+
+</html>

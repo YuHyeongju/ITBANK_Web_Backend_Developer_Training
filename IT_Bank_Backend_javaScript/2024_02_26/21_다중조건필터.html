@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21_다중조건필터</title>
+    <style>
+        #root{
+            display: flex;
+            width: 500px;
+            height: 350px;
+        }
+        .left{
+            display: flex;
+            flex-direction: column;
+            width: 100px;
+        }
+        .left > label{
+            flex: 1;
+        }
+        table{
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+        td{
+            border: 1px solid grey;
+            padding: 10px 20px;
+        }
+        .hidden{ 
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>21_다중조건필터</h1>
+    <hr>
+
+    <div id="root">
+        <div class="left">
+            <label><input type="checkbox" name="a10">10대</label>
+            <label><input type="checkbox" name="a20">20대</label>
+            <label><input type="checkbox" name="a30">30대</label>
+            <label><input type="checkbox" name="a40">40대</label>
+            <label><input type="checkbox" name="a50">50대</label>
+        </div>
+        <div class="right">
+            <table>
+                <tr>
+                    <td>남도일</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td>최현웅</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>이지은</td>
+                    <td>31</td>
+                </tr>
+                <tr>
+                    <td>홍진호</td>
+                    <td>42</td>
+                </tr>
+                <tr>
+                    <td>이서진</td>
+                    <td>53</td>
+                </tr>
+                <tr>
+                    <td>유지민</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>김민정</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>김동준</td>
+                    <td>32</td>
+                </tr>
+                
+                
+               
+            </table>
+
+        </div>
+
+        
+    </div>
+
+    <script>
+        const boxList = document.querySelectorAll('div.left > label > input[type="checkbox"]')
+
+        function filterHandler(event){
+            
+            // 배열에서 원하는 속성만 가져오거나, 별도의 속성을 추가해서 가져올 때 Array.map() 사용
+
+            const checkedArray = Array.from(boxList).filter(e => e.checked).map(e => +e.name.replace('a','')) 
+            // checked : 체크 박스 태그안에 checked를 생략하면 false상태 작성하면 true 
+            // 웹 상에서 체크박스에 체크를 하면 true 상태가 된다.
+            // e => e.checked는 그 상태를 가져오는 것이다.
+            // 체크된 요소들 중에서 이름에서 a를 제거하고 남은 숫자들을 checkedArray 배열에 저장한다.
+
+            // const checkedArray = Array.from(boxList).map(e => {
+            //     // const ob  = {
+            //     //     age:  +e.name.replace('a',''),      // 체크되엇는지 확인하기위해 객체 배열 생성
+            //     //     checked: e.checked
+            //     // }
+            //     return ob 
+            // })
+
+            // 중첩된 반복문을 분리해서 해도 되는지 생각을 해야한다. 
+
+            console.log(checkedArray)
+
+            /*  만약 다중 조건이 아니라, 클릭이벤트의 대상만 처리한다면 */
+            //const flag = +event.target.name.replace('a','')  // a10 => 10 // 단일 일 때 사용
+            /*********************************************************/
+
+            const trList = document.querySelectorAll('table > tbody > tr') // tbody를 안써도 html이 tbody를 넣기 때문에 넣어줘야함.
+            
+            /*
+
+            const age = Math.floor(+tr.children[1].innerText / 10) * 10: 현재 반복 중인 tr 요소의 두 번째 자식 요소의 텍스트 값을 가져온 후, 해당 값을 숫자로 변환합니다. 
+            이후, 변환된 숫자를 10으로 나누어 소수점 이하를 버린 뒤 10을 곱합니다. 이를 통해 나이를 10의 단위로 구분하는 값을 얻습니다.
+            if(checkedArray.includes(age)){ ... } else { ... }: checkedArray 배열이 현재 구분된 나이(age) 값을 포함하고 있는지 확인합니다. 
+            포함되어 있을 경우 해당 tr 요소의 클래스에서 'hidden' 클래스를 제거하여 숨김을 해제합니다. 
+            포함되어 있지 않을 경우 'hidden' 클래스를 추가하여 해당 tr 요소를 숨깁니다.
+            
+            */    
+
+
+            trList.forEach(tr => {
+                const age = Math.floor(+tr.children[1].innerText / 10) * 10  // Math.floor : 실수에서 소숫점 이하를 버리고 실수만 남긴다.
+
+                if(checkedArray.includes(age)){ //checkedArray 베열이 age값을 포함하면 삭제
+                    tr.classList.remove('hidden')   // 포함되면 가리는 것을 풀어라, hidden속성을 추가할것이냐 뺄 것 이냐
+                }
+                else{
+                    tr.classList.add('hidden') // 포함안하면 가려라
+                }
+            })
+
+
+        }
+        boxList.forEach(box => box.onclick = filterHandler)
+
+    </script>
+</body>
+</html>

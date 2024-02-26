@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <hr>
+    <fieldset>
+        <h3>filter: 조건에 맞는 값만 남긴다. 길이 변화할 수 있으나 형식은 변하지 않는다.</h3>
+        <script>
+            const arr = [23,52,40,11,7]
+            const arr2 = arr.filter(num => num > 20)
+            console.log('filter')
+            console.log(arr)
+            console.log(arr2)
+            console.log('')
+        </script>
+    </fieldset>
+    <br>
+    <fieldset>
+        <h3>map: 기존 데이터를 활용하여 형태를 변경한다.(재구성)길이는 변하지 않는다.</h3>
+        <script>
+            const arr3 = arr.map(e => e >= 20 ? '성인' : '미성년자')
+            console.log('map')
+            console.log(arr)
+            console.log(arr3)
+            console.log('')
+        </script>
+    </fieldset>
+    <!--
+        필터를 먼저 쓰고  map을 사용하는 것이 효율이 좋다.
+        arr.forEach     단순반복
+        arr.filter      조건필터
+        arr.toSorted    정렬
+        arr.map         재구성
+        arr.slice       잘라내기
+        arr.includes    포함확인
+    
+    -->
+</body>
+</html>
