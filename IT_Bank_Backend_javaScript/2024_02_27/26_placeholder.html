@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #root{
+            width: 500px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            padding: 10px;
+            box-sizing: border-box;
+            justify-content: center;
+            align-items: center;
+        }
+        div.box{
+            position: relative;
+            margin: 10px;
+        }
+        label{
+            color: darkgrey;
+            font-size: 16px;
+            position: absolute; /*주변 요소와 상관없는 자리차지*/
+            top: 5px;
+            left:10px;
+            transition-duration: 0.3s;
+
+        }
+        input{
+            all: unset; /*태그의 기본 스타일을 모두 초기화*/
+            width: 100%;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+            
+        }
+        input:focus + label,    /*사용자가 해당 요소를 선택하고 있을 때*/
+        input:valid + label     /*입력 요소 요구사항을 총족 했을 때*/
+        {  /*동위선택자 + */    
+            top: -8px;
+            background-color: white;
+            color: red;
+            padding: 0 2px;
+            font-size: 11px;
+            
+        }
+        input:valid + label{
+            color: blue;
+        }
+        .box > button{
+            background-color: lightpink;
+            color: inherit;
+            border-radius: 10px;
+            border-color: transparent;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .box > button:active{
+            cursor: pointer;
+            background-color: blueviolet;
+            box-shadow: 1px 1px 2px 2px;
+        }
+
+
+        </style>
+</head>
+<body>
+    <h1>26_placeholder.html</h1>
+    <hr>
+
+    <div id ="root">
+        <div class ="box">
+            <input  id="id" name="id" type="text" autocomplete="off" required>
+            <label for="id">ID</label>
+        </div>
+        <div class ="box">
+            <input  id="pw" name="pw" type="password" required>
+            <label for="PW">PW</label>
+        </div>
+        <div class ="box">
+            <button>로그인</button>
+        </div>
+
+    </div>
+</body>
+</html>

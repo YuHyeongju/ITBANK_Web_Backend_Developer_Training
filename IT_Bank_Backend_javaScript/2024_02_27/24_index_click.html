@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #root {
+            padding: 10px;
+        }
+
+        .box {
+            margin-top: 10px;
+            width: 250px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>index_click</h1>
+    <hr>
+
+    <div id="root">
+        <div class="btns">
+            <button id="red">빨강</button>
+            <button id="orange">주황</button>
+            <button id="green">초록</button>
+            <button id="blue">파랑</button>
+            <button id="purple">보라</button>
+        </div>
+        <div class="box"></div>
+    </div>
+
+    <script>
+        const btns = document.querySelectorAll('.btns  button') // 버튼 불러옴
+
+        // btns.forEach(btns => { // 모든 버튼들에 적용
+        //     btns.addEventListener('click', function() { // 버튼 하나를 눌렀을때 수행할 이벤트 
+        //         const color = this.id // 클릭된 버튼의 id값을 가리킴
+                
+        //         console.log(color)
+
+        //         document.querySelector('.box').style.backgroundColor = color
+        //     })
+
+
+            
+
+
+        // })
+        // function clickHandler(event){...}
+        const clickHandler = function(event){
+            const id = event.target.id
+
+            const box = document.querySelector('div.box')
+            //box.style.background-color(x)
+            box.style.backgroundColor = id
+            box.style.opacity = 0.5
+        }
+
+
+
+        btns.forEach(btn => btn.click = clickHandler)
+
+
+
+    </script>
+</body>
+
+</html>
